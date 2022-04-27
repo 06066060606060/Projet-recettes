@@ -1,75 +1,136 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/59ecaaffaa.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
+  <body>
+    <!-- BARRE DE MENU -->
+    <div class="topnav">
+      <a class="logo" href="#"><img src="./images/Foodieland.png" /></a>
+      <div class="spacer"></div>
+      <a href="#">Home</a>
+      <a href="#">Recipes</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+      <a href="#">About us</a>
+      <div></div>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <!----------------------------------------->
 
-<body>
+    <!-- 1ERE GRID -->
+    <article class="article">
+      <grid class="gridtop">
+        <!-- grid cell gauche -->
+        <itemsG>
+          <div class="divicon">
+            <img class="circle" src="./images/Badge.png" />
+            <img src="./images/Rectangle1.png" />
+            <p class="icone1">
+              <img class="icon-img" src="./images/image 14.png" />
+              <span class="cat-n">Hot Recipes</span>
+            </p>
+          </div>
+          <div class="divtext">
+            <h1 class="titre-recette">Spicy delicious chicken wings</h1>
+            <p class="text-home">
+              Sunt in culpa qui officia deserunt mollit anim id Sunt in culpa
+              qui officia deserunt mollit anim id
+            </p>
+          </div>
+          <div class="boutton-time">
+            <i class="fa-solid fa-stopwatch"></i>
+            <span class="timer">30 Minutes</span>
+          </div>
 
-  <!-- BARRE DE MENU -->
-  <div class="topnav">
-    <a class="logo" href="#"><img src="./images/Foodieland.png" /></a>
-    <div class="spacer"></div>
-    <a href="#">Home</a>
-    <a href="#">Recipes</a>
-    <a href="#">Blog</a>
-    <a href="#">Contact</a>
-    <a href="#">About us</a>
-    <div></div>
-    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <div class="boutton-fork">
+            <i class="fa-solid fa-utensils"></i>
+            <span class="cat-0">Chicken</span>
+          </div>
+
+          <div class="divautor">
+            <p class="imga"><img src="/images/Ellipse2.png" /></p>
+            <div class="divname">
+            <p class="nameautor">John Smith</p>
+            <p class="date_autor">15 March 2022</p>
+          </div>
+          </div>
+
+          <div class="view_button">
+            <span class="btn-title">View Recipes</span>
+            <i class="fa-solid fa-circle-play"></i>
+          </div>
+        </itemsG>
+
+        <!-- grid cell droite -->
+        <itemsD>
+          <img src="./images/droite.png" />
+        </itemsD>
+      </grid>
+    </article>
+
+    <article class="article">
+      <div class="categories-bar">
+        <span class="cat-title">Categories</span>
+        <div></div>
+        <span class="all-cat">View All Categories</span>
+      </div>
+
+      <div class="grid-cat">
+        <div class="container-cat-1">
+          <img class="cat-img" src="/images/1.png" />
+          <span class="cat-title2">Breakfast</span>
+        </div>
+        <div class="container-cat-2">
+          <img class="cat-img" src="/images/2.png" />
+          <span class="cat-title2">Vegan</span>
+        </div>
+        <div class="container-cat-3">
+          <img class="cat-img" src="/images/3.png" />
+          <span class="cat-title2">Meat</span>
+        </div>
+        <div class="container-cat-4">
+          <img class="cat-img" src="/images/4.png" />
+          <span class="cat-title2">Dessert</span>
+        </div>
+        <div class="container-cat-5">
+          <img class="cat-img" src="/images/5.png" />
+          <span class="cat-title2">Lunch</span>
+        </div>
+        <div class="container-cat-6">
+          <img class="cat-img" src="/images/6.png" />
+          <span class="cat-title2">Chocolate</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="article">
+      <div class="div-grid-recettes">
+        <span class="title-grid-recettes">Simple and tasty recipes</span>
+        <p class="text-grid-recettes">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt
+           ut labore et dolore magna aliqut enim ad minim </p>
+
+
+
   </div>
-  <!----------------------------------------->
-
-  <!-- 1ERE GRID -->
-  <article class="article">
-    <grid class="gridtop">
-      <!-- grid cell gauche -->
-      <itemsG>
-        <div class="divicon">
-          <img src="./images/Rectangle1.png">
-          <p class="icone1">
-            <img class="icon-img" src="./images/image 14.png">
-          <span class="cat-n">Hot Recipes</span>
-          </p>
-        </div>
-        <div class="divtext">
-          <h1 class="titre-recette">Spicy delicious chicken wings</h1>
-          <p>
-            Sunt in culpa qui officia deserunt mollit anim id
-            Sunt in culpa qui officia deserunt mollit anim id
-          </p>
-        </div>
-        <div class="boutton-time">
-          <i class="fa-solid fa-stopwatch"></i>
-          <span class="timer">30 Minutes</span>
-        </div>
-
-        <div class="boutton-fork">
-          <i class="fa-solid fa-utensils"></i>
-          <span class="cat-0">Chicken</span>
-        </div>
-
-        <div class="divautor">
-         <p><img src="/images/Ellipse2.png"></p>
-          <p class="nameautor">John Smith</p><br>
-          <p class="date_autor">15 March 2022</p>
-        </div>
-
-        <div class="view_button">
-          <span class="btn-title">View Recipes</span>
-          <i class="fa-solid fa-circle-play"></i>
-        </div>
 
 
-      </itemsG>
+
+    </article>
 
 
 
@@ -77,14 +138,5 @@
 
 
 
-      <!-- grid cell droite -->
-      <itemsD>
-        <img src="./images/droite.png">
-      </itemsD>
-    </grid>
-  </article>
-
-
-</body>
-
+  </body>
 </html>

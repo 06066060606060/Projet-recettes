@@ -22,7 +22,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 1440px;
-  height: 200vh;
+  height: 600vh; /* a enlever*/
   padding: 10px;
   background: white;
 }
@@ -67,6 +67,15 @@ body {
   align-items: stretch;
 }
 
+.circle {
+  z-index: 1;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 570px;
+  top: 50px;
+}
+
 .article {
   margin-left: 70px;
   margin-right: 70px;
@@ -75,12 +84,12 @@ body {
 itemsG {
   position: relative;
   margin-left: 10px;
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 50px 0px 0px 50px;
 }
 
 itemsD {
   margin-right: 10px;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 50px 50px 0px;
 }
 
 .icon-img {
@@ -124,14 +133,12 @@ itemsD {
   letter-spacing: -0.04em;
 }
 
-p {
+.text-home {
   position: absolute;
   width: 520px;
   height: 56px;
   left: 40px;
   top: 295px;
-
-  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -188,13 +195,20 @@ p {
 
 .divautor {
   position: absolute;
+  display: grid;
+  grid-template-columns: auto auto;
   left: 20px;
-  top: 240px;
+  top: 535px;
+}
+
+.imga{
+  margin-left: 30px;
 }
 
 .nameautor {
   margin-top: 5px;
-  margin-left: 65px;
+  margin-bottom: 5px;
+  margin-left: 20px;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -202,8 +216,7 @@ p {
 }
 
 .date_autor {
-  margin-left: 65px;
-  margin-top: 30px;
+  margin-left: 20px;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -229,33 +242,195 @@ p {
   font-size: 16px;
   line-height: 17px;
   letter-spacing: -0.02em;
- 
 }
 
 .fa-solid.fa-circle-play {
   margin-left: 10px;
 }
 
-
 /* FIN---GRID--RECETTES--DU--JOUR */
 
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+/* GRID CATEGORIES */
+.categories-bar {
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: 20% 65% 15%;
+  align-items: center;
 }
 
+.cat-title {
+  justify-content: start;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.all-cat {
+  background-color: #e7fafe;
+  width: 200px;
+  height: 60px;
+  padding: 20px;
+  padding-left: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  border-radius: 16px;
+}
+
+.grid-cat {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 35px;
+}
+.cat-img {
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 60px;
+  -webkit-box-reflect: below -130px linear-gradient(transparent, rgba(0, 0, 0, 0.138));
+}
+
+.cat-title2 {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  margin-top: -20px;
+}
+
+.container-cat-1 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.789) 0%,
+    #f2f4ef 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-2 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #f2faee 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-3 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #faebea 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-4 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #fef6e8 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-5 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #f5f5f5 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-6 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #f5f5f5 40%
+  );
+  border-radius: 30px;
+}
+
+/* FIN--------GRID-------------CAT */
+
+
+.div-grid-recettes{
+  padding-top: 150px;
+  text-align: center;
+}
+
+.title-grid-recettes{
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 58px;
+letter-spacing: -0.04em;
+}
+
+.text-grid-recettes{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+
+
+
+
+
+
+/* MODE TABLETTE */
 @media screen and (max-width: 850px) {
   .topnav {
     grid-template-columns: auto;
     height: 600px;
   }
 
+  .circle {
+    z-index: -1;
+  }
 
+  .gridtop {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    align-items: stretch;
+  }
 
+  .gridtop img {
+    border-radius: 50px 50px 50px 50px;
+  }
 
+  itemsG {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+  }
+
+  itemsD {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+  }
 }
 
+/* MODE MOBILE */
 @media screen and (max-width: 400px) {
 }
