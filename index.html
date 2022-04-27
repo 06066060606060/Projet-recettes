@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/59ecaaffaa.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
 
-    <div class="topnav">
-      <a class="logo" href="#"><img src="./images/Foodieland.png"></a>
-      <div></div>
-      <a href="#">Home</a>
-      <a href="#">Recipes</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-      <a href="#">About us</a>
-      <div></div>
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-    <div class="row">
-      <div class="container">
-        <div class="section">
-            <h5> icone </h5>
-          <h1 class="titre-recette">Spicy delicious chicken wings</h1>
-          <div class="fakeimg" style="height: 200px">Image</div>
-          <p>
-            Sunt in culpa qui officia deserunt mollit anim id est laborum
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco.
+<body>
+
+  <!-- BARRE DE MENU -->
+  <div class="topnav">
+    <a class="logo" href="#"><img src="./images/Foodieland.png" /></a>
+    <div class="spacer"></div>
+    <a href="#">Home</a>
+    <a href="#">Recipes</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+    <a href="#">About us</a>
+    <div></div>
+    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <!----------------------------------------->
+
+  <!-- 1ERE GRID -->
+  <article class="article">
+    <grid class="gridtop">
+      <!-- grid cell gauche -->
+      <itemsG>
+        <div class="divicon">
+          <img src="./images/Rectangle1.png">
+          <p class="icone1">
+            <img class="icon-img" src="./images/image 14.png">
+          <span class="cat-n">Hot Recipes</span>
           </p>
         </div>
-      </div>
-    </div>
+        <div class="divtext">
+          <h1 class="titre-recette">Spicy delicious chicken wings</h1>
+          <p>
+            Sunt in culpa qui officia deserunt mollit anim id
+            Sunt in culpa qui officia deserunt mollit anim id
+          </p>
+        </div>
+        <div class="boutton-time">
+          <i class="fa-solid fa-stopwatch"></i>
+          <span class="timer">30 Minutes</span>
+        </div>
+
+        <div class="boutton-fork">
+          <i class="fa-solid fa-utensils"></i>
+          <span class="cat-0">Chicken</span>
+        </div>
+
+        <div class="divautor">
+         <p><img src="/images/Ellipse2.png"></p>
+          <p class="nameautor">John Smith</p><br>
+          <p class="date_autor">15 March 2022</p>
+        </div>
+
+        <div class="view_button">
+          <span class="btn-title">View Recipes</span>
+          <i class="fa-solid fa-circle-play"></i>
+        </div>
 
 
-  </body>
+      </itemsG>
+
+
+
+
+
+
+
+      <!-- grid cell droite -->
+      <itemsD>
+        <img src="./images/droite.png">
+      </itemsD>
+    </grid>
+  </article>
+
+
+</body>
+
 </html>
