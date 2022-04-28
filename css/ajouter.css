@@ -56,10 +56,9 @@ body {
   width: 20px;
 }
 
-/* //------------------article------------------- */
-
 
 .title_contact {
+
   width: 315px;
   height: 77px;
   margin-left: auto;
@@ -77,6 +76,7 @@ body {
 input[type="text"],
 select,
 textarea {
+  text-align: center;
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -89,6 +89,11 @@ textarea {
   resize: none;
 }
 
+label{
+  margin-left: 40%;
+  margin-right: 40%;
+  text-align: center;
+}
 
 
 input[type="submit"]:hover {
@@ -111,6 +116,8 @@ input[type="submit"]:hover {
   padding-left: 40px;
   padding-right: 40px;
 }
+
+
 
 @media screen and (max-width: 850px) {
   .gridtop {
