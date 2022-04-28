@@ -35,6 +35,7 @@ body {
   overflow: hidden;
   padding-left: 55px;
   padding-right: 55px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1); ;
 }
 
 .topnav a {
@@ -390,11 +391,41 @@ letter-spacing: -0.04em;
   margin-right: 20%;
 }
 
+.ninegrid{
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 40px;
+}
 
+.cell{
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.53) 0%, #EAFAFD 30%);
+  border-radius: 20px;
+  width: 400px;
+  height: 434px;
+}
 
+.cell0{
+  background-color: #357355;
+  width: 400px;
+  height: 434px;
+}
 
+.img9{
+  position: absolute;
+  margin-top: 16px;
+ margin-left: 16px;
+ margin-right: 16px;
+}
 
-
+.recette9-title{
+  font-weight: 600;
+font-size: 24px;
+line-height: 32px;
+letter-spacing: -0.04em;
+}
 
 /* MODE TABLETTE */
 @media screen and (max-width: 850px) {
