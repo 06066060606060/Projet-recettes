@@ -602,11 +602,12 @@ itemsD {
 }
 
 .titre-every {
+  white-space: pre-line;
   position: absolute;
-  margin-top: 100px;
+  margin-top: 40px;
   left: 40px;
   top: 120px;
-  width: 500px;
+  width: 600px;
   height: 116px;
   left: 20px;
   font-family: "Inter";
