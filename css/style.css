@@ -22,7 +22,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 1440px;
-  height: 1100vh; /* a enlever*/
   padding: 10px;
   background: white;
 }
@@ -37,7 +36,7 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.77);
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
 }
 
@@ -123,7 +122,8 @@ itemsD {
   top: 50px;
   background-color: white;
   border-radius: 20px;
-  filter: drop-shadow(10px 20px 40px rgba(41, 64, 70, 0.1));
+  filter: drop-shadow(10px 20px 40px rgba(41, 64, 70, 0.441));
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.086);
 }
 
 .cat-n {
@@ -519,6 +519,11 @@ itemsD {
   margin-right: 16px;
 }
 
+.img9:hover {
+  transform: scale(1.05);
+  transition: transform 330ms ease-in-out;
+}
+
 .img10 {
   position: absolute;
   margin-top: 62px;
@@ -659,7 +664,6 @@ itemsD {
   border-radius: 30px;
 }
 .img_jongleur {
-  padding-right: 100px;
 }
 
 .tomates {
@@ -735,6 +739,7 @@ itemsD {
 }
 
 /* FIN TITRE GRID 8 */
+
 /* DEBUT GRID 8 */
 
 .title-grid-88 {
@@ -771,6 +776,11 @@ itemsD {
   margin-top: 16px;
   margin-left: 16px;
   margin-right: 16px;
+}
+
+.img98:hover {
+  transform: scale(1.05);
+  transition: transform 330ms ease-in-out;
 }
 
 .recette8-title {
@@ -852,13 +862,17 @@ itemsD {
   color: #e24f00;
 }
 
+/*  DEBUT DELICIOUS__________________________________________________ */
 .delicious {
+  position: relative;
   margin-top: 170px;
   width: 1280px;
   height: 442px;
-  left: 80px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #e7f9fd;
   border-radius: 70px;
+  overflow: hidden;
 }
 
 .titre-delicious {
@@ -888,10 +902,10 @@ itemsD {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.mailbar{
+.mailbar {
   position: relative;
 }
-.formail{
+.formail {
   margin-top: 60px;
   background-color: white;
   width: 480px;
@@ -901,7 +915,7 @@ itemsD {
   border-radius: 24px;
 }
 
-.btn-mail{
+.btn-mail {
   position: absolute;
   top: 10px;
   left: 710px;
@@ -914,7 +928,15 @@ itemsD {
   border-radius: 16px;
 }
 
-.ymail{
+.btn-mail:hover {
+  background-color: rgba(0, 0, 0, 0.77);
+}
+
+.btn-mail:active {
+  background-color: black;
+}
+
+.ymail {
   position: absolute;
   padding-top: 32px;
   padding-left: 25px;
@@ -925,29 +947,86 @@ itemsD {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.imgsalad{
+.imgsalad {
   position: absolute;
-  left: 10px;
+  left: 0px;
+  top: 65px;
 }
 
-.imgsalad2{
-  position: absolute;
-  right: 10px;
+.imgsalad:hover {
+  transform: scale(1.05);
+  transition: transform 1000ms ease-out;
 }
 
+.imgsalad2 {
+  position: absolute;
+  top: 175px;
+  right: -130px;
+}
 
+.imgsalad2:hover {
+  transform: scale(1.05);
+  transition: transform 1000ms ease-out;
+}
 
+/* FIN DELICIOUS BOX */
 
+/*  FOOTER BAR______________________________________ */
+.footernav {
+  margin-top: 150px;
+  display: grid;
+  height: 80px;
+  grid-template-columns: 100px 1fr auto auto auto auto auto;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
 
+.footernav a {
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-style: Medium;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
+footer {
+  margin-top: 10px;
+  padding-left: 40px;
+  padding-right: 50px;
+  height: 120px;
+}
 
+.footer p {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding-top: 30px;
+}
 
+.footer i {
+  font-size: 24px;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: right;
+  margin-bottom: 100px;
+}
 
+.spacerfoot {
+  width: 20px;
+}
 
-
-
-
-
+.footernav a:hover {
+  color: black;
+}
 
 /* MODE TABLETTE_________________________________________________________________________________________ */
 @media screen and (max-width: 1000px) {

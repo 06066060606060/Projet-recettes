@@ -1,6 +1,8 @@
 /* //--------------------header----------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 * {
+  box-sizing: border-box;
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
@@ -16,7 +18,6 @@ body {
   margin-right: auto;
   max-width: 1440px;
   padding: 10px;
-  height: 200vh;
 }
 
 .header {
@@ -58,7 +59,6 @@ body {
 
 /* //------------------article------------------- */
 .article {
-  height: 733px;
   left: 50%;
 }
 
@@ -135,6 +135,324 @@ input[type="submit"]:hover {
   padding-left: 40px;
   padding-right: 40px;
 }
+
+
+/*  DEBUT DELICIOUS__________________________________________________ */
+.delicious {
+  position: relative;
+  margin-top: 120px;
+  width: 1280px;
+  height: 442px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e7f9fd;
+  border-radius: 70px;
+  overflow: hidden;
+}
+
+.titre-delicious {
+  padding-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 589px;
+  height: 58px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.text-delicious {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 620px;
+  height: 56px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.mailbar {
+  position: relative;
+}
+.formail {
+  margin-top: 60px;
+  background-color: white;
+  width: 480px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 24px;
+}
+
+.btn-mail {
+  position: absolute;
+  top: 10px;
+  left: 710px;
+  text-align: center;
+  color: white;
+  width: 160px;
+  height: 60px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 16px;
+}
+
+.btn-mail:hover{
+  background-color: rgba(0, 0, 0, 0.77);
+}
+
+.btn-mail:active{
+  background-color: black;
+}
+
+
+.ymail {
+  position: absolute;
+  padding-top: 32px;
+  padding-left: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.imgsalad {
+  position: absolute;
+  left: 0px;
+  top: 65px;
+}
+
+.imgsalad:hover {
+  transform: scale(1.05);
+  transition: transform 1000ms ease-out;
+}
+
+.imgsalad2 {
+  position: absolute;
+  top: 175px;
+  right: -130px;
+}
+
+.imgsalad2:hover {
+  transform: scale(1.05);
+  transition: transform 1000ms ease-out;
+}
+
+/* FIN DELICIOUS BOX */
+
+
+/* DEBUT GRID 4 */
+
+.title-grid-88 {
+  padding-top: 130px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  padding-bottom: 90px;
+}
+
+.text-grid-88 {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.grid888 {
+  display: grid;
+  margin-left: 45px;
+  margin-right: 45px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.cell8 {
+  position: relative;
+  border-radius: 20px;
+  width: 290px;
+  height: 316px;
+}
+
+.img98 {
+  position: absolute;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.img98:hover {
+  transform: scale(1.05);
+  transition: transform 330ms ease-in-out;
+}
+
+.recette8-title {
+  position: absolute;
+  width: 290px;
+  height: 52px;
+  left: 15px;
+  top: 230px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.04em;
+}
+
+.boutton-timeCell8 {
+  position: absolute;
+  height: 24px;
+  top: 290px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.boutton-catCell8 {
+  position: absolute;
+  height: 24px;
+  top: 290px;
+  left: 120px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.iconT8.fa-solid.fa-stopwatch {
+  color: #000000;
+  margin-left: 10px;
+}
+
+.iconC8.fa-solid.fa-solid.fa-utensils {
+  color: #000000;
+}
+
+.dotlike8 {
+  position: absolute;
+  z-index: 1;
+  top: 35px;
+  left: 240px;
+  height: 48px;
+  width: 48px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+}
+
+.flike8.fa-solid.fa-heart {
+  color: #c4c8c9;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  left: 14px;
+}
+
+.flike8.fa-solid.fa-heart:hover {
+  color: #949595;
+}
+
+.flike8.fa-solid.fa-heart:active {
+  color: #e24f00;
+}
+
+.flike8.fa-solid.fa-heart:visited {
+  color: #e24f00;
+}
+
+
+
+/*  FOOTER BAR______________________________________ */
+.footernav {
+  margin-top: 150px;
+  display: grid;
+  height: 80px;
+  grid-template-columns: 100px 1fr auto auto auto auto auto;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1280px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.footernav a {
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-style: Medium;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+footer {
+  margin-top: 10px;
+  padding-left: 40px;
+  padding-right: 50px;
+  height: 120px;
+}
+
+.footer p {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.footer i {
+  font-size: 24px;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: right;
+  margin-bottom: 100px;
+}
+
+.spacerfoot {
+  width: 20px;
+}
+
+.footernav a:hover {
+  color: black;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 850px) {
   .gridtop {
