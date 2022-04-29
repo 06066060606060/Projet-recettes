@@ -1,112 +1,40 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="./js/Myfunctions.js"></script>
     <script
       src="https://kit.fontawesome.com/59ecaaffaa.js"
       crossorigin="anonymous"
     ></script>
-
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/ajouter.css" />
-    <script
-      src="https://kit.fontawesome.com/59ecaaffaa.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <grid class="gridtop">
+    <div id="overlay"></div>
+    <!-- BARRE DE MENU -->
+    <div class="topnav">
       <a class="logo" href="#"><img src="./images/Foodieland.png" /></a>
       <div class="spacer"></div>
-      <a href="#">Home</a>
-      <a href="#">Recipes</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-      <a href="#">About us</a>
+      <span> <a href="#">Home</a></span>
+      <span> <a href="#">Recipes</a></span>
+      <span><a href="#">Contact</a></span>
+      <span><a href="#">About us</a></span>
+      <span onclick="on()"><a href="#">Login</a></span>
       <div></div>
       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="#"><i class="fa-brands fa-twitter"></i></a>
       <a href="#"><i class="fa-brands fa-instagram"></i></a>
-    </grid>
+    </div>
+    <!----------------------------------------->
 
-    <article class="article">
-      <h2 class="title_Ajouter">Ajouter Une Recette</h2>
-      <grid class="grid_contact">
-        <div class="gridD">
-          <div class="form_contact">
-            <form action="/action_page.php">
-              <grid class="header_recette">
-              <label for="fname">Nom de la recette:</label>
-              <input type="text" id="recip" name="recette" placeholder="Enter your name recipe..">
-              <label for="lname">Auteur:</label>
-              <input type="text" id="aut" name="aut1" placeholder="">
-              <label for="lname">Prep time </label>
-              <input type="text" id="timerecip" name="preptime" placeholder="">
-              <label for="lname">Cook time</label>
-              <input type="text" id="cookt" name="cook time" placeholder="">
-              <label for="lname">Categorie:</label>
-              <input type="text" id="cate" name="namecate" placeholder="">
-              </grid>
-              <label for="text">Description:</label>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-              <label for="lname">image etape 1</label>
-              <input type="text" id="ingre" name="ing1" placeholder="">
-
-              <label for="lname">ingredients</label>
-              <input type="text" id="ingre" name="ing1" placeholder="">
-              <label for="lname">ingredients</label>
-              <input type="text" id="ingre" name="ing2" placeholder="">
-              <label for="lname">ingredients</label>
-              <input type="text" id="ingre" name="ing3" placeholder="">
-              <label for="lname">ingredients</label>
-              <input type="text" id="ingre" name="ing4" placeholder="">
-              <label for="lname">ingredients</label>
-              <input type="text" id="ingre" name="ing5" placeholder="">
-              <label for="lname">ingredients</label>
-              <input type="text" id="ingre" name="ing6" placeholder="">
-
-              <label for="lname">Sauce</label>
-              <input type="text" id="sauce" name="sauce1" placeholder="">
-              <label for="lname">sauce</label>
-              <input type="text" id="sauce" name="sauce2" placeholder="">
-              <label for="lname">sauce</label>
-              <input type="text" id="sauce" name="sauce3" placeholder="">
-              <label for="lname">sauce</label>
-              <input type="text" id="Sauce" name="sauce4" placeholder="">
-              <label for="lname">sauce</label>
-              <input type="text" id="sauce" name="sauce5" placeholder="">
-
-              <label for="lname">Directions</label>
-              <br><br><h3 class="titre_direction">titreD1</h3>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-              <label for="lname">image direction 1</label>
-              <input type="text" id="ingre" name="ing1" placeholder="">
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-              <br><br><h3 class="titre_direction">titreD2</h3>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-              <br><br><h3 class="titre_direction">titreD3</h3>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-              
-              <label for="lname">Nutrition information</label>
-              <input type="text" id="nutri_info" name="" placeholder="">
-              
-              <input type="submit" value="Submit"><br><br>
-            </form>
-          </div>
-        </div>
-      </grid>
-    </article>
-
-    <article class="article2">
-    </article>
-
-    <footer>
-    </footer>
+   
   </body>
 </html>
