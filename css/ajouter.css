@@ -14,7 +14,7 @@ text-align: center;
 }
 
 .grid_add{
-  margin-top: 50px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 20px;
@@ -58,8 +58,7 @@ padding: 20px;
 
 .label-file {
   color: white;
-  font-weight: bold;
-  background-color: black;
+  background-color: rgb(118, 118, 118);
   border-radius: 16px;
   margin-top: 6px;
   padding: 10px;
@@ -89,6 +88,17 @@ padding: 20px;
 
 .bouton{
 padding: 40px;
+
+}
+
+
+  
+.griduser{
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 5px;
+  align-items: center;
+  justify-items: center;
 
 }
 
