@@ -10,8 +10,7 @@
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
 html {
@@ -26,55 +25,6 @@ body {
   background: white;
 }
 
-#overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.77);
-  z-index: 2;
-  cursor: pointer;
-}
-
-.topnav {
-  display: grid;
-  padding-top: 20px;
-  height: 110px;
-  grid-template-columns: 100px 1fr auto auto auto auto auto 1fr 40px 40px 40px;
-  overflow: hidden;
-  padding-left: 55px;
-  padding-right: 55px;
-  border-top: solid 1px rgba(0, 0, 0, 0.1);
-}
-
-.topnav span {
-  margin-top: 12px;
-}
-.topnav a {
-  color: #000000;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-style: Medium;
-  font-weight: 500;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.topnav a.logo {
-}
-
-.spacer {
-  width: 20px;
-}
-
-.topnav a:hover {
-  color: black;
-}
 
 /*//------grid--recette-du-jour------------// */
 .gridtop {
@@ -281,7 +231,7 @@ itemsD {
 .categories-bar {
   margin-top: 150px;
   display: grid;
-  grid-template-columns: 20% 65% 15%;
+  grid-template-columns: 20% auto 15%;
   align-items: center;
 }
 
@@ -531,7 +481,13 @@ itemsD {
   margin-right: 16px;
 }
 
+.img10:hover {
+  transform: scale(1.05);
+  transition: transform 330ms ease-in-out;
+}
+
 .img11 {
+  z-index: 2;
   position: absolute;
   margin-top: 40px;
   margin-left: 120px;
@@ -729,6 +685,7 @@ itemsD {
 
 .text-cell88 {
   position: absolute;
+  top: 30px;
   width: 600px;
   height: 56px;
   left: 700px;
@@ -952,23 +909,21 @@ itemsD {
   position: absolute;
   left: 0px;
   top: 65px;
+  animation: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
-.imgsalad:hover {
-  transform: scale(1.05);
-  transition: transform 1000ms ease-out;
-}
 
 .imgsalad2 {
   position: absolute;
   top: 175px;
   right: -130px;
+  animation: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
-.imgsalad2:hover {
-  transform: scale(1.05);
-  transition: transform 1000ms ease-out;
-}
 
 /* FIN DELICIOUS BOX */
 
@@ -1030,17 +985,7 @@ footer {
 }
 
 /* MODE TABLETTE_________________________________________________________________________________________ */
-@media screen and (max-width: 1000px) {
-  .topnav {
-    grid-template-columns: auto;
-    height: 600px;
-  }
-
-  .topnav span {
-    margin-top: 12px;
-    text-align: center;
-  }
-
+@media screen and (max-width: 1100px) {
   .circle {
     z-index: -1;
   }
@@ -1068,6 +1013,10 @@ footer {
     border-radius: 20px;
   }
 
+  .categories-bar {
+    grid-template-columns: 20% auto 15% 5%;
+  }
+
   .grid-cat {
     margin-top: 80px;
     margin-left: auto;
@@ -1078,6 +1027,11 @@ footer {
     row-gap: 35px;
   }
 
+  .text-grid-recettes {
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
   .ninegrid {
     margin-top: 100px;
     margin-left: auto;
@@ -1088,107 +1042,67 @@ footer {
     column-gap: 40px;
     row-gap: 40px;
   }
+
+  .grid888 {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
 }
 
 /* MODE MOBILE__________________________________________________________________ */
-@media screen and (max-width: 400px) {
-}
-
-/* LOGIN FORM__________________________________________________________________ */
-/* LOGIN FORM__________________________________________________________________ */
-/* LOGIN FORM__________________________________________________________________ */
-#login {
-  visibility: hidden;
-  z-index: -1;
-  position: fixed;
-  width: 400px;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -20%);
-}
-
-#login.active {
-  z-index: 2;
-  visibility: visible;
-  animation: fronte1 1s linear forwards;
-}
-
-@keyframes fronte1 {
-  from {
-    z-index: 1;
+@media screen and (max-width: 880px) {
+  body {
+    width: 100%;
   }
-  to {
-    z-index: 2;
+
+  .topnav {
+    grid-template-columns: auto;
+    height: 600px;
+  }
+
+  .topnav span {
+    margin-top: 12px;
+    text-align: center;
   }
 }
 
-#login .fa-solid.fa-circle-xmark {
-  color: brown;
-  padding: 5px;
-  float: right;
-}
+@media screen and (max-width: 650px) {
+  .categories-bar {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+  }
 
-#login .fa-solid.fa-circle-xmark:hover {
-  color: rgb(164, 88, 88);
-  padding: 5px;
-  float: right;
-}
+  .grid-cat {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 35px;
+    row-gap: 35px;
+  }
 
-#login h1 {
-  text-align: center;
-  color: #000000;
-  font-size: 24px;
-  margin-left: 20px;
-  padding: 20px 0 20px 0;
-  border-bottom: 1px solid #dee0e4;
-}
+  .ninegrid {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 40px;
+  }
 
-#login form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-top: 20px;
-}
-#login form label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  background: rgba(30, 30, 30, 0.894);
-  color: #ffffff;
-}
-#login form input[type="password"],
-#login form input[type="text"] {
-  width: 310px;
-  height: 50px;
-  border: 1px solid #dee0e4;
-  margin-bottom: 20px;
-  padding: 0 15px;
-}
-#login form input[type="submit"] {
-  width: 100%;
-  padding: 15px;
-  margin-top: 20px;
-  background: rgba(30, 30, 30, 0.667);
-  border: 0;
-  cursor: pointer;
-  font-weight: bold;
-  color: #ffffff;
-  transition: background-color 0.2s;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-#login form input[type="submit"]:hover {
-  background: rgba(61, 61, 61, 0.894);
-  transition: background-color 0.2s;
-}
-
-#login form input[type="submit"]:active {
-  background: rgba(137, 137, 137, 0.894);
-  transition: background-color 0.2s;
+  .grid888 {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
 }
