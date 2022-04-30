@@ -44,7 +44,6 @@ function OneReceipe()
             'ing_sauce5' =>  $ingredient['ing_sauce5'],
             'ing_sauce6' => $ingredient['ing_sauce6'],
         ];
-
     }
 
     while ($etape = $etapes->fetch()) {
@@ -53,23 +52,19 @@ function OneReceipe()
             'etape1' => $etape['etape1'],
             'etape2' => $etape['etape2'],
             'etape3' => $etape['etape3'],
-
         ];
 
     }
 
     while ($nutrition = $nutritions->fetch()) {
         $nut[] = [
-            
             'id_nut' => $nutrition['id_nut'],
             'calories' => $nutrition['calories'],
             'fat' => $nutrition['fat'],
             'prot' => $nutrition['prot'],
             'carbon' => $nutrition['carbon'],
             'chol' => $nutrition['chol'],
-
         ];
-
     }
 
     for ($i = 0; $i < count($content); $i++) { ?>
@@ -118,8 +113,6 @@ function OneReceipe()
     <?php
         $bdd->connection = null;
     } ?>
-
-
 
 <?php
 }
