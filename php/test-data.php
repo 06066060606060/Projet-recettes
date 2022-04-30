@@ -21,31 +21,12 @@ include('./fonction.php');
   </head>
   <body>
 
-    <div class="topnav">
-      <a class="logo" href="#"><img src="./images/Foodieland.png"></a>
-      <div></div>
-      <a href="#">Home</a>
-      <a href="#">Recipes</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-      <a href="#">About us</a>
-      <div></div>
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-
     <div class="row">
       <div class="container">
         <div class="section">
-            <h5> icone </h5>
-          <h1 class="titre-recette">Spicy delicious chicken wings</h1>
-          <div class="fakeimg" style="height: 200px">Image</div>
-          <p>
            <?php
-           indexpage();
+           OneReceipe();
            ?>
-          </p>
         </div>
         </div>
       </div>

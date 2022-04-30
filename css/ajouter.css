@@ -104,6 +104,7 @@ padding: 40px;
 
 
 input[type="text"],
+input[type="password"],
 select,
 textarea {
   text-align: center;
