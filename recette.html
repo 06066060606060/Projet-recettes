@@ -1,55 +1,285 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="./js/Myfunctions.js"></script>
-    <script
-      src="https://kit.fontawesome.com/59ecaaffaa.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/navbar.css" />
-  </head>
+<html lang="en">
 
-  <body>
-    <div id="overlay"></div>
-    <!-- BARRE DE MENU -->
-    <div class="topnav">
-      <a class="logo" href="#"><img src="./images/Foodieland.png" /></a>
-      <div class="spacer"></div>
-      <span> <a href="./index.html">Accueil</a></span>
-      <span><a href="./inscription.html">Inscription</a></span>
-      <span onclick="on()"><a href="#">Login</a></span>
-      <div></div>
-      <div></div>
-      <div></div>
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
+
+  <title>Document</title>
+  <script type="text/javascript" src="./js/Myfunctions.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./css/recettes.css" />
+  <link rel="stylesheet" href="./css/navbar.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="logo" href="#"><img src="./images/Foodieland.png" /></a>
+    <div class="spacer"></div>
+    <span> <a href="./index.html">Accueil</a></span>
+    <span> <a href="./recette.html">Recettes</a></span>
+    <span><a href="./contact.html">Contact</a></span>
+    <span><a href="./inscription.html">Inscription</a></span>
+    <span><a href="">Login</a></span>
+    <div></div>
+    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <!----------------------------------------->
+
+  <article class="article">
+    <span class="title_recette">Health Japanese Fried Rice</span>
+    <div class="gridinfo">
+      <div class="auteur">
+        <p class="imga"><img src="./images/Ellipse2.png" /></p>
+        <div class="divname">
+          <p class="nameautor">John Smith</p>
+          <p class="date_autor">15 March 2022</p>
+        </div>
+      </div>
+      <div class="cooktime">
+        <i class="iconI fa-solid fa-stopwatch"></i>
+        <span class="timing">PREP TIME</span>
+        <span class="timercell1">30 Minutes</span>
+      </div>
+      <div class="preptime"><i class="iconI fa-solid fa-stopwatch"></i>
+        <span class="timing">COOK TIME</span>
+        <span class="timercell1">30 Minutes</span>
+      </div>
+      <div class="category"> <i class="iconI fa-solid fa-utensils"></i>
+        <span class="Catcell2">Healty</span>
+      </div>
     </div>
-    <!----------------------------------------->
+
+    <grid class="grid_recette">
+      <div class="gridGr">
+        <div class="image_recette">
+          <img src="./images/player.png" />
+        </div>
+      </div>
+      <div class="gridDr">
+        <span class="title_nutrition">Nutrition Information</span>
+        <div class="gridnutrition">
+          <span class="nutrition">Calories</span>
+          <span class="nutritionD">219.9 kcal</span>
+          <span class="nutrition">Total Fat</span>
+          <span class="nutritionD">10.0 g</span>
+          <span class="nutrition">Protein</span>
+          <span class="nutritionD">7.9 g</span>
+          <span class="nutrition">Carbohydrate</span>
+          <span class="nutritionD">22.3 g</span>
+          <span class="nutrition">Cholesterol</span>
+          <span class="nutritionD">37.4 mg</span>
+        </div>
+      </div>
+    </grid>
+  </article>
+
+  <article>
+    <p class="resumerecettes">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+      anim id est laborum.</p>
+  </article>
 
 
-  <!-- 1ERE GRID -->
-    <article class="article">
-      <h1 class="titre-1-recette">titre</h1>
-        <grid class="gridtop">
-            <itemsG>
-              <p>
-                Sunt in culpa qui officia deserunt mollit anim id 
-              </p>
-            </itemsG>
-            <itemsD>2</itemsD>
-        </grid>
-    </article>
+
+  <article>
+    <grid class="grid_recette2">
+      <div class="gridingredient">
+        <span class="title_ing">Ingredients</span>
+        <span class="subtitle_ing">For main dish</span>
+        <input type="radio" class="ingr">
+        <span class="ingredient">Lorem ipsum dolor sit amet</span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient">Lorem ipsum dolor sit amet</span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient">Lorem ipsum dolor sit amet</span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient">Lorem ipsum dolor sit amet</span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient">Lorem ipsum dolor sit amet</span>
+        </input>
+        <span class="subtitle_ing">For the sauce</span>
+        <input type="radio" class="ingr">
+        <span class="ingredient">Lorem ipsum dolor sit amet</span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient">Lorem ipsum dolor sit amet</span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient">Lorem ipsum dolor sit amet</span>
+        </input>
+      </div>
+      <div class="gridingredientD">
+        <span class="title_Other">Other Recipe</span>
+        <div class="gridPub">
+          <img class="minipost" src="./images/112.png">
+          <div class="pubtext">
+          <p class="titrepub">Chicken Meatball with Creamy Chees...</p>
+          <span class="subt">By Andreas Paula</span>
+        </div>
+        </div>
+        <div class="gridPub">
+          <img class="minipost" src="./images/113.png">
+          <div class="pubtext">
+          <p class="titrepub">The Creamiest Creamy Chicken an...</p>
+          <span class="subt">By Andreas Paula</span>
+        </div>
+      </div>
+        <div class="gridPub">
+          <img class="minipost" src="./images/114.png">
+                <div class="pubtext">
+          <p class="titrepub">The Best Easy One Pot Chicken and Rice</p>
+                    <span class="subt">By Andreas Paula</span>
+        </div>
+      </div>
+      <div class="pubgreen">
+      <div class="cell0">
+        <img class="img11" src="./images/food.png" />
+        <img class="img10" src="./images/01.png" />
+      </div>
+    </div>
+      </div>
+    </grid>
+  </article>
+
+<article>
+  <div class="gridetapes">
+    <span class="title_etapes">Directions</span>
+    <input type="radio" class="ingr">
+    <span class="etapes">1.  Lorem ipsum dolor sit amet</span>
+    <p class="etape">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+      enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modivoluptatem 
+      enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+      sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    <img src="./images/Mask Group-7.png" class="imgrecet">
+  </input>
+
+    <input type="radio" class="ingr">
+    <span class="etapes">2.  Lorem ipsum dolor sit amet</span>
+    <p class="etape">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    </input>
+
+    <input type="radio" class="ingr">
+    <span class="etapes">3.  Lorem ipsum dolor sit amet</span>
+     <p class="etape">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    </input>
+
+  </div>
+</article>
 
 
+
+
+  <article class="article">
+    <div class="delicious">
+      <h1 class="titre-delicious">Deliciousness to your inbox</h1>
+      <p class="text-delicious">
+        Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqut enim ad minim
+      </p>
+      <div class="mailbar">
+        <div class="formail">
+          <span class="ymail">Your email here...</span>
+          <div class="btn-mail">Subscribe</div>
+        </div>
+      </div>
+      <img class="imgsalad" src="./images/salads.png" />
+      <img class="imgsalad2" src="./images/22.png" />
+    </div>
+  </article>
+
+  <article class="article">
+    <h2 class="title-grid-888">You may like these recipe too</h2>
+    <div class="grid888">
+      <div class="cell8">
+        <div class="dotlike8">
+          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
+        </div>
+        <img class="img98" src="./images/111.png" />
+        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
+        <div class="boutton-timeCell8">
+          <i class="iconT8 fa-solid fa-stopwatch"></i>
+          <span class="timercell">30 Minutes</span>
+        </div>
+        <div class="boutton-catCell8">
+          <i class="iconC8 fa-solid fa-utensils"></i>
+          <span class="catCell8">Healty</span>
+        </div>
+      </div>
+      <div class="cell8">
+        <div class="dotlike8">
+          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
+        </div>
+        <img class="img98" src="./images/112.png" />
+        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
+        <div class="boutton-timeCell8">
+          <i class="iconT8 fa-solid fa-stopwatch"></i>
+          <span class="timercell">30 Minutes</span>
+        </div>
+        <div class="boutton-catCell8">
+          <i class="iconC8 fa-solid fa-utensils"></i>
+          <span class="catCell8">Healty</span>
+        </div>
+      </div>
+      <div class="cell8">
+        <div class="dotlike8">
+          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
+        </div>
+        <img class="img98" src="./images/113.png" />
+        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
+        <div class="boutton-timeCell8">
+          <i class="iconT8 fa-solid fa-stopwatch"></i>
+          <span class="timercell">30 Minutes</span>
+        </div>
+        <div class="boutton-catCell8">
+          <i class="iconC8 fa-solid fa-utensils"></i>
+          <span class="catCell8">Healty</span>
+        </div>
+      </div>
+      <div class="cell8">
+        <div class="dotlike8">
+          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
+        </div>
+        <img class="img98" src="./images/114.png" />
+        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
+        <div class="boutton-timeCell8">
+          <i class="iconT8 fa-solid fa-stopwatch"></i>
+          <span class="timercell">30 Minutes</span>
+        </div>
+        <div class="boutton-catCell8">
+          <i class="iconC8 fa-solid fa-utensils"></i>
+          <span class="catCell8">Healty</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="footernav">
+    <a class="logofoot" href="#"><img src="./images/Foodieland.png" /></a>
+    <div class="spacerfoot"></div>
+    <span> <a href="#">Home</a></span>
+    <span> <a href="#">Recipes</a></span>
+    <span><a href="#">Contact</a></span>
+    <span><a href="#">About us</a></span>
+  </div>
+  <footer>
+    <div class="footer">
+      <p>©2022 Site Recette Formation Simplon</p>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+  </footer>
 </body>
 
 </html>

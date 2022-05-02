@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
 #overlay {
     position: fixed;
     display: none;
@@ -145,9 +152,6 @@
     font-weight: 500;
     padding-left: 20px;
     padding-right: 20px;
-  }
-  
-  .topnav a.logo {
   }
   
   .spacer {
