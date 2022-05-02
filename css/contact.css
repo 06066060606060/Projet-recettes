@@ -142,7 +142,7 @@ input[type="submit"]:hover {
 .delicious {
   position: relative;
   margin-top: 120px;
-  width: 1280px;
+  max-width: 1280px;
   height: 442px;
   margin-left: auto;
   margin-right: auto;
@@ -228,22 +228,18 @@ input[type="submit"]:hover {
   position: absolute;
   left: 0px;
   top: 65px;
-}
-
-.imgsalad:hover {
-  transform: scale(1.05);
-  transition: transform 1000ms ease-out;
+  animation: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
 .imgsalad2 {
   position: absolute;
   top: 175px;
   right: -130px;
-}
-
-.imgsalad2:hover {
-  transform: scale(1.05);
-  transition: transform 1000ms ease-out;
+  animation: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 
 /* FIN DELICIOUS BOX */

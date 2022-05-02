@@ -32,9 +32,12 @@
     <h2 class="title_add">Ajouter Recette</h2>
     <form action="/action_page.php">
       <div class="grid_add">
-        <div class="grid1">
-          <input type="text" id="time" name="preptime" placeholder="Temps de Preparation..." />
-          <input type="text" id="time" name="cooktime" placeholder="Temps de Cuisson..." />
+        <div class="cook">
+          <input type="text" id="time" name="preptime" placeholder="Temps de preparation en minutes"/>
+        </div>
+        <div class="cook">
+        <input type="text" id="time2" name="cooktime" placeholder="temps de cuisson en minutes"/>
+      </div>
           <select name="cat" id="cat">
             <option value="cat1">Catégorie</option>
             <option value="Poisson">Viandes</option>
@@ -47,49 +50,49 @@
             <option value="Poisson">Végétarien</option>
             <option value="Legumes">Entrée Froide</option>
           </select>
+        </div>
           <input type="text" class="videourl" name="subject" placeholder="Url de la vidéo..." />
           <textarea class="resume" name="subject" placeholder="Resumé de la recette.."></textarea>
-        </div>
-      </div>
-      <div class="grid2">
-        <div class="gridingredient">
-          <h2>Liste des Ingredients:</h2>
-          <h2>Pour le plats:</h2>
-          <input type="text" id="cingr" name="prepa" placeholder="Ingredient 1..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Ingredient 2..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Ingredient 3..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Ingredient 4..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Ingredient 5..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Ingredient 6..." />
-          <h2>Pour la sauce:</h2>
-          <input type="text" id="cingr" name="prepa" placeholder="Sauce 1..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Sauce 2..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Sauce 3..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Sauce 4..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Sauce 5..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Sauce 6..." />
-          <h2>Infos Nutritionnelles:</h2>
-          <input type="text" id="cingr" name="prepa" placeholder="Calories..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Graisse..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Proteine..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Glucide..." />
-          <input type="text" id="cingr" name="prepa" placeholder="Cholesterol..." />
-        </div>
-        <div class="gridetape">
-          <h2>Liste des Etapes:</h2>
-          <textarea class="resume" name="subject" placeholder="Etapes 1.."></textarea>
-          <div class="boutonimg">
-            <label for="file" class="label-file">Choisir l'image</label>
-            <input id="file" class="input-file" type="file" />
+
+        <div class="grid2">
+          <div class="gridingredient">
+            <h2>Liste des Ingredients:</h2>
+            <h2>Pour le plats:</h2>
+            <input type="text" id="cingr" name="prepa" placeholder="Ingredient 1..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Ingredient 2..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Ingredient 3..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Ingredient 4..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Ingredient 5..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Ingredient 6..." />
+            <h2>Pour la sauce:</h2>
+            <input type="text" id="cingr" name="prepa" placeholder="Sauce 1..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Sauce 2..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Sauce 3..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Sauce 4..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Sauce 5..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Sauce 6..." />
+            <h2>Infos Nutritionnelles:</h2>
+            <input type="text" id="cingr" name="prepa" placeholder="Calories..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Graisse..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Proteine..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Glucide..." />
+            <input type="text" id="cingr" name="prepa" placeholder="Cholesterol..." />
           </div>
-          <textarea class="resume" name="subject" placeholder="Etapes 2.."></textarea>
-          <textarea class="resume" name="subject" placeholder="Etapes 3.."></textarea>
-          <textarea class="resume" name="subject" placeholder="Etapes 4.."></textarea>
+          <div class="gridetape">
+            <h2>Liste des Etapes:</h2>
+            <textarea class="resume" name="subject" placeholder="Etapes 1.."></textarea>
+            <div class="boutonimg">
+              <label for="file" class="label-file">Choisir l'image</label>
+              <input id="file" class="input-file" type="file" />
+            </div>
+            <textarea class="resume" name="subject" placeholder="Etapes 2.."></textarea>
+            <textarea class="resume" name="subject" placeholder="Etapes 3.."></textarea>
+            <textarea class="resume" name="subject" placeholder="Etapes 4.."></textarea>
+          </div>
+          <div class="bouton">
+            <input class="btn_add" type="submit" value="Publier la nouvelle recette" />
+          </div>
         </div>
-        <div class="bouton">
-          <input class="btn_add" type="submit" value="Publier la nouvelle recette" />
-        </div>
-      </div>
     </form>
   </article>
 
