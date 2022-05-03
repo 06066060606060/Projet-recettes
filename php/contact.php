@@ -1,8 +1,8 @@
-<?php
-include('./bdd.php');
-include('./fonction.php');
+<?php 
+include './fonction.php';
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,22 +10,21 @@ include('./fonction.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
-
-  <title>Document</title>
   <script type="text/javascript" src=".././js/Myfunctions.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href=".././css/recettes.css" />
+  <title>Document</title>
+  <link rel="stylesheet" href=".././css/contact.css" />
   <link rel="stylesheet" href=".././css/navbar.css" />
   <link rel="stylesheet" href=".././css/style.css" />
+  <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div id="overlay"></div>
+  <!-- BARRE DE MENU -->
   <div class="topnav">
   <?php topnav();?>
   </div>
   <!----------------------------------------->
-
   <!-- LOGIN -->
   <div id="login">
     <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
@@ -44,9 +43,32 @@ include('./fonction.php');
   </div>
   <!-- FIN LOGIN -->
 
-  <?php
-           OneReceipe();
-           ?>
+  <article class="article">
+    <h2 class="title_contact">Contact us</h2>
+    <grid class="grid_contact">
+      <div class="gridG">
+        <div class="image_contact">
+          <img src="./images/Group 13936.png" />
+        </div>
+      </div>
+      <div class="gridD">
+        <div class="form_contact">
+          <form action="/action_page.php">
+            <label for="fname">NAME</label>
+            <input type="text" id="fname" name="firstname" placeholder="Enter your name..">
+            <label for="lname">EMAIL ADDRESS</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your email address..">
+            <label for="lname">SUBJECT</label>
+            <input type="text" id="lsubject" name="subject" placeholder="Enter subject...">
+
+            <label for="subject">MESSAGE</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </grid>
+  </article>
 
   <article class="article">
     <div class="delicious">
@@ -61,19 +83,18 @@ include('./fonction.php');
           <div class="btn-mail">Subscribe</div>
         </div>
       </div>
-      <img class="imgsalad" src=".././images/salads.png" />
-      <img class="imgsalad2" src=".././images/22.png" />
+      <img class="imgsalad" src="./images/salads.png" />
+      <img class="imgsalad2" src="./images/22.png" />
     </div>
   </article>
 
+
   <article class="article">
-    <h2 class="title-grid-888">You may like these recipe too</h2>
-    <div class="grid889">
+    <h1 class="title-grid-88">Check out the delicious recipe</h1>
+    <div class="grid888">
       <div class="cell8">
-        <div class="dotlike8">
-          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
-        </div>
-        <img class="img98" src=".././images/111.png" />
+        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+        <img class="img98" src="./images/111.png" />
         <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
         <div class="boutton-timeCell8">
           <i class="iconT8 fa-solid fa-stopwatch"></i>
@@ -85,10 +106,8 @@ include('./fonction.php');
         </div>
       </div>
       <div class="cell8">
-        <div class="dotlike8">
-          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
-        </div>
-        <img class="img98" src=".././images/112.png" />
+        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+        <img class="img98" src="./images/112.png" />
         <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
         <div class="boutton-timeCell8">
           <i class="iconT8 fa-solid fa-stopwatch"></i>
@@ -100,10 +119,8 @@ include('./fonction.php');
         </div>
       </div>
       <div class="cell8">
-        <div class="dotlike8">
-          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
-        </div>
-        <img class="img98" src=".././images/113.png" />
+        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+        <img class="img98" src="./images/113.png" />
         <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
         <div class="boutton-timeCell8">
           <i class="iconT8 fa-solid fa-stopwatch"></i>
@@ -115,10 +132,8 @@ include('./fonction.php');
         </div>
       </div>
       <div class="cell8">
-        <div class="dotlike8">
-          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
-        </div>
-        <img class="img98" src=".././images/114.png" />
+        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+        <img class="img98" src="./images/114.png" />
         <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
         <div class="boutton-timeCell8">
           <i class="iconT8 fa-solid fa-stopwatch"></i>
@@ -131,6 +146,8 @@ include('./fonction.php');
       </div>
     </div>
   </article>
+
+
 
   <div class="footernav">
   <?php footernav(); ?>

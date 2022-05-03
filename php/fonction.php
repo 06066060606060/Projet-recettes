@@ -1,6 +1,72 @@
 <?php
 session_start();
 //AFFICHAGE 'D'UNE RECETTE'_____________________________
+function topnav(){
+  echo '
+  <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
+  <div class="spacer"></div>
+  <span> <a href="./index.php">Accueil</a></span>
+  <span> <a href="./recette.php">Recettes</a></span>
+  <span><a href="./contact.php">Contact</a></span>
+  <span><a href="./inscription.php">Inscription</a></span>
+  <span onclick="on()"><a href="#">Login</a></span>
+  <div></div>
+  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="#"><i class="fa-brands fa-twitter"></i></a>
+  <a href="#"><i class="fa-brands fa-instagram"></i></a>';
+}
+
+function gridtop(){
+  echo '
+  <grid class="gridtop">
+      <!-- grid cell gauche -->
+      <itemsG>
+        <div class="divicon">
+          <img class="circle" src=".././images/Badge.png" />
+          <img class="topblue" src=".././images/Rectangle1.png" />
+          <p class="icone1">
+            <img class="icon-img" src=".././images/image 14.png" />
+            <span class="cat-n">Hot Recipes</span>
+          </p>
+        </div>
+        <div class="divtext">
+          <h1 class="titre-recette">Spicy delicious chicken wings</h1>
+          <p class="text-home">
+            Sunt in culpa qui officia deserunt mollit anim id Sunt in culpa
+            qui officia deserunt mollit anim id
+          </p>
+        </div>
+        <div class="boutton-time">
+          <i class="fa-solid fa-stopwatch"></i>
+          <span class="timer">30 Minutes</span>
+        </div>
+
+        <div class="boutton-fork">
+          <i class="fa-solid fa-utensils"></i>
+          <span class="cat-0">Chicken</span>
+        </div>
+
+        <div class="divautor">
+          <p class="imga"><img src=".././images/Ellipse2.png" /></p>
+          <div class="divname">
+            <p class="nameautor">John Smith</p>
+            <p class="date_autor">15 March 2022</p>
+          </div>
+        </div>
+
+        <div class="view_button">
+          <span class="btn-title"><a class="link" href="http://">View Recipes</a></span>
+          <i class="fa-solid fa-circle-play"></i>
+        </div>
+      </itemsG>
+
+      <!-- grid cell droite -->
+      <itemsD>
+        <img class="topdroite" src=".././images/droite.png" />
+      </itemsD>
+    </grid>';
+}
+
 function OneReceipe()
 {
     include './bdd.php';
@@ -126,7 +192,7 @@ From
     <grid class="grid_recette">
       <div class="gridGr">
         <div class="image_recette">
-          <img src=".././images/player.png" />
+          <img class="img_play" src=".././images/player.png" />
         </div>
       </div>
       <div class="gridDr">
@@ -247,5 +313,28 @@ From
 
 <?php
 }
+
+
+function footernav(){
+  echo '
+  <a class="logofoot" href="./index.php"><img src=".././images/Foodieland.png" /></a>
+  <div class="spacerfoot"></div>
+  <span> <a href="./index.php">Accueil</a></span>
+  <span> <a href="./recette.php">Recettes</a></span>
+  <span><a href="./contact.php">Contact</a></span>
+  <span><a href="./inscription.php">Inscription</a></span>';
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
