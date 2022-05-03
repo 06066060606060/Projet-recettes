@@ -13,6 +13,22 @@ text-align: center;
   color: #000000;
 }
 
+
+
+.title_incription {
+  text-align: center;
+    height: 77px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+    letter-spacing: -0.04em;
+    color: #000000;
+  }
+
 .grid_add{
 
   margin-top: 20px;
@@ -135,12 +151,6 @@ input[type="submit"]:hover {
   border-collapse: collapse;
   border-style: none;
 }
-
-
-
-
-
-
 
 
 @media screen and (max-width: 850px) {

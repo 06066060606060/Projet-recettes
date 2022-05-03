@@ -186,13 +186,23 @@
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.02em;
-  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 30px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.138);
 }
 
 input[type="radio"].ingr {
   position: relative;
-  top: 52px;
+  top: 33px;
+  height: 24px;
+  width: 24px;
+  accent-color: #232323;
+}
+
+input[type="radio"].ingr1 {
+  position: relative;
+  top: 58px;
   height: 24px;
   width: 24px;
   accent-color: #232323;
@@ -213,7 +223,7 @@ input[type="radio"].ingr {
 .subtitle_ing {
   position: relative;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   top: 20px;
   width: 204px;
   height: 29px;
@@ -269,8 +279,8 @@ input[type="radio"].ingr {
   font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.04em;
- padding-left: 20px;
- padding-bottom: 15px;
+  padding-left: 20px;
+  padding-bottom: 15px;
 }
 
 .subt {
@@ -282,19 +292,18 @@ input[type="radio"].ingr {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.pubgreen{
-margin-left: 20px;
-margin-top: 80px;
+.pubgreen {
+  margin-left: 20px;
+  margin-top: 80px;
 }
 
-.gridetapes{
+.gridetapes {
   margin-left: 80px;
   display: grid;
   grid-template-columns: 1fr;
 }
 
-
-.title_etapes{
+.title_etapes {
   padding-top: 100px;
   font-style: normal;
   font-weight: 600;
@@ -311,34 +320,37 @@ margin-top: 80px;
   line-height: 29px;
   letter-spacing: -0.02em;
   padding: 30px;
-
 }
 
-.etape{
-width: 70%;
-font-weight: 400;
-font-size: 16px;
-line-height: 26px;
-letter-spacing: -0.02em;
-color: rgba(0, 0, 0, 0.6);
+.etape {
+  width: 70%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+  padding-bottom: 50px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.138);
+}
+
+.etape2 {
+  width: 70%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
   padding-bottom: 50px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.138);
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+.imgrecet {
+  padding: 20px;
+  float: left;
+ border-radius: 30px;
+}
 
 .title-grid-888 {
   position: relative;

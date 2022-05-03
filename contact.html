@@ -5,11 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
-
+  <script type="text/javascript" src="./js/Myfunctions.js"></script>
   <title>Document</title>
   <link rel="stylesheet" href="./css/contact.css" />
   <link rel="stylesheet" href="./css/navbar.css" />
-
+  <link rel="stylesheet" href="./css/style.css" />
   <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
 </head>
 
@@ -20,16 +20,33 @@
     <a class="logo" href="#"><img src="./images/Foodieland.png" /></a>
     <div class="spacer"></div>
     <span> <a href="./index.html">Accueil</a></span>
-    <span><a href="inscription.html">Inscription</a></span>
+    <span> <a href="./recette.html">Recettes</a></span>
+    <span><a href="./contact.html">Contact</a></span>
+    <span><a href="./inscription.html">Inscription</a></span>
     <span onclick="on()"><a href="#">Login</a></span>
-    <div></div>
-    <div></div>
     <div></div>
     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
     <a href="#"><i class="fa-brands fa-twitter"></i></a>
     <a href="#"><i class="fa-brands fa-instagram"></i></a>
   </div>
   <!----------------------------------------->
+  <!-- LOGIN -->
+  <div id="login">
+    <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
+    <h1>Login</h1>
+    <form action="./backend/backend.html" method="post">
+      <label for="username">
+        <i class="fa-solid fa-user"></i>
+      </label>
+      <input type="text" name="theusername" placeholder="Username" id="username" required />
+      <label for="password">
+        <i class="fa-solid fa-lock"></i>
+      </label>
+      <input type="password" name="thepassword" placeholder="Password" id="password" required />
+      <input type="submit" value="Login" />
+    </form>
+  </div>
+  <!-- FIN LOGIN -->
 
   <article class="article">
     <h2 class="title_contact">Contact us</h2>
@@ -47,7 +64,7 @@
             <label for="lname">EMAIL ADDRESS</label>
             <input type="text" id="lname" name="lastname" placeholder="Your email address..">
             <label for="lname">SUBJECT</label>
-            <input type="text" id="lname" name="subject" placeholder="Enter subject...">
+            <input type="text" id="lsubject" name="subject" placeholder="Enter subject...">
 
             <label for="subject">MESSAGE</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
