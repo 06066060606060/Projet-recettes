@@ -184,6 +184,12 @@ itemsD {
   margin-left: 30px;
 }
 
+.imgb {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
 .nameautor {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -435,8 +441,46 @@ itemsD {
   height: 434px;
 }
 
+.cell:nth-child(6){
+  background-image: url(../images/01.png); 
+  background-size: cover;
+  border-radius: 0%;
+  width: 400px;
+  height: 434px;
+}
+
+.cell:nth-child(6) img {
+visibility: hidden;
+} 
+.cell:nth-child(6) p {
+  visibility: hidden;
+  } 
+
+.cell:nth-child(6) i {
+    visibility: hidden;
+} 
+
+.cell:nth-child(6) span {
+      visibility: hidden;
+} 
+
+.cell:nth-child(6) .dotlike {
+  visibility: hidden;
+} 
+
+
+
+
 .cell0 {
   background: linear-gradient(180deg, #357355 0%, #1d483b 100%);
+  width: 400px;
+  height: 434px;
+}
+
+.cellx {
+  background-image: url(../images/01.png); 
+  background-size: cover;
+  border-radius: 0%;
   width: 400px;
   height: 434px;
 }

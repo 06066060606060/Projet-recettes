@@ -9,6 +9,12 @@ function OneReceipe()
     etapes.etape1,
     etapes.etape2,
     etapes.etape3,
+    etapes.titre_etape1,
+    etapes.titre_etape2,
+    etapes.titre_etape3,
+    utilisateurs.nom,
+    utilisateurs.prenom,
+    utilisateurs.avatar,
     nutrition.calories,
     nutrition.fat,
     nutrition.prot,
@@ -38,11 +44,13 @@ function OneReceipe()
     ingredients.ing_sauce6
 From
     recettes Inner Join
-    nutrition On nutrition.id_nutrition = recettes.id_recipes Inner Join
-    etapes On etapes.id_etapes = recettes.id_recipes Inner Join
-    categories On recettes.id_cat = categories.id_cat Inner Join
-    ingredients On ingredients.id_ingredient = recettes.id_recipes
-    WHERE id = 1');
+    nutrition On nutrition.id_nutrition = recettes.id_recipes 
+    Inner Join etapes On etapes.id_etapes = recettes.id_recipes 
+    Inner Join ingredients On ingredients.id_ingredient = recettes.id_recipes
+    Inner Join categories On recettes.id_cat = categories.id_cat 
+    Inner Join utilisateurs On recettes.id_auteur = utilisateurs.id
+
+    WHERE recettes.id_recipes = 1');
 
 
     while ($post = $postx->fetch()) {
@@ -50,6 +58,9 @@ From
             'id_recipes' => $post['id_recipes'],
             'title' => $post['title'],
             'id_auteur' => $post['id_auteur'],
+             'nom' => $post['nom'],
+             'prenom' => $post['prenom'],
+             'avatar' => $post['avatar'],
             'preptime' =>  $post['preptime'],
             'cooktime' => $post['cooktime'],
             'image_recette' => $post['image_recette'],
@@ -73,6 +84,10 @@ From
             'etape2' => $post['etape2'],
             'etape3' => $post['etape3'],
 
+            'titre_etape1' => $post['titre_etape1'],
+            'titre_etape2' => $post['titre_etape2'],
+            'titre_etape3' => $post['titre_etape3'],
+
             'calories' => $post['calories'],
             'fat' => $post['fat'],
             'prot' => $post['prot'],
@@ -83,43 +98,149 @@ From
     }
     
     for ($i = 0; $i < count($content); $i++) { ?>
-        <article>
-            <div class="box">
-                <h2>titre= <?= $content[$i]["title"]; ?></h2>
-                <p>id recette = <?=$content[$i]["id_recipes"]; ?></p>
-                <p>id auteur = <?=$content[$i]["id_auteur"]; ?></p>
-                <p>preptime = <?= $content[$i]["preptime"]; ?></p>
-                <p>cooktime = <?= $content[$i]["cooktime"]; ?></p>
-                <img class="imgpost" src="<?= $content[$i]["image_recette"]; ?>"></img>
-                <p>description = <?= $content[$i]["description"]; ?></p>
-                <p>date = <?= date_format($date, 'd/m/Y H:i');?></p>
+   
+   <article class="article">
+    <span class="title_recette"><?= $content[$i]["title"]; ?></span>
+    <div class="gridinfo">
+      <div class="auteur">
+        <p class="imga"><img class="imgb" src="<?=$content[$i]["avatar"]; ?>" /></p>
+        <div class="divname">
+          <p class="nameautor"> <?=$content[$i]["nom"]; ?> &zwnj;  &zwnj;<?=$content[$i]["prenom"]; ?></p>
+          <p class="date_autor"><?= date_format($date, 'd F Y');?></p>
+        </div>
+      </div>
+      <div class="cooktime">
+        <i class="iconI fa-solid fa-stopwatch"></i>
+        <span class="timing">PREP TIME</span>
+        <span class="timercell1"> <?= $content[$i]["preptime"]; ?></span>
+      </div>
+      <div class="preptime"><i class="iconI fa-solid fa-stopwatch"></i>
+        <span class="timing">COOK TIME</span>
+        <span class="timercell1"><?= $content[$i]["cooktime"]; ?></span>
+      </div>
+      <div class="category"> <i class="iconI fa-solid fa-utensils"></i>
+        <span class="Catcell2">Healty</span>
+      </div>
+    </div>
 
-                <p>ID ingredients = <?=$content[$i]["id_ingredient"]; ?></p>
-                <p>ingredient1 = <?=$content[$i]["ing_plats1"]; ?></p>
-                <p>ingredient2 = <?=$content[$i]["ing_plats2"]; ?></p>
-                <p>ingredient3 = <?=$content[$i]["ing_plats3"]; ?></p>
-                <p>ingredient4 = <?=$content[$i]["ing_plats4"]; ?></p>
-                <p>ingredient5 = <?=$content[$i]["ing_plats5"]; ?></p>
-                <p>ingredient6 = <?=$content[$i]["ing_plats6"]; ?></p>
+    <grid class="grid_recette">
+      <div class="gridGr">
+        <div class="image_recette">
+          <img src=".././images/player.png" />
+        </div>
+      </div>
+      <div class="gridDr">
+        <span class="title_nutrition">Nutrition Information</span>
+        <div class="gridnutrition">
+          <span class="nutrition">Calories</span>
+          <span class="nutritionD"><?=$content[$i]["calories"]; ?></span>
+          <span class="nutrition">Total Fat</span>
+          <span class="nutritionD"><?=$content[$i]["fat"]; ?></span>
+          <span class="nutrition">Protein</span>
+          <span class="nutritionD"><?=$content[$i]["prot"]; ?></span>
+          <span class="nutrition">Carbohydrate</span>
+          <span class="nutritionD"><?=$content[$i]["carbon"]; ?></span>
+          <span class="nutrition">Cholesterol</span>
+          <span class="nutritionD"><?=$content[$i]["chol"]; ?></span>
+        </div>
+      </div>
+    </grid>
+  </article>
 
-                <p>sauce1 = <?=$content[$i]["ing_sauce1"]; ?></p>
-                <p>sauce2 = <?=$content[$i]["ing_sauce2"]; ?></p>
-                <p>sauce3 = <?=$content[$i]["ing_sauce3"]; ?></p>
-                <p>sauce4 = <?=$content[$i]["ing_sauce4"]; ?></p>
-                <p>sauce5 = <?=$content[$i]["ing_sauce5"]; ?></p>
-                <p>sauce6 = <?=$content[$i]["ing_sauce6"]; ?></p>
+  <article>
+    <p class="resumerecettes"> <?= $content[$i]["description"]; ?></p>
+  </article>
 
-                <p>etape1 = <?=$content[$i]["etape1"]; ?></p>
-                <p>etape2 = <?=$content[$i]["etape2"]; ?></p>
-                <p>etape3 = <?=$content[$i]["etape3"]; ?></p>
 
-                <p>calories = <?=$content[$i]["calories"]; ?></p>
-                <p>fat = <?=$content[$i]["fat"]; ?></p>
-                <p>prot = <?=$content[$i]["prot"]; ?></p>
-                <p>carbon = <?=$content[$i]["carbon"]; ?></p>
-                <p>chol = <?=$content[$i]["chol"]; ?></p>
-            </div>
-        </article>
+
+  <article>
+    <grid class="grid_recette2">
+      <div class="gridingredient">
+        <span class="title_ing">Ingredients</span>
+        <span class="subtitle_ing">For main dish</span>
+        <input type="radio" class="ingr">
+        <span class="ingredient" onclick="this.style.textDecoration='line-through'"> <?=$content[$i]["ing_plats1"]; ?></span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient" onclick="this.style.textDecoration='line-through'"> <?=$content[$i]["ing_plats2"]; ?></span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient" onclick="this.style.textDecoration='line-through'"> <?=$content[$i]["ing_plats3"]; ?></span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient" onclick="this.style.textDecoration='line-through'"> <?=$content[$i]["ing_plats4"]; ?></span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient" onclick="this.style.textDecoration='line-through'"> <?=$content[$i]["ing_plats5"]; ?></span>
+        </input>
+        <span class="subtitle_ing">For the sauce</span>
+        <input type="radio" class="ingr">
+        <span class="ingredient" onclick="this.style.textDecoration='line-through'"> <?=$content[$i]["ing_sauce1"]; ?></span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient" onclick="this.style.textDecoration='line-through'"> <?=$content[$i]["ing_sauce2"]; ?></span>
+        </input>
+        <input type="radio" class="ingr">
+        <span class="ingredient" onclick="this.style.textDecoration='line-through'"> <?=$content[$i]["ing_sauce3"]; ?></span>
+        </input>
+      </div>
+      <div class="gridingredientD">
+        <span class="title_Other">Other Recipe</span>
+        <div class="gridPub">
+          <img class="minipost" src=".././images/112.png">
+          <div class="pubtext">
+            <p class="titrepub">Chicken Meatball with Creamy Chees...</p>
+            <span class="subt">By Andreas Paula</span>
+          </div>
+        </div>
+        <div class="gridPub">
+          <img class="minipost" src=".././images/113.png">
+          <div class="pubtext">
+            <p class="titrepub">The Creamiest Creamy Chicken an...</p>
+            <span class="subt">By Andreas Paula</span>
+          </div>
+        </div>
+        <div class="gridPub">
+          <img class="minipost" src=".././images/114.png">
+          <div class="pubtext">
+            <p class="titrepub">The Best Easy One Pot Chicken and Rice</p>
+            <span class="subt">By Andreas Paula</span>
+          </div>
+        </div>
+        <div class="pubgreen">
+          <div class="cellx">
+          </div>
+        </div>
+      </div>
+    </grid>
+  </article>
+
+  <article>
+    <div class="gridetapes">
+      <span class="title_etapes">Directions</span>
+      <input type="radio" class="ingr1">
+      <span class="etapes">1. &zwnj; &zwnj;  <?=$content[$i]["titre_etape1"]; ?></span>
+      <div class="cell01">
+      <img src="<?= $content[$i]["image_recette"]; ?>" class="imgrecet">
+      <p class="etape">  <?=$content[$i]["etape1"]; ?></p>
+      </input>
+    </div>
+      <input type="radio" class="ingr1">
+      <span class="etapes">2. &zwnj; &zwnj;   <?=$content[$i]["titre_etape2"]; ?></span>
+      <p class="etape2">  <?=$content[$i]["etape2"]; ?></p>
+      </input>
+
+      <input type="radio" class="ingr1">
+      <span class="etapes">3. &zwnj; &zwnj;   <?=$content[$i]["titre_etape3"]; ?></span>
+      <p class="etape2">  <?=$content[$i]["etape3"]; ?></p>
+      </input>
+
+    </div>
+  </article>
+
+
+
+
     <?php
         $bdd->connection = null;
     } ?>
