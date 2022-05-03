@@ -192,6 +192,7 @@
   border-bottom: solid 1px rgba(0, 0, 0, 0.138);
 }
 
+
 input[type="radio"].ingr {
   position: relative;
   top: 33px;
@@ -202,7 +203,7 @@ input[type="radio"].ingr {
 
 input[type="radio"].ingr1 {
   position: relative;
-  top: 58px;
+  top: 56px;
   height: 24px;
   width: 24px;
   accent-color: #232323;
@@ -270,6 +271,11 @@ input[type="radio"].ingr1 {
 .minipost {
   width: 180px;
   height: 120px;
+
+}
+.minipost:hover {
+transform: scale(1.05);
+transition: transform 330ms ease-in-out;
 }
 
 .titrepub {
