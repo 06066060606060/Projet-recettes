@@ -1,7 +1,7 @@
 
   function on() {
     console.log("okiii");
-        document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.display = "block";
     document.getElementById("login").style.visibility = "visible";
     document.getElementById("login").style.zIndex = "2";
   }

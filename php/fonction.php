@@ -16,8 +16,47 @@ function topnav(){
   <a href="#"><i class="fa-brands fa-instagram"></i></a>';
 }
 
+// ___________________________________________________________________________________________
+
 function gridtop(){
-  echo '
+
+  include './bdd.php';
+    $postx = $bdd->query('SELECT
+    recettes.title,
+    recettes.preptime,
+    recettes.image_recette,
+    recettes.description,
+    recettes.categorie,
+    recettes.date,
+    recettes.id_recipes,
+    utilisateurs.nom,
+    utilisateurs.prenom,
+    recettes.id_auteur,
+    utilisateurs.id
+FROM
+  recettes
+  INNER JOIN utilisateurs ON recettes.id_auteur = utilisateurs.id LIMIT 1');
+
+while ($post = $postx->fetch()) {
+  $tabcontent [] = [
+    'id_recipes' => $post['id_recipes'],
+    'title' => $post['title'],
+    'preptime' => $post['preptime'],
+    'image_recette' => $post['image_recette'],
+    'description' => $post['description'],
+    'categorie' => $post['categorie'],
+    'date' => $post['date'],
+    'nom' => $post['nom'],
+    'prenom' => $post['prenom'],
+    'id_auteur' => $post['id_auteur'],
+
+  ];
+  $date = date_create($post['date']);
+}
+
+for ($i = 0; $i < count($tabcontent); $i++) { ?>
+
+
   <grid class="gridtop">
       <!-- grid cell gauche -->
       <itemsG>
@@ -30,7 +69,7 @@ function gridtop(){
           </p>
         </div>
         <div class="divtext">
-          <h1 class="titre-recette">Spicy delicious chicken wings</h1>
+          <h1 class="titre-recette"><?= $tabcontent[$i]["title"]; ?></h1>
           <p class="text-home">
             Sunt in culpa qui officia deserunt mollit anim id Sunt in culpa
             qui officia deserunt mollit anim id
@@ -38,7 +77,7 @@ function gridtop(){
         </div>
         <div class="boutton-time">
           <i class="fa-solid fa-stopwatch"></i>
-          <span class="timer">30 Minutes</span>
+          <span class="timer"><?= $tabcontent[$i]["preptime"]; ?></span>
         </div>
 
         <div class="boutton-fork">
@@ -49,28 +88,43 @@ function gridtop(){
         <div class="divautor">
           <p class="imga"><img src=".././images/Ellipse2.png" /></p>
           <div class="divname">
-            <p class="nameautor">John Smith</p>
-            <p class="date_autor">15 March 2022</p>
+            <p class="nameautor"><?= $tabcontent[$i]["prenom"]; ?> &zwnj;  &zwnj;<?= $tabcontent[$i]["nom"]; ?></p>
+            <p class="date_autor"><?= date_format($date, 'd F Y');?></p>
           </div>
         </div>
 
         <div class="view_button">
-          <span class="btn-title"><a class="link" href="http://">View Recipes</a></span>
+          <span class="btn-title"><a class="link" href="./recette.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">View Recipes</a></span>
           <i class="fa-solid fa-circle-play"></i>
         </div>
       </itemsG>
 
       <!-- grid cell droite -->
       <itemsD>
-        <img class="topdroite" src=".././images/droite.png" />
+        <img class="topdroite" src="<?= $tabcontent[$i]["image_recette"]; ?>" />
       </itemsD>
-    </grid>';
+    </grid>
+    <?php
+        $bdd->connection = null;
+    } ?>
+
+<?php
 }
+
+
+// ___________________________________________________________________________________________
 
 function OneReceipe()
 {
+
+
+  if ($_SERVER['REQUEST_METHOD'] == "GET" and isset($_GET['id'])) {
+    $id_recette = $_GET['id'];
+} else
+{
+  $id_recette = 1;
+}
     include './bdd.php';
-    $id_recette = 1;
     $postx = $bdd->query('SELECT
     etapes.etape1,
     etapes.etape2,
@@ -87,6 +141,7 @@ function OneReceipe()
     nutrition.carbon,
     nutrition.chol,
     recettes.id_recipes,
+    recettes.imgplayer,
     recettes.title,
     recettes.date,
     recettes.id_auteur,
@@ -116,7 +171,7 @@ From
     Inner Join categories On recettes.id_cat = categories.id_cat 
     Inner Join utilisateurs On recettes.id_auteur = utilisateurs.id
 
-    WHERE recettes.id_recipes = 1');
+    WHERE recettes.id_recipes = "'. $id_recette .'" ');
 
 
     while ($post = $postx->fetch()) {
@@ -130,6 +185,7 @@ From
             'preptime' =>  $post['preptime'],
             'cooktime' => $post['cooktime'],
             'image_recette' => $post['image_recette'],
+            'imgplayer' => $post['imgplayer'],
             'description' => $post['description'],
             'date' => $post['date'],
             'id_ingredient' => $post['id_ingredient'],
@@ -150,9 +206,6 @@ From
             'etape2' => $post['etape2'],
             'etape3' => $post['etape3'],
 
-            'titre_etape1' => $post['titre_etape1'],
-            'titre_etape2' => $post['titre_etape2'],
-            'titre_etape3' => $post['titre_etape3'],
 
             'calories' => $post['calories'],
             'fat' => $post['fat'],
@@ -171,7 +224,7 @@ From
       <div class="auteur">
         <p class="imga"><img class="imgb" src="<?=$content[$i]["avatar"]; ?>" /></p>
         <div class="divname">
-          <p class="nameautor"> <?=$content[$i]["nom"]; ?> &zwnj;  &zwnj;<?=$content[$i]["prenom"]; ?></p>
+          <p class="nameautor"> <?=$content[$i]["nom"]; ?> &zwnj;  &zwnj;<?=$content[$i]["prenom"];?></p>
           <p class="date_autor"><?= date_format($date, 'd F Y');?></p>
         </div>
       </div>
@@ -192,7 +245,10 @@ From
     <grid class="grid_recette">
       <div class="gridGr">
         <div class="image_recette">
-          <img class="img_play" src=".././images/player.png" />
+          <img class="img_play" src="<?=$content[$i]['imgplayer']; ?>">
+          <div class="dotplay">
+          <i class="fa-solid fa-play"></i>
+          </div>
         </div>
       </div>
       <div class="gridDr">
@@ -285,19 +341,19 @@ From
     <div class="gridetapes">
       <span class="title_etapes">Directions</span>
       <input type="radio" class="ingr1">
-      <span class="etapes">1. &zwnj; &zwnj;  <?=$content[$i]["titre_etape1"]; ?></span>
+      <span class="etapes">Etapes &zwnj; 1&zwnj;  </span>
       <div class="cell01">
       <img src="<?= $content[$i]["image_recette"]; ?>" class="imgrecet">
       <p class="etape">  <?=$content[$i]["etape1"]; ?></p>
       </input>
     </div>
       <input type="radio" class="ingr1">
-      <span class="etapes">2. &zwnj; &zwnj;   <?=$content[$i]["titre_etape2"]; ?></span>
+      <span class="etapes">Etapes &zwnj; 2&zwnj;  </span>
       <p class="etape2">  <?=$content[$i]["etape2"]; ?></p>
       </input>
 
       <input type="radio" class="ingr1">
-      <span class="etapes">3. &zwnj; &zwnj;   <?=$content[$i]["titre_etape3"]; ?></span>
+      <span class="etapes">Etapes &zwnj; 3&zwnj;  </span>
       <p class="etape2">  <?=$content[$i]["etape3"]; ?></p>
       </input>
 

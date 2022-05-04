@@ -48,7 +48,7 @@ include './fonction.php';
     <grid class="grid_contact">
       <div class="gridG">
         <div class="image_contact">
-          <img src="./images/Group 13936.png" />
+          <img src=".././images/Group 13936.png" />
         </div>
       </div>
       <div class="gridD">

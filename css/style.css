@@ -37,6 +37,14 @@ body {
   align-items: stretch;
 }
 
+.topdroite{
+  margin-right: 250px;
+  background-size: cover;
+  width: auto;
+  height: 640px;
+  border-radius: 50px;
+}
+
 .circle {
   z-index: 1;
   position: absolute;
