@@ -1,7 +1,7 @@
 <?php
 include('./bdd.php');
 include('./fonction.php');
-
+session_start();
 ?>
 <html lang="en">
 

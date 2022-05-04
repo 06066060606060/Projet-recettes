@@ -87,3 +87,8 @@ a.btn:hover {
   opacity: 80%;
   color: black;
 }
+
+.crudimage{
+  width: 200px;
+  height: auto;
+}

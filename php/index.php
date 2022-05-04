@@ -1,5 +1,6 @@
 <?php 
 include './fonction.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -28,15 +29,15 @@ include './fonction.php';
   <div id="login">
     <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
     <h1>Login</h1>
-    <form action="./backend/backend.html" method="post">
+    <form action="./authenticate.php" method="post">
       <label for="username">
         <i class="fa-solid fa-user"></i>
       </label>
-      <input type="text" name="theusername" placeholder="Username" id="username"  />
+      <input type="text" name="username" placeholder="Username" id="username"  />
       <label for="password">
         <i class="fa-solid fa-lock"></i>
       </label>
-      <input type="password" name="thepassword" placeholder="Password" id="password"  />
+      <input type="password" name="password" placeholder="Password" id="password"  />
       <input type="submit" value="Login" />
     </form>
   </div>

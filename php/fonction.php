@@ -1,22 +1,36 @@
 <?php
-session_start();
+
 //AFFICHAGE 'D'UNE RECETTE'_____________________________
 function topnav()
 {
-  echo '
-  <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
-  <div class="spacer"></div>
-  <span> <a href="./index.php">Accueil</a></span>
-  <span> <a href="./recette.php">Recettes</a></span>
-  <span><a href="./contact.php">Contact</a></span>
-  <span><a href="./inscription.php">Inscription</a></span>
-  <span onclick="on()"><a href="#">Login</a></span>
-  <div></div>
-  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-  <a href="#"><i class="fa-brands fa-twitter"></i></a>
-  <a href="#"><i class="fa-brands fa-instagram"></i></a>';
+  if (isset($_SESSION['id'])){
+      echo '
+      <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
+      <div class="spacer"></div>
+      <span> <a href="./index.php">Accueil</a></span>
+      <span> <a href="./recette.php">Recettes</a></span>
+      <span><a href="./contact.php">Contact</a></span>
+      <span><a href="./backend.php">Mes Recettes</a></span>
+      <span><a href="./logout.php">Logout</a></span>
+      <div></div>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>';
+    } else {
+      echo '
+      <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
+      <div class="spacer"></div>
+      <span> <a href="./index.php">Accueil</a></span>
+      <span> <a href="./recette.php">Recettes</a></span>
+      <span><a href="./contact.php">Contact</a></span>
+      <span><a href="./inscription.php">Inscription</a></span>
+      <span onclick="on()"><a href="#">Login</a></span>
+      <div></div>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>';
 }
-
+}
 // ___________________________________________________________________________________________
 
 function gridtop()
@@ -242,6 +256,7 @@ FROM
 
   <?php
 }
+
 
 // _____________________________________________________________________________________________
 
@@ -610,5 +625,93 @@ ORDER BY RAND() limit 3');
   } ?>
 
 <?php
+}
+
+//-- BACKEND 
+
+function crudrecette()
+{
+  include './bdd.php';
+  if (isset($_SESSION['id'])){
+    if ($_SESSION['id'] == '4') {
+      $postx = $bdd->query('SELECT
+      recettes.title,
+      recettes.image_recette,
+      recettes.description,
+      recettes.categorie,
+      recettes.type,
+      recettes.id_recipes,
+      recettes.id_auteur
+  FROM
+    recettes
+   ORDER BY date DESC');
+  
+    while ($post = $postx->fetch()) {
+      $tabcontent[] = [
+        'id_recipes' => $post['id_recipes'],
+        'title' => $post['title'],
+        'image_recette' => $post['image_recette'],
+        'description' => $post['description'],
+        'categorie' => $post['categorie'],
+        'type' => $post['type'],
+      ];
+    }
+    } else if ($_SESSION['id'] != '4') {
+    $thisID = $_SESSION['id'];
+    $postx = $bdd->query('SELECT
+    recettes.title,
+    recettes.image_recette,
+    recettes.description,
+    recettes.categorie,
+    recettes.type,
+    recettes.id_recipes,
+    recettes.id_auteur
+FROM
+  recettes
+ WHERE id_auteur = "' . $thisID .'" ORDER BY date DESC');
+
+  while ($post = $postx->fetch()) {
+    $tabcontent[] = [
+      'id_recipes' => $post['id_recipes'],
+      'title' => $post['title'],
+      'image_recette' => $post['image_recette'],
+      'description' => $post['description'],
+      'categorie' => $post['categorie'],
+      'type' => $post['type'],
+    ];
+  }
+    }
+   }
+
+ 
+
+  for ($i = 0; $i < count($tabcontent); $i++) { ?>
+<tr>
+                  <td><?= $tabcontent[$i]["title"]; ?></td>
+                  <p>
+                      <td><img class="crudimage"src="<?= $tabcontent[$i]["image_recette"]; ?>"></td>
+                  <p>
+                      <td>
+                          <p class="short"><?= $tabcontent[$i]["description"]; ?>
+                              .</p>
+                      </td>
+                  <p>
+                      <td><?= $tabcontent[$i]["categorie"]; ?></td>
+                      <p>
+                        <td><?= $tabcontent[$i]["type"]; ?></td>
+                  <p>
+                      <td><a class="btn" href="./recette.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Aperçu</a></td>
+                  <p>
+                      <td><a class="btn btn-success" href="./modifier.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Modifier</a></td>
+                  <p>
+                      <td><a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Supprimer</a></td>
+                  <p>
+              </tr>
+
+  <?php
+    $bdd->connection = null;
+  } ?>
+
+  <?php
 }
 ?>
