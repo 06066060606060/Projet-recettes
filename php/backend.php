@@ -22,7 +22,7 @@ session_start();
 </head>
 
 <body>
-  <div id="overlay"></div>
+
   <!-- BARRE DE MENU -->
   <div class="topnav">
     <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
@@ -33,11 +33,12 @@ session_start();
     <span> <a href="./index.php">Accueil</a></span>
     <span> <a href="./categorie.php">Liste des Catégories</a></span>
     <span> <a href="./utilisateurs.php">Liste des Utilisateurs</a></span>
+    <span> <a href="./ajouter.php">Ajouter Une Recette</a></span>
     <span onclick=""><a href="./logout.php">Logout</a></span>';
   } else {
     echo '
     <span> <a href="./index.php">Accueil</a></span>
-    <span> <a href="./categorie.php">Liste des Catégories</a></span>
+    <span> <a href="./ajouter.php">Ajouter Une Recette</a></span>
     <span> <a href="./backend.php">Mes Recettes</a></span>
     <span onclick=""><a href="./logout.php">Logout</a></span>';
   }
@@ -57,9 +58,10 @@ session_start();
       echo "<h2 class='title_liste'>Liste de vos Recettes</h2>";
   }
  } ?>
-   
+ 
       <table class="table table-hover table-bordered">
         <thead>
+       
           <th>titre</th>
           <p>
             <th>image de la recette</th>
@@ -84,11 +86,11 @@ session_start();
         </tbody>
       </table>
     </div>
-
+  
 
   </article>
 
-  <a class="btnadd" href="./ajouter.php">Ajouter Une Recette</a>
+
 
   <div class="footernav">
     <?php footernav(); ?>

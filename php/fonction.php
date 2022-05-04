@@ -3,8 +3,8 @@
 //AFFICHAGE 'D'UNE RECETTE'_____________________________
 function topnav()
 {
-  if (isset($_SESSION['id'])){
-      echo '
+  if (isset($_SESSION['id'])) {
+    echo '
       <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
       <div class="spacer"></div>
       <span> <a href="./index.php">Accueil</a></span>
@@ -16,8 +16,8 @@ function topnav()
       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="#"><i class="fa-brands fa-twitter"></i></a>
       <a href="#"><i class="fa-brands fa-instagram"></i></a>';
-    } else {
-      echo '
+  } else {
+    echo '
       <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
       <div class="spacer"></div>
       <span> <a href="./index.php">Accueil</a></span>
@@ -29,7 +29,7 @@ function topnav()
       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="#"><i class="fa-brands fa-twitter"></i></a>
       <a href="#"><i class="fa-brands fa-instagram"></i></a>';
-}
+  }
 }
 // ___________________________________________________________________________________________
 
@@ -613,7 +613,7 @@ ORDER BY RAND() limit 3');
   for ($i = 0; $i < count($tabcontent); $i++) { ?>
 
     <div class="gridPub">
-     <a href="./recette.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>"><img class="minipost" src="<?= $tabcontent[$i]["image_recette"]; ?>"></a>
+      <a href="./recette.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>"><img class="minipost" src="<?= $tabcontent[$i]["image_recette"]; ?>"></a>
       <div class="pubtext">
         <p class="titrepub"><?= $tabcontent[$i]["title"]; ?></p>
         <span class="subt">By &zwnj;<?= $tabcontent[$i]["prenom"]; ?> &zwnj;<?= $tabcontent[$i]["nom"]; ?></span>
@@ -624,7 +624,7 @@ ORDER BY RAND() limit 3');
     $bdd->connection = null;
   } ?>
 
-<?php
+  <?php
 }
 
 //-- BACKEND 
@@ -632,7 +632,7 @@ ORDER BY RAND() limit 3');
 function crudrecette()
 {
   include './bdd.php';
-  if (isset($_SESSION['id'])){
+  if (isset($_SESSION['id'])) {
     if ($_SESSION['id'] == '4') {
       $postx = $bdd->query('SELECT
       recettes.title,
@@ -645,20 +645,20 @@ function crudrecette()
   FROM
     recettes
    ORDER BY date DESC');
-  
-    while ($post = $postx->fetch()) {
-      $tabcontent[] = [
-        'id_recipes' => $post['id_recipes'],
-        'title' => $post['title'],
-        'image_recette' => $post['image_recette'],
-        'description' => $post['description'],
-        'categorie' => $post['categorie'],
-        'type' => $post['type'],
-      ];
-    }
+
+      while ($post = $postx->fetch()) {
+        $tabcontent[] = [
+          'id_recipes' => $post['id_recipes'],
+          'title' => $post['title'],
+          'image_recette' => $post['image_recette'],
+          'description' => $post['description'],
+          'categorie' => $post['categorie'],
+          'type' => $post['type'],
+        ];
+      }
     } else if ($_SESSION['id'] != '4') {
-    $thisID = $_SESSION['id'];
-    $postx = $bdd->query('SELECT
+      $thisID = $_SESSION['id'];
+      $postx = $bdd->query('SELECT
     recettes.title,
     recettes.image_recette,
     recettes.description,
@@ -668,45 +668,45 @@ function crudrecette()
     recettes.id_auteur
 FROM
   recettes
- WHERE id_auteur = "' . $thisID .'" ORDER BY date DESC');
+ WHERE id_auteur = "' . $thisID . '" ORDER BY date DESC');
 
-  while ($post = $postx->fetch()) {
-    $tabcontent[] = [
-      'id_recipes' => $post['id_recipes'],
-      'title' => $post['title'],
-      'image_recette' => $post['image_recette'],
-      'description' => $post['description'],
-      'categorie' => $post['categorie'],
-      'type' => $post['type'],
-    ];
-  }
+      while ($post = $postx->fetch()) {
+        $tabcontent[] = [
+          'id_recipes' => $post['id_recipes'],
+          'title' => $post['title'],
+          'image_recette' => $post['image_recette'],
+          'description' => $post['description'],
+          'categorie' => $post['categorie'],
+          'type' => $post['type'],
+        ];
+      }
     }
-   }
+  }
 
- 
+
 
   for ($i = 0; $i < count($tabcontent); $i++) { ?>
-<tr>
-                  <td><?= $tabcontent[$i]["title"]; ?></td>
-                  <p>
-                      <td><img class="crudimage"src="<?= $tabcontent[$i]["image_recette"]; ?>"></td>
-                  <p>
-                      <td>
-                          <p class="short"><?= $tabcontent[$i]["description"]; ?>
-                              .</p>
-                      </td>
-                  <p>
-                      <td><?= $tabcontent[$i]["categorie"]; ?></td>
-                      <p>
-                        <td><?= $tabcontent[$i]["type"]; ?></td>
-                  <p>
-                      <td><a class="btn" href="./recette.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Aperçu</a></td>
-                  <p>
-                      <td><a class="btn btn-success" href="./modifier.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Modifier</a></td>
-                  <p>
-                      <td><a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Supprimer</a></td>
-                  <p>
-              </tr>
+    <tr>
+      <td><?= $tabcontent[$i]["title"]; ?></td>
+      <p>
+        <td><img class="crudimage" src="<?= $tabcontent[$i]["image_recette"]; ?>"></td>
+      <p>
+        <td>
+          <p class="short"><?= $tabcontent[$i]["description"]; ?>
+            .</p>
+        </td>
+      <p>
+        <td><?= $tabcontent[$i]["categorie"]; ?></td>
+      <p>
+        <td><?= $tabcontent[$i]["type"]; ?></td>
+      <p>
+        <td><a class="btn" href="./recette.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Aperçu</a></td>
+      <p>
+        <td><a class="btn btn-success" href="./modifier.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Modifier</a></td>
+      <p>
+        <td><a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Supprimer</a></td>
+      <p>
+    </tr>
 
   <?php
     $bdd->connection = null;
@@ -714,4 +714,110 @@ FROM
 
   <?php
 }
+
+function cruduser()
+{
+  include './bdd.php';
+  $postx = $bdd->query('SELECT
+*
+FROM
+  utilisateurs');
+
+  while ($post = $postx->fetch()) {
+    $tabcontent[] = [
+      'id' => $post['id'],
+      'username' => $post['username'],
+      'nom' => $post['nom'],
+      'prenom' => $post['prenom'],
+      'avatar' => $post['avatar'],
+      'email' => $post['email'],
+    ];
+  }
+
+  for ($i = 0; $i < count($tabcontent); $i++) { ?>
+    <tr>
+      <p>
+      <td><?= $tabcontent[$i]["username"]; ?></td>
+      <p>
+        <td><img style="width:50px;height:50px;" src="<?= $tabcontent[$i]["avatar"]; ?>"></td>
+      <p>
+        <td> <?= $tabcontent[$i]["prenom"]; ?> </td>
+      <p>
+        <td><?= $tabcontent[$i]["nom"]; ?></td>
+      <p>
+      <td> <?= $tabcontent[$i]["email"]; ?> </td>
+      <p>
+        <td><a class="btn btn-success" href="./modifier_user.php?id=<?= $tabcontent[$i]["id"]; ?>">Modifier</a></td>
+      <p>
+        <td><a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id"]; ?>">Supprimer</a></td>
+      <p>
+    </tr>
+  <?php
+    $bdd->connection = null;
+  } ?>
+
+<?php
+}
+
+function crudcategorie()
+{
+  include './bdd.php';
+  $postx = $bdd->query('SELECT
+*
+FROM
+categories');
+
+  while ($post = $postx->fetch()) {
+    $tabcontent[] = [
+      'id_cat' => $post['id_cat'],
+      'name' => $post['name'],
+      'icon' => $post['icon'],
+    ];
+  }
+
+  for ($i = 0; $i < count($tabcontent); $i++) { ?>
+      <tr>
+            <td><?= $tabcontent[$i]["id_cat"]; ?></td>
+            <p>
+              <td><?= $tabcontent[$i]["name"]; ?></td>
+            <p>
+              
+              <td><img src="<?= $tabcontent[$i]["icon"]; ?>"></td>
+            <p>
+              <td><a class="btn btn-danger" href="">Supprimer</a></td>
+            <p>
+          </tr>
+  <?php
+    $bdd->connection = null;
+  } ?>
+
+<?php
+}
+
+
+function loginpop(){
+  echo '
+  <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
+  <h1>Login</h1>
+  <form action="./authenticate.php" method="post">
+    <label for="username">
+      <i class="fa-solid fa-user"></i>
+    </label>
+    <input type="text" name="username" placeholder="Username" id="username"  />
+    <label for="password">
+      <i class="fa-solid fa-lock"></i>
+    </label>
+    <input type="password" name="password" placeholder="Password" id="password"  />
+    <input type="submit" value="Login" />
+  </form>';
+}
+
+
+
+
+
+
+
+
+
 ?>

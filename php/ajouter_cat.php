@@ -22,9 +22,9 @@ session_start();
   <div id="overlay"></div>
   <!-- BARRE DE MENU -->
   <div class="topnav">
-    <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
+    <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href="./backend.html">Retour</a></span>
+    <span> <a href="./backend.php">Retour</a></span>
     <div></div>
   </div>
 
@@ -48,12 +48,7 @@ session_start();
   </article>
 
   <div class="footernav">
-    <a class="logofoot" href="#"><img src=".././images/Foodieland.png" /></a>
-    <div class="spacerfoot"></div>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href=".././recette.html">Recettes</a></span>
-    <span><a href=".././contact.html">Contact</a></span>
-    <span><a href=".././inscription.html">Inscription</a></span>
+<?php footernav(); ?>
   </div>
 
   <footer>

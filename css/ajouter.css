@@ -136,6 +136,9 @@ textarea {
   resize: none;
 }
 
+.titre-add{
+  width: 100%;
+}
 
 input[type="submit"]:hover {
   background-color: #454545;

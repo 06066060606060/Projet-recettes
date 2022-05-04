@@ -27,19 +27,7 @@ session_start();
 
   <!-- LOGIN -->
   <div id="login">
-    <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
-    <h1>Login</h1>
-    <form action="./authenticate.php" method="post">
-      <label for="username">
-        <i class="fa-solid fa-user"></i>
-      </label>
-      <input type="text" name="username" placeholder="Username" id="username"  />
-      <label for="password">
-        <i class="fa-solid fa-lock"></i>
-      </label>
-      <input type="password" name="password" placeholder="Password" id="password"  />
-      <input type="submit" value="Login" />
-    </form>
+<?php loginpop(); ?>
   </div>
   <!-- FIN LOGIN -->
 

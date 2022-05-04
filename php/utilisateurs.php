@@ -1,6 +1,13 @@
-<?php 
+<?php
 include './fonction.php';
 session_start();
+if (isset($_SESSION['id'])) {
+  if ($_SESSION['id'] == '4') {
+  } else {
+    header("Location: ./index.php");
+    die();
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,12 +29,12 @@ session_start();
   <div id="overlay"></div>
   <!-- BARRE DE MENU -->
   <div class="topnav">
-    <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
+    <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href="./backend.html">Liste des recettes</a></span>
-    <span> <a href=".././inscription.html">Ajouter utilisateur</a></span>
-    <span onclick=""><a href="#">Logout</a></span>
+    <span> <a href="./index.php">Accueil</a></span>
+    <span> <a href="./backend.php">Liste des Recettes</a></span>
+    <span> <a href="./categorie.php">Liste des Catégories</a></span>
+    <span><a href="./logout.php">Logout</a></span>
     <div></div>
   </div>
 
@@ -39,15 +46,13 @@ session_start();
         <thead>
           <th>Pseudo</th>
           <p>
-          <th>Avatar</th>
+            <th>Avatar</th>
           <p>
             <th>Prénom</th>
           <p>
             <th>Nom</th>
           <p>
-            <th>Role</th>
-            <p>
-              <th>Email</th>
+            <th>Email</th>
           <p>
             <th>Edition</th>
           <p>
@@ -57,43 +62,7 @@ session_start();
         </thead>
 
         <tbody>
-          <tr>
-            <p>
-              <td>Admin</td>
-            <td><img src=".././images/Ellipse2.png"></td>
-            <p>
-              <td>John</td>
-            <p>
-              <td> Smith </td>
-            <p>
-              <td>Admin</td>
-            <p>
-              <td>cdsfsfer@mail.com</td>
-              <p>
-              <td><a class="btn btn-success" href="modifier_user.html">Modifier</a></td>
-            <p>
-              <td><a class="btn btn-danger" href="">Supprimer</a></td>
-            <p>
-          </tr>
-          <tr>
-            <p>
-              <td>Nico</td>
-            <td><img src=".././images/avatar2.png"></td>
-            <p>
-              <td>Nico</td>
-            <p>
-              <td> test </td>
-            <p>
-              <td>User</td>
-              <p>
-                <td>cdsfsfer@mail.com</td>
-                <p>
-              <td><a class="btn btn-success" href="./modifier.html">Modifier</a></td>
-            <p>
-              <td><a class="btn btn-danger" href="">Supprimer</a></td>
-            <p>
-          </tr>
-          <p>
+          <?php cruduser(); ?>
         </tbody>
       </table>
     </div>
@@ -102,11 +71,7 @@ session_start();
 
 
   <div class="footernav">
-    <a class="logofoot" href="#"><img src=".././images/Foodieland.png" /></a>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href=".././recette.html">Recettes</a></span>
-    <span><a href=".././contact.html">Contact</a></span>
-    <span><a href=".././inscription.html">Inscription</a></span>
+<?php footernav(); ?>
   </div>
 
   <footer>

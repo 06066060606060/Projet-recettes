@@ -24,11 +24,10 @@ session_start();
   <div class="topnav">
     <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href=".././recette.html">Recettes</a></span>
-    <span><a href=".././contact.html">Contact</a></span>
-    <span><a href=".././inscription.html">Inscription</a></span>
-    <span onclick="on()"><a href="#">Login</a></span>
+    <span> <a href="./index.php">Accueil</a></span>
+    <span> <a href="./backend.php">Liste des Recettes</a></span>
+    <span> <a href="./categorie.php">Liste des Catégories</a></span>
+    <span><a href="./logout.php">Logout</a></span>
     <div></div>
     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
     <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -39,19 +38,7 @@ session_start();
 
   <!-- LOGIN -->
   <div id="login">
-    <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
-    <h1>Login</h1>
-    <form action="./backend/backend.html" method="post">
-      <label for="username">
-        <i class="fa-solid fa-user"></i>
-      </label>
-      <input type="text" name="theusername" placeholder="Username" id="username" required />
-      <label for="password">
-        <i class="fa-solid fa-lock"></i>
-      </label>
-      <input type="password" name="thepassword" placeholder="Password" id="password" required />
-      <input type="submit" value="Login" />
-    </form>
+  <?php loginpop(); ?>
   </div>
   <!-- FIN LOGIN -->
 

@@ -20,14 +20,14 @@ session_start();
 </head>
 
 <body>
-  <div id="overlay"></div>
   <!-- BARRE DE MENU -->
   <div class="topnav">
     <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href="./backend.html">Liste des recettes</a></span>
-    <span onclick=""><a href="#">Logout</a></span>
+    <span> <a href="./index.php">Accueil</a></span>
+    <span> <a href="./backend.php">Liste des recettes</a></span>
+    <span> <a href="./utilisateurs.php">Liste des Utilisateurs</a></span>
+    <span><a href="./logout.php">Logout</a></span>
     <div></div>
   </div>
 
@@ -50,17 +50,7 @@ session_start();
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <p>
-              <td>Viande</td>
-            <p>
-              
-              <td><img src=".././images/3.png"></td>
-            <p>
-              <td><a class="btn btn-danger" href="">Supprimer</a></td>
-            <p>
-          </tr>
+       <?php crudcategorie(); ?>
 
         </tbody>
 
@@ -68,16 +58,11 @@ session_start();
     </div>
 
   </article>
-  <a class="btnadd" href="./ajouter_cat.html">Ajouter Une Catégorie</a>
+  <a class="btnadd" href="./ajouter_cat.php">Ajouter Une Catégorie</a>
 
 
   <div class="footernav">
-    <a class="logofoot" href="#"><img src=".././images/Foodieland.png" /></a>
-    <div class="spacerfoot"></div>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href=".././recette.html">Recettes</a></span>
-    <span><a href=".././contact.html">Contact</a></span>
-    <span><a href=".././inscription.html">Inscription</a></span>
+<?php footernav(); ?>
   </div>
 
   <footer>
