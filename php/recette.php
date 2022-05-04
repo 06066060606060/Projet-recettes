@@ -44,9 +44,16 @@ include('./fonction.php');
   </div>
   <!-- FIN LOGIN -->
 
+
+
+  
   <?php
            OneReceipe();
            ?>
+
+
+
+
 
   <article class="article">
     <div class="delicious">
@@ -69,66 +76,7 @@ include('./fonction.php');
   <article class="article">
     <h2 class="title-grid-888">You may like these recipe too</h2>
     <div class="grid889">
-      <div class="cell8">
-        <div class="dotlike8">
-          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
-        </div>
-        <img class="img98" src=".././images/111.png" />
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8">
-          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
-        </div>
-        <img class="img98" src=".././images/112.png" />
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8">
-          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
-        </div>
-        <img class="img98" src=".././images/113.png" />
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8">
-          <i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i>
-        </div>
-        <img class="img98" src=".././images/114.png" />
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
+     <?php grid4(); ?>
     </div>
   </article>
 

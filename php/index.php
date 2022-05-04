@@ -32,11 +32,11 @@ include './fonction.php';
       <label for="username">
         <i class="fa-solid fa-user"></i>
       </label>
-      <input type="text" name="theusername" placeholder="Username" id="username" required />
+      <input type="text" name="theusername" placeholder="Username" id="username"  />
       <label for="password">
         <i class="fa-solid fa-lock"></i>
       </label>
-      <input type="password" name="thepassword" placeholder="Password" id="password" required />
+      <input type="password" name="thepassword" placeholder="Password" id="password"  />
       <input type="submit" value="Login" />
     </form>
   </div>
@@ -92,123 +92,7 @@ include './fonction.php';
     </div>
 
     <div class="ninegrid">
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"><img class="img9" src=".././images/Mask Group-7.png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"><img class="img9" src=".././images/Mask Group-4.png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"> <img class="img9" src=".././images/Mask Group (1).png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"> <img class="img9" src=".././images/Mask Group (2).png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"><img class="img9" src=".././images/Mask Group-2.png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"><img class="img9" src=".././images/Mask Group-2.png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"><img class="img9" src=".././images/Mask Group (3).png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"> <img class="img9" src=".././images/Mask Group (5).png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"> <img class="img9" src=".././images/Mask Group.png" /></a>
-        <p class="recette9-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell">
-          <i class="iconT fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell">
-          <i class="iconC fa-solid fa-utensils"></i>
-          <span class="Catcell">Healty</span>
-        </div>
-      </div>
+      <?php grid9();?>
     </div>
   </article>
 
@@ -264,110 +148,7 @@ include './fonction.php';
 
   <article class="article">
     <div class="grid888">
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://"> <img class="img98" src=".././images/111.png" /></a>
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://">  <img class="img98" src=".././images/112.png" /></a>
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://">   <img class="img98" src=".././images/113.png" /></a>
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://">  <img class="img98" src=".././images/114.png" /></a>
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://">    <img class="img98" src=".././images/115.png" /></a>
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart"onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://">   <img class="img98" src=".././images/116.png" /></a>
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://">   <img class="img98" src=".././images/117.png" /></a>
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <a class="link" href="http://">  <img class="img98" src=".././images/118.png" /></a>
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
+    <?php grid8(); ?>
     </div>
   </article>
 

@@ -29,7 +29,7 @@
     background-color: rgb(255, 255, 255);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    top: 20%;
+    top: -200px;
     left: 50%;
     transform: translate(-50%, -20%);
   }
