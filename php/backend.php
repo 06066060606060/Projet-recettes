@@ -55,6 +55,8 @@ session_start();
       echo "<h5 class=''>Bonjour Admin</h2>";
       echo "<h2 class='title_liste'>Liste de toutes les Recettes</h2>";
   } else if ($_SESSION['id'] != '4') {
+      echo "<h5 class=''>Bonjour</h5>";
+      echo  "<h5 class=''>", $_SESSION['name'] ,"</h5>";
       echo "<h2 class='title_liste'>Liste de vos Recettes</h2>";
   }
  } ?>

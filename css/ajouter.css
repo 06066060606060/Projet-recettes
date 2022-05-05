@@ -84,6 +84,8 @@ padding: 20px;
   padding-left:  20px;
   padding-right:  20px;
   min-width: 150px;
+  max-width: 100%;
+  margin-bottom: 20px;
 }
 
 .label-file:hover {
@@ -103,6 +105,11 @@ padding: 20px;
   margin-top: 6px;
   padding: 10px;
 
+}
+
+.imgadd{
+  margin: 10px;
+  padding: 10px;
 }
 
 .bouton{

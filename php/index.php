@@ -68,6 +68,7 @@ session_start();
         <img class="cat-img" src=".././images/6.png" />
         <span class="cat-title2">Chocolate</span>
       </div>
+
     </div>
   </article>
 

@@ -683,8 +683,6 @@ FROM
     }
   }
 
-
-
   for ($i = 0; $i < count($tabcontent); $i++) { ?>
     <tr>
       <td><?= $tabcontent[$i]["title"]; ?></td>
