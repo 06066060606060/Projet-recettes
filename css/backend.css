@@ -12,25 +12,40 @@
   color: #000000;
 }
 
-table,
-th,
-td {
+table {
   margin-left: auto;
   margin-right: auto;
+  border-collapse: collapse;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.avatarcrud {
+  width:50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+th,
+td {
+
   margin-top: 20px;
   padding: 10px;
-  border: 2px solid rgb(103, 103, 103);
-  background-color: rgba(240, 248, 255, 0.645);
+  border: 2px solid rgb(255, 255, 255);
+  background-color: #cdd2ef;
   border-collapse: collapse;
 }
 
+table{
+  border-radius: 16px;
+}
+
 .btnadd {
-  position: absolute;
   text-align: center;
   width: 250px;
   margin-top: 40px;
-  margin-left: 50%;
-  margin-right: 50%;
+  margin-left: auto;
+  margin-right: auto;
   transform: translateX(-50%);
   color: white;
   background-color: rgb(0, 67, 162);
@@ -58,29 +73,28 @@ p.short {
 }
 
 a.btn {
-  color: white;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: rgb(109, 109, 109);
-  border: solid 1px #383838;
-  border-radius: 16px;
+  display: block;
+  padding: 10px;
+  color: rgb(4, 0, 255);
   text-decoration: none;
+  padding-left: 15px;
+  font-size: 24px;
 }
 a.btn.btn-active {
-  background-color: rgb(0, 67, 162);
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
 a.btn.btn-success {
-  background-color: rgb(0, 162, 57);
+  color: rgb(0, 126, 2);
   text-decoration: none;
+  padding-left: 17px;
 }
 
 a.btn.btn-danger {
-  background-color: rgb(185, 4, 4);
+  color: rgb(229, 0, 0);
   text-decoration: none;
+  padding-left: 17px;
 }
 
 a.btn:hover {

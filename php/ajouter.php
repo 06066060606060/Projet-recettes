@@ -1,14 +1,12 @@
-
-<?php 
+<?php
 include './bdd.php';
 include './fonction.php';
 session_start();
 if (isset($_SESSION['id'])) {
-  
-  } else {
-    header("Location: ./index.php");
-    die();
-  }
+} else {
+  header("Location: ./index.php");
+  die();
+}
 
 ?>
 <!DOCTYPE html>
@@ -29,28 +27,27 @@ if (isset($_SESSION['id'])) {
 
 <body>
 
-<?php
-$id = null;
-if (!empty($_GET['id'])) {
+  <?php
+  $id = null;
+  if (!empty($_GET['id'])) {
     $id = $_REQUEST['id'];
-
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) { // on initialise nos erreurs
+  }
+  if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) { // on initialise nos erreurs
     $titleError = null;
     $timeError = null;
-    $image_postError = null;
+    $imgplayer_postError = null;
     $description_postError = null;
     $id = $_POST['id_recipes'];
     $title = $_POST['title'];
-    $image = $_POST['imgplayer'];
-    $idauteur = $_POST['id_auteur'];
-    $idcat = $_POST['id_cat'];
+    $imgplayer = $_POST['imgplayer'];
+    $idauteur = $_SESSION['id'];
+    $catname = $_POST['name'];
     $preptime = $_POST['preptime'];
     $cooktime = $_POST['cooktime'];
     $image_recette = $_POST['image_recette'];
     $description = $_POST['description'];
-    $categorie = 1;
-    $type = 1;
+    $type = $_POST['type'];
+    $vedette = $_POST['vedette'];
 
     $ing_plats1 = $_POST['ing_plats1'];
     $ing_plats2 = $_POST['ing_plats2'];
@@ -76,121 +73,186 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) { // on initialise n
     $etape2 = $_POST['etape2'];
     $etape3 = $_POST['etape3'];
 
-
-
     $valid = true;
     if (empty($title)) {
-        $titleError = 'Entrer un titre';
-        $valid = false;
+      $titleError = 'Entrer un titre';
+      $valid = false;
     }
     if (empty($description)) {
-        $description_postError = 'Entrer un description';
-        $valid = false;
+      $description_postError = 'Entrer un description';
+      $valid = false;
     }
 
     if ($valid) {
-        $pdo = $bdd;
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "INSERT INTO recettes  VALUES (NULL, '" . $title . "', '" . $idauteur . "', '" . $idcat . "', '" . $preptime . "', '" . $cooktime . "', '" . $image_recette . "', '" . $description . "', '" . $categorie. "', '" . $type . "', '" . $image . "', NOW())";
-        $q = $pdo->query($sql);
+      $pdo = $bdd;
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $sql = "INSERT INTO recettes (`id_recipes`, `title`, `id_auteur`, `preptime`, `cooktime`, `image_recette`, `description`, `type`, `date`, `imgplayer`, `vedette`)  VALUES (NULL, '" . $title . "', '" . $idauteur . "', '" . $preptime . "', '" . $cooktime . "', '" . $image_recette . "', '" . $description . "', '" . $type . "', NOW() , '" . $imgplayer . "','" . $vedette . "')";
+      $q = $pdo->query($sql);
+      $sqlx = "SELECT `id_recipes` FROM `recettes` ORDER BY `id_recipes` DESC LIMIT 1";
+      $qx = $pdo->query($sqlx);
+      foreach ($qx as $row) {
+        $newrecepies = $row['id_recipes'];
+      }
+      $sql2 =  "INSERT INTO ingredients (`id_ingredient`, `ing_plats1`, `ing_plats2`, `ing_plats3`, `ing_plats4`, `ing_plats5`, `ing_plats6`, `ing_sauce1`, `ing_sauce2`, `ing_sauce3`, `ing_sauce4`, `ing_sauce5`, `ing_sauce6`)  VALUES ($newrecepies, '" . $ing_plats1 . "', '" . $ing_plats2 . "', '" . $ing_plats3 . "', '" . $ing_plats4 . "', '" . $ing_plats5 . "', '" . $ing_plats6 . "', '" . $ing_sauce1 . "', '" . $ing_sauce2 . "', '" . $ing_sauce3 . "', '" . $ing_sauce4 . "', '" . $ing_sauce5 . "', '" . $ing_sauce6 . "')";
+      $q1 = $pdo->query($sql2);
+      $sql3 =  "INSERT INTO etapes (`id`, `id_etapes`, `etape1`, `etape2`, `etape3`) VALUES (NULL, $newrecepies, '" . $etape1 . "', '" . $etape2 . "', '" . $etape3 . "')";
+      $q2 = $pdo->query($sql3);
+      $sql4 = "INSERT INTO nutrition (`id_nutrition`, `id_nut`, `calories`, `fat`, `prot`, `carbon`, `chol`) VALUES ($newrecepies, $newrecepies, '" . $calories . "', '" . $fat . "', '" . $prot . "', '" . $carbon . "', '" . $chol . "')";
+      $q3 = $pdo->query($sql4);
+      $sql5 = "INSERT INTO link_cat (`id_categorie`, `id_recette`) VALUES ($catname, $newrecepies)";
+      $q4 = $pdo->query($sql5);
 
-        $sql2 =  "INSERT INTO ingredient  VALUES (NULL, '" . $ing_plats1 . "', '" . $ing_plats2 . "', '" . $ing_plats3 . "', '" . $ing_plats4 . "', '" . $ing_plats5 . "', '" . $ing_plats6. "', '" . $ing_sauce1 . "', '" . $ing_sauce2 . "', '" . $ing_sauce3 . "', '" . $ing_sauce4 . "', '" . $ing_sauce5 . "', '" . $ing_sauce6 . "')";
-        $q1 = $pdo->query($sql2);
-
-        $sql3 =  "INSERT INTO etapes  VALUES (NULL, '" . $etape1 . "', '" . $etape2 . "', '" . $etape3 . "')";
-        $q2 = $pdo->query($sql3);
-
-        $sql4 = "INSERT INTO nutrition VALUES (NULL, '" . $calories . "', '" . $fat . "', '" . $prot . "', '" . $carbon . "', '" . $chol . "')";
-        $q3 = $pdo->query($sql4);
-    
-        $bdd->connection = null;
-        header("Location: ./backend.php");
+      $bdd->connection = null;
+      header("Location: ./backend.php");
     }
-} else {
+  } else {
 
     $bdd->connection = null;
-}
+  }
 
-?>
+  ?>
 
   <div id="overlay"></div>
   <!-- BARRE DE MENU -->
   <div class="topnav">
     <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href=".././index.php">Accueil</a></span>
-    <span> <a href="./backend.php">Liste des recettes</a></span>
-    <span> <a href="./categorie.php">Liste des Catégories</a></span>
+    <span> <a href="./index.php">Home</a></span>
+    <span> <a href="./backend.php">Recipies List</a></span>
+    <span> <a href="./categorie.php">Category List</a></span>
     <span onclick=""><a href="./logout.php">Logout</a></span>
     <div></div>
   </div>
 
   <!----------------------------------------->
   <article class="article">
-    <h2 class="title_add">Ajouter Une Recette</h2>
+    <h2 class="title_add">Add new recepies</h2>
     <form action="./ajouter.php" method="post">
-      <div class="grid_add">
+    <div class="grid_add">
         <div class="cook">
-        <input type="text" id="hidden" name="id_recipes" placeholder="" hidden="true" value=""/>
-          <input type="text" id="time" name="preptime" placeholder="Temps de preparation en minutes" value=""/>
+        <input type="text" id="hidden" name="id_recipes" placeholder="" hidden="true" value="<?= $id_recipes ?>"/>
+        <label for="preptime" class="label-preptime">Preparation Time:</label>
+        <select name="preptime" id="time">
+      <option value="5 Minutes">5 Minutes</option>
+      <option value="10 Minutes">10 Minutes</option>
+      <option value="15 Minutes">15 Minutes</option>
+      <option value="20 Minutes">20 Minutes</option>
+      <option value="25 Minutes">25 Minutes</option>
+      <option value="30 Minutes">30 Minutes</option>
+      <option value="40 Minutes">40 Minutes</option>
+      <option value="50 Minutes">50 Minutes</option>
+      <option value="60 Minutes">60 Minutes</option>
+      <option value="70 Minutes">70 Minutes</option>
+      <option value="80 Minutes">80 Minutes</option>
+      <option value="90 Minutes">90 Minutes</option>
+    </select>
         </div>
         <div class="cook">
-        <input type="text" id="time2" name="cooktime" placeholder="temps de cuisson en minutes" value=""/>
+        <label for="cooktime" class="label-cooktime">Cook Time:</label>
+        <select name="cooktime" id="time">
+      <option value="5 Minutes">5 Minutes</option>
+      <option value="10 Minutes">10 Minutes</option>
+      <option value="15 Minutes">15 Minutes</option>
+      <option value="20 Minutes">20 Minutes</option>
+      <option value="25 Minutes">25 Minutes</option>
+      <option value="30 Minutes">30 Minutes</option>
+      <option value="40 Minutes">40 Minutes</option>
+      <option value="50 Minutes">50 Minutes</option>
+      <option value="60 Minutes">60 Minutes</option>
+      <option value="70 Minutes">70 Minutes</option>
+      <option value="80 Minutes">80 Minutes</option>
+      <option value="90 Minutes">90 Minutes</option>
+    </select>
       </div>
-        <input type="text" name="id_auteur" placeholder="catégorie" value=""/>
-        <input type="text" name="id_cat" placeholder="catégorie" value=""/>
+     <div class="cook">
+      <label for="name" class="label-name">Category:</label>
+      <select name="name" id="name">
+      <option value="1">Breakfast</option>
+      <option value="2">Vegan</option>
+      <option value="3">Meat</option>
+      <option value="4">Dessert</option>
+      <option value="5">Lunch</option>
+      <option value="6">Chocolat</option>
+    </select>
+    </div>
+    <div class="cook">
+    <label for="type" class="label-type">Type:</label>
+    <select name="type" id="type">
+      <option value="Healthy">Healthy</option>
+      <option value="Hot Recipies">Hot Recipies</option>
+      <option value="SeaFood">SeaFood</option>
+      <option value="Sweet">Sweet</option>
+    </select>
+    </div>
+    <div class="cook">
+        <?php if (isset($_SESSION['id'])) {
+    if ($_SESSION['id'] == '4') {
+      echo '<label for="vedette" class="label-vedette">In Front:</label>
+      <select name="vedette" id="vedette">
+      <option value="1">Activate</option>
+      <option value="0">Desactivate</option>
+    </select>';
+    } }?>
+    </div>
         </div>
-          <input type="text" class="titre-add" name="title" placeholder="title" value=""/>
-          <input type="text" class="videourl" name="imgplayer" placeholder="Url de la vidéo..." value=""/>
-          <textarea class="resume" name="description" placeholder="Resumé de la recette.."></textarea>
+      <input type="text" class="titre-add" name="title" placeholder="title" value="" />
+      <input type="text" class="videourl" name="imgplayer" placeholder="video URL..." value="" />
+      <textarea class="resume" name="description" placeholder="Recipies resume.."></textarea>
 
-        <div class="grid2">
-          <div class="gridingredient">
-            <h2>Liste des Ingredients:</h2>
-            <h2>Pour le plats:</h2>
+      <div class="grid2">
+        <div class="gridingredient">
+          <h2>Ingredients:</h2>
+          <h2>For main dish:</h2>
 
-            <input type="text" id="cingr" name="ing_plats1" placeholder="Ingredient 1..." value=""/>
-            <input type="text" id="cingr" name="ing_plats2" placeholder="Ingredient 2..." value=""/>
-            <input type="text" id="cingr" name="ing_plats3" placeholder="Ingredient 3..." value=""/>
-            <input type="text" id="cingr" name="ing_plats4" placeholder="Ingredient 4..." value="" />
-            <input type="text" id="cingr" name="ing_plats5" placeholder="Ingredient 5..." value="" />
-            <input type="text" id="cingr" name="ing_plats6" placeholder="Ingredient 6..." value=""/>
-            <h2>Pour la sauce:</h2>
-            <input type="text" id="cingr" name="ing_sauce1" placeholder="Sauce 1..." value="" />
-            <input type="text" id="cingr" name="ing_sauce2" placeholder="Sauce 2..." value="" />
-            <input type="text" id="cingr" name="ing_sauce3" placeholder="Sauce 3..."  value=""/>
-            <input type="text" id="cingr" name="ing_sauce4" placeholder="Sauce 4..."  value=""/>
-            <input type="text" id="cingr" name="ing_sauce5" placeholder="Sauce 5..." value="" />
-            <input type="text" id="cingr" name="ing_sauce6" placeholder="Sauce 6..." value="" />
-            <h2>Infos Nutritionnelles:</h2>
-            <input type="text" id="cingr" name="calories" placeholder="Calories..."  value=""/>
-            <input type="text" id="cingr" name="fat" placeholder="Graisse..." value="" />
-            <input type="text" id="cingr" name="prot" placeholder="Proteine..."  value=""/>
-            <input type="text" id="cingr" name="carbon" placeholder="Glucide..."  value=""/>
-            <input type="text" id="cingr" name="chol" placeholder="Cholesterol..." value="" />
-          </div>
-          <div class="gridetape">
-            <h2>Liste des Etapes:</h2>
-            <textarea class="resume" name="etape1" placeholder="Etapes 1.."></textarea>
-            <input type="text" class="titre-add" name="image_recette" placeholder="title" value=""/>
-            <div class="boutonimg">
-              <label for="file" class="label-file">Choisir l'image</label>
-              <img class="imgadd" style="width:auto;height:150px;" src="">
-              <input id="file" class="input-file" type="file" />
-            </div>
-
-            <textarea class="resume" name="etape2" placeholder="Etapes 2.."></textarea>
-            <textarea class="resume" name="etape3" placeholder="Etapes 3.."></textarea>
-          </div>
-          <div class="bouton">
-            <input class="btn_add" type="submit" value="Publier la modification de la recette" />
-          </div>
+          <input type="text" id="cingr" name="ing_plats1" placeholder="Ingredient 1..." value="" />
+          <input type="text" id="cingr" name="ing_plats2" placeholder="Ingredient 2..." value="" />
+          <input type="text" id="cingr" name="ing_plats3" placeholder="Ingredient 3..." value="" />
+          <input type="text" id="cingr" name="ing_plats4" placeholder="Ingredient 4..." value="" />
+          <input type="text" id="cingr" name="ing_plats5" placeholder="Ingredient 5..." value="" />
+          <input type="text" id="cingr" name="ing_plats6" placeholder="Ingredient 6..." value="" />
+          <h2>For the sauce:</h2>
+          <input type="text" id="cingr" name="ing_sauce1" placeholder="Sauce 1..." value="" />
+          <input type="text" id="cingr" name="ing_sauce2" placeholder="Sauce 2..." value="" />
+          <input type="text" id="cingr" name="ing_sauce3" placeholder="Sauce 3..." value="" />
+          <input type="text" id="cingr" name="ing_sauce4" placeholder="Sauce 4..." value="" />
+          <input type="text" id="cingr" name="ing_sauce5" placeholder="Sauce 5..." value="" />
+          <input type="text" id="cingr" name="ing_sauce6" placeholder="Sauce 6..." value="" />
+          <h2>Nutrition Information for 100g:</h2> 
+       
+          <label for="calories" class="label-calories">Calories kcal:</label>
+          <input type="text" id="cingr" name="calories" placeholder="Calories kcal..." value="" />
+          <label for="fat" class="label-calories">Total fat g:</label>
+          <input type="text" id="cingr" name="fat" placeholder="Total fat g..." value="" />
+          <label for="prot" class="label-calories">Protein g:</label>
+          <input type="text" id="cingr" name="prot" placeholder="Protein g..." value="" />
+          <label for="carbon" class="label-calories">Carbohydrate g:</label>
+          <input type="text" id="cingr" name="carbon" placeholder="Carbohydrate g..." value="" />
+          <label for="chol" class="label-calories">Cholesterol mg:</label>
+          <input type="text" id="cingr" name="chol" placeholder="Cholesterol mg..." value="" />
+          <input class="btn_add" type="submit" value="Publish new recepies" />
         </div>
+        <div class="gridetape">
+          <h2>Directions:</h2>
+          <label for="etape1" class="label-etape1">Step1:</label>
+          <textarea class="resume" name="etape1" placeholder="Step 1.."></textarea>
+          <input type="text" class="titre-add" name="image_recette" placeholder="Picture link" value="" />
+          <div class="boutonimg">
+            <label for="file" class="label-file">Add picture</label>
+            <img class="imgadd" style="width:auto;height:150px;" src="">
+            <input id="file" class="input-file" type="file" />
+          </div>
+          <label for="etape2" class="label-etape2">Step2:</label>
+          <textarea class="resume" name="etape2" placeholder="Step 2.."></textarea>
+          <label for="etape" class="label-etape3">Step3:</label>
+          <textarea class="resume" name="etape3" placeholder="Step 3.."></textarea>
+        </div>
+
+      </div>
     </form>
   </article>
 
   <div class="footernav">
-<?php footernav(); ?>
+    <?php footernav(); ?>
   </div>
 
   <footer>

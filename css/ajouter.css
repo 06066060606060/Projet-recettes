@@ -33,7 +33,7 @@ text-align: center;
 
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 10px;
   align-items: start;
 }
@@ -45,8 +45,21 @@ text-align: center;
   width: 100%;
 }
 
+#name{
+  width: 100%;
+}
+
+#type{
+  width: 100%;
+}
+
+#vedette{
+  width: 100%;
+}
+
+
 .resume{
-  height: 150px;
+  height: 250px;
 }
 
 .videourl{
@@ -67,20 +80,23 @@ padding: 20px;
 }
 
 .gridingredient{
+  display: grid;
+  justify-content: center;
+}
 
+.label-calories{
+  padding-top: 10px;
 }
 
 
-.gridetape{
 
-}
 
 .label-file {
   color: white;
   background-color: rgb(118, 118, 118);
   border-radius: 16px;
   margin-top: 6px;
-  padding: 10px;
+  padding: 5px;
   padding-left:  20px;
   padding-right:  20px;
   min-width: 150px;
@@ -108,8 +124,7 @@ padding: 20px;
 }
 
 .imgadd{
-  margin: 10px;
-  padding: 10px;
+padding: 20px;
 }
 
 .bouton{
@@ -160,6 +175,8 @@ input[type="submit"]:hover {
   border-radius: 16px;
   border-collapse: collapse;
   border-style: none;
+  margin-top: 20px ;
+
 }
 
 

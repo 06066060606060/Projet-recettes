@@ -30,21 +30,23 @@ session_start();
     <?php   if (isset($_SESSION['id'])){
   if ($_SESSION['id'] == '4') {
     echo '
-    <span> <a href="./index.php">Accueil</a></span>
-    <span> <a href="./categorie.php">Liste des Catégories</a></span>
-    <span> <a href="./utilisateurs.php">Liste des Utilisateurs</a></span>
-    <span> <a href="./ajouter.php">Ajouter Une Recette</a></span>
+    <span> <a href="./index.php">Home</a></span>
+    <span> <a href="./categorie.php">Category List</a></span>
+    <span> <a href="./utilisateurs.php">User List</a></span>
+    <span> <a href="./ajouter.php">Add a new Recepie</a></span>
     <span onclick=""><a href="./logout.php">Logout</a></span>';
   } else {
     echo '
-    <span> <a href="./index.php">Accueil</a></span>
-    <span> <a href="./ajouter.php">Ajouter Une Recette</a></span>
-    <span> <a href="./backend.php">Mes Recettes</a></span>
+    <span> <a href="./index.php">Home</a></span>
+    <span> <a href="./ajouter.php">Add a new Recepie</a></span>
+    <span> <a href="./categorie.php">Category List</a></span>
+    <span> <a href="./backend.php">My Recepies</a></span>
     <span onclick=""><a href="./logout.php">Logout</a></span>';
   }
  } ?>
     <div></div>
   </div>
+
 
   <!----------------------------------------->
   <article class="article">
@@ -52,35 +54,33 @@ session_start();
 
  <?php   if (isset($_SESSION['id'])){
   if ($_SESSION['id'] == '4') {
-      echo "<h5 class=''>Bonjour Admin</h2>";
-      echo "<h2 class='title_liste'>Liste de toutes les Recettes</h2>";
-  } else if ($_SESSION['id'] != '4') {
-      echo "<h5 class=''>Bonjour</h5>";
-      echo  "<h5 class=''>", $_SESSION['name'] ,"</h5>";
-      echo "<h2 class='title_liste'>Liste de vos Recettes</h2>";
+      echo "<h5 class=''>Welcome Admin</h2>";
+      echo "<h2 class='title_liste'>List of all Recepies:</h2>";      
+    }
+  else if ($_SESSION['id'] != '4') {
+      echo "<h4 class=''>Welcome</h4>";
+      echo  "<h4 class=''>", $_SESSION['name'] ,"</h4>";
+      echo "<h2 class='title_liste'>Liste of your recipies</h2>";
   }
  } ?>
- 
       <table class="table table-hover table-bordered">
         <thead>
-       
-          <th>titre</th>
+          <th>ID</th>
           <p>
-            <th>image de la recette</th>
+          <th>title</th>
           <p>
-            <th>Résumé</th>
+            <th>picture</th>
           <p>
-            <th>Catégorie</th>
+            <th>resume</th>
+          <p>
+            <th>category</th>
           <p>
             <th>Type</th>
           <p>
-            <th>Aperçu</th>
+            <th>Manage</th>
           <p>
-            <th>Edition</th>
+          <th>In Front</th>
           <p>
-            <th>Supprimer</th>
-          <p>
-
         </thead>
 
         <tbody>

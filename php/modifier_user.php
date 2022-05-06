@@ -27,6 +27,7 @@ session_start();
     <span> <a href="./index.php">Accueil</a></span>
     <span> <a href="./backend.php">Liste des Recettes</a></span>
     <span> <a href="./categorie.php">Liste des Catégories</a></span>
+    <span> <a href="./utilisateurs.php">Liste des Utilisateurs</a></span>
     <span><a href="./logout.php">Logout</a></span>
     <div></div>
     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -57,8 +58,11 @@ session_start();
         <input type="text" id="cingr" name="Prenom" placeholder="Prénom" />
         <label for="Prenom" class="label">Email:</label>
         <input type="text" id="cingr" name="mail" placeholder="Email" />
-        <label for="role" class="label">Role:</label>
-        <input type="text" id="cingr" name="role" placeholder="Role" />
+        <?php if (isset($_SESSION['id'])) {
+    if ($_SESSION['id'] == '4') {
+     echo '     <label for="role" class="label">Role:</label>
+     <input type="text" id="cingr" name="role" placeholder="Role" />';
+    } }?>
         <label for="Password" class="label">Password:</label>
         <input type="password" id="cingr" name="password" placeholder="password" />
         <div class="bouton">

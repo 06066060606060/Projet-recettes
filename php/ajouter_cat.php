@@ -22,26 +22,26 @@ session_start();
   <div id="overlay"></div>
   <!-- BARRE DE MENU -->
   <div class="topnav">
-    <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
+  <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href="./backend.php">Retour</a></span>
-    <div></div>
+    <span> <a href="./index.php">Home</a></span>
+    <span> <a href="./backend.php">Recipies List</a></span>
+    <span> <a href="./categorie.php">Category List</a></span>
+    <span><a href="./logout.php">Logout</a></span>
   </div>
 
   <!----------------------------------------->
   <article class="article">
-    <h2 class="title_add">Ajouter Catégorie</h2>
+    <h2 class="title_add">Add new Category</h2>
     <form action="/action_page.php">
 
       <div class="griduser">
-        <label for="Nom" class="label">Nom:</label>
-        <input type="text" id="cingr" name="Nom" placeholder="Nom" />
-        <label for="Prenom" class="label">Type:</label>
-        <input type="text" id="cingr" name="Prenom" placeholder="type" />
-        <label for="file" class="label-file">Ajouter un icone</label>
+        <label for="Nom" class="label">Name:</label>
+        <input type="text" id="cingr" name="Nom" placeholder="Name" />
+        <label for="file" class="label-file">Add an icon</label>
         <input id="file" class="input-file" type="file" />
         <div class="bouton">
-          <input class="btn_add" type="submit" value="Ajouter" />
+          <input class="btn_add" type="submit" value="Add Category" />
         </div>
       </div>
     </form>

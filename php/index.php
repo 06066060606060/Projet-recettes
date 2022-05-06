@@ -101,7 +101,7 @@ session_start();
           </p>
         </div>
         <div class="view_every">
-          <span class="btn-learn"><a class="link" href="http://">Learn More</a></span>
+          <span class="btn-learn"><a class="link" onclick="">Learn More</a></span>
         </div>
       </itemsG>
 

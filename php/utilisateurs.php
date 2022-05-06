@@ -31,9 +31,9 @@ if (isset($_SESSION['id'])) {
   <div class="topnav">
     <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href="./index.php">Accueil</a></span>
-    <span> <a href="./backend.php">Liste des Recettes</a></span>
-    <span> <a href="./categorie.php">Liste des Catégories</a></span>
+    <span> <a href="./index.php">Home</a></span>
+    <span> <a href="./backend.php">Recipies List</a></span>
+    <span> <a href="./categorie.php">Category List</a></span>
     <span><a href="./logout.php">Logout</a></span>
     <div></div>
   </div>
@@ -41,22 +41,22 @@ if (isset($_SESSION['id'])) {
   <!----------------------------------------->
   <article class="article">
     <div class="table-responsive">
-      <h2 class="title_liste">Liste des Utilisateurs</h2>
+      <h2 class="title_liste">User List</h2>
       <table class="table table-hover table-bordered">
         <thead>
-          <th>Pseudo</th>
+          <th>Username</th>
           <p>
             <th>Avatar</th>
           <p>
-            <th>Prénom</th>
+            <th>First Name</th>
           <p>
-            <th>Nom</th>
+            <th>Last Name</th>
           <p>
             <th>Email</th>
+            <p>
+            <th>Role</th>
           <p>
-            <th>Edition</th>
-          <p>
-            <th>Supprimer</th>
+            <th>Manage</th>
           <p>
 
         </thead>

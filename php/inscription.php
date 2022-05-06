@@ -45,24 +45,24 @@ session_start();
   else
       echo "<p>Erreur</p>";
 } ?>
-    <h2 class="title_incription">Inscrivez-Vous</h2>
+    <h2 class="title_incription">Create an Account</h2>
     <form action="./inscription.php" method="post">
 
       <div class="griduser">
-        <label for="username" class="label">Pseudo:</label>
-        <input type="text" id="cingr" name="username" placeholder="Pseudo" />
-        <label for="Nom" class="label">Nom:</label>
-        <input type="text" id="cingr" name="Nom" placeholder="Nom" />
-        <label for="Prenom" class="label">Prenom:</label>
-        <input type="text" id="cingr" name="Prenom" placeholder="Prénom" />
+        <label for="username" class="label">Username:</label>
+        <input type="text" id="cingr" name="username" placeholder="Username" />
+        <label for="Nom" class="label">First Name:</label>
+        <input type="text" id="cingr" name="Nom" placeholder="First Name" />
+        <label for="Prenom" class="label">Last Name:</label>
+        <input type="text" id="cingr" name="Prenom" placeholder="Last Name" />
         <label for="mail" class="label">Email:</label>
         <input type="text" id="cingr" name="mail" placeholder="Email" />
         <label for="Password" class="label">Password:</label>
         <input type="password" id="cingr" name="password" placeholder="password" />
-        <label for="file" class="label-file">Ajouter un avatar</label>
+        <label for="file" class="label-file">Select profile Picture</label>
         <input id="file" class="input-file" type="file" name="avatar" />
         <div class="bouton">
-          <input class="btn_add" type="submit" value="S'inscrire" />
+          <input class="btn_add" type="submit" value="Register" />
         </div>
       </div>
     </form>

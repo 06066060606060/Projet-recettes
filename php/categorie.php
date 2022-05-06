@@ -24,9 +24,9 @@ session_start();
   <div class="topnav">
     <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href="./index.php">Accueil</a></span>
-    <span> <a href="./backend.php">Liste des recettes</a></span>
-    <span> <a href="./utilisateurs.php">Liste des Utilisateurs</a></span>
+    <span> <a href="./index.php">Home</a></span>
+    <span> <a href="./backend.php">Recipies List</a></span>
+    <span> <a href="./ajouter_cat.php">Add a new category</a></span>
     <span><a href="./logout.php">Logout</a></span>
     <div></div>
   </div>
@@ -34,17 +34,17 @@ session_start();
   <!----------------------------------------->
   <article class="article">
     <div class="table-responsive">
-      <h2 class="title_liste">Liste des Catégories</h2>
+      <h2 class="title_liste">Category List</h2>
     
       <table class="table table-hover table-bordered">
         <thead>
           <th>Id</th>
           <p>
-          <th>Nom</th>
+          <th>Name</th>
             <p>
-            <th>Icone</th>
+            <th>Icon</th>
           <p>
-            <th>Supprimer</th>
+            <th>manage</th>
           <p>
 
         </thead>
@@ -58,7 +58,6 @@ session_start();
     </div>
 
   </article>
-  <a class="btnadd" href="./ajouter_cat.php">Ajouter Une Catégorie</a>
 
 
   <div class="footernav">

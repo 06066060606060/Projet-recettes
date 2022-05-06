@@ -7,10 +7,10 @@ function topnav()
     echo '
       <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
       <div class="spacer"></div>
-      <span> <a href="./index.php">Accueil</a></span>
-      <span> <a href="./recette.php">Recettes</a></span>
+      <span> <a href="./index.php">Home</a></span>
+      <span> <a href="./recette.php">Recipies</a></span>
       <span><a href="./contact.php">Contact</a></span>
-      <span><a href="./backend.php">Mes Recettes</a></span>
+      <span><a href="./backend.php">My Recipies</a></span>
       <span><a href="./logout.php">Logout</a></span>
       <div></div>
       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -20,10 +20,10 @@ function topnav()
     echo '
       <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
       <div class="spacer"></div>
-      <span> <a href="./index.php">Accueil</a></span>
-      <span> <a href="./recette.php">Recettes</a></span>
+      <span> <a href="./index.php">Home</a></span>
+      <span> <a href="./recette.php">Recipies</a></span>
       <span><a href="./contact.php">Contact</a></span>
-      <span><a href="./inscription.php">Inscription</a></span>
+      <span><a href="./inscription.php">Register</a></span>
       <span onclick="on()"><a href="#">Login</a></span>
       <div></div>
       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -42,9 +42,9 @@ function gridtop()
     recettes.preptime,
     recettes.image_recette,
     recettes.description,
-    recettes.categorie,
     recettes.type,
     recettes.date,
+    categories.name,
     recettes.id_recipes,
     utilisateurs.nom,
     utilisateurs.prenom,
@@ -52,9 +52,12 @@ function gridtop()
     utilisateurs.id,
     utilisateurs.avatar
 FROM
-  recettes
-  INNER JOIN utilisateurs ON recettes.id_auteur = utilisateurs.id
-   ORDER BY RAND() limit 1');
+recettes 
+Inner Join
+link_cat On link_cat.id_recette = recettes.id_recipes Inner Join
+    categories On link_cat.id_categorie = categories.id_cat Inner Join
+    utilisateurs On recettes.id_auteur = utilisateurs.id
+   WHERE vedette = 1 ORDER BY RAND() limit 1');
 
   while ($post = $postx->fetch()) {
     $tabcontent[] = [
@@ -63,7 +66,7 @@ FROM
       'preptime' => $post['preptime'],
       'image_recette' => $post['image_recette'],
       'description' => $post['description'],
-      'categorie' => $post['categorie'],
+      'name' => $post['name'],
       'type' => $post['type'],
       'date' => $post['date'],
       'nom' => $post['nom'],
@@ -103,7 +106,7 @@ FROM
 
         <div class="boutton-fork">
           <i class="fa-solid fa-utensils"></i>
-          <span class="cat-0"><?= $tabcontent[$i]["categorie"]; ?></span>
+          <span class="cat-0"><?= $tabcontent[$i]["name"]; ?></span>
         </div>
 
         <div class="divautor">
@@ -138,23 +141,16 @@ function grid9()
 {
 
   include './bdd.php';
-  $postx = $bdd->query('SELECT
-    recettes.title,
-    recettes.preptime,
-    recettes.image_recette,
-    recettes.description,
-    recettes.categorie,
-    recettes.type,
-    recettes.date,
-    recettes.id_recipes,
-    utilisateurs.nom,
-    utilisateurs.prenom,
-    recettes.id_auteur,
-    utilisateurs.id,
-    utilisateurs.avatar
-FROM
-  recettes
-  INNER JOIN utilisateurs ON recettes.id_auteur = utilisateurs.id
+  $postx = $bdd->query('SELECT 
+  categories.name,
+  recettes.id_recipes,
+  recettes.preptime, 
+  recettes.title, 
+  recettes.image_recette,
+  recettes.type
+FROM recettes INNER JOIN
+link_cat ON link_cat.id_recette = recettes.id_recipes INNER JOIN
+  categories ON link_cat.id_categorie = categories.id_cat
    ORDER BY RAND() limit 9');
 
   while ($post = $postx->fetch()) {
@@ -163,12 +159,10 @@ FROM
       'title' => $post['title'],
       'preptime' => $post['preptime'],
       'image_recette' => $post['image_recette'],
-      'description' => $post['description'],
-      'categorie' => $post['categorie'],
+      'name' => $post['name'],
       'type' => $post['type'],
 
     ];
-    $date = date_create($post['date']);
   }
 
   for ($i = 0; $i < count($tabcontent); $i++) { ?>
@@ -183,7 +177,7 @@ FROM
       </div>
       <div class="boutton-catCell">
         <i class="iconC fa-solid fa-utensils"></i>
-        <span class="Catcell"><?= $tabcontent[$i]["type"]; ?></span>
+        <span class="Catcell"><?= $tabcontent[$i]["name"]; ?></span>
       </div>
     </div>
 
@@ -201,22 +195,15 @@ function grid8()
 
   include './bdd.php';
   $postx = $bdd->query('SELECT
-    recettes.title,
-    recettes.preptime,
-    recettes.image_recette,
-    recettes.description,
-    recettes.categorie,
-    recettes.type,
-    recettes.date,
-    recettes.id_recipes,
-    utilisateurs.nom,
-    utilisateurs.prenom,
-    recettes.id_auteur,
-    utilisateurs.id,
-    utilisateurs.avatar
-FROM
-  recettes
-  INNER JOIN utilisateurs ON recettes.id_auteur = utilisateurs.id
+  categories.name,
+  recettes.id_recipes,
+  recettes.preptime, 
+  recettes.title, 
+  recettes.image_recette,
+  recettes.type
+FROM recettes INNER JOIN
+link_cat ON link_cat.id_recette = recettes.id_recipes INNER JOIN
+  categories ON link_cat.id_categorie = categories.id_cat
    ORDER BY RAND() limit 8');
 
   while ($post = $postx->fetch()) {
@@ -225,12 +212,9 @@ FROM
       'title' => $post['title'],
       'preptime' => $post['preptime'],
       'image_recette' => $post['image_recette'],
-      'description' => $post['description'],
-      'categorie' => $post['categorie'],
-      'type' => $post['type'],
+      'name' => $post['name'],
 
     ];
-    $date = date_create($post['date']);
   }
 
   for ($i = 0; $i < count($tabcontent); $i++) { ?>
@@ -245,7 +229,7 @@ FROM
       </div>
       <div class="boutton-catCell8">
         <i class="iconC8 fa-solid fa-utensils"></i>
-        <span class="catCell8"><?= $tabcontent[$i]["type"]; ?></span>
+        <span class="catCell8"><?= $tabcontent[$i]["name"]; ?></span>
       </div>
     </div>
 
@@ -265,21 +249,15 @@ function grid4()
 
   include './bdd.php';
   $postx = $bdd->query('SELECT
-    recettes.title,
-    recettes.preptime,
-    recettes.image_recette,
-    recettes.description,
-    recettes.categorie,
-    recettes.type,
-    recettes.date,
-    recettes.id_recipes,
-    utilisateurs.nom,
-    utilisateurs.prenom,
-    recettes.id_auteur,
-    utilisateurs.id,
-    utilisateurs.avatar
-FROM
-  recettes
+  categories.name,
+  recettes.id_recipes,
+  recettes.preptime, 
+  recettes.title, 
+  recettes.image_recette,
+  recettes.type
+    FROM recettes 
+    INNER JOIN link_cat ON link_cat.id_recette = recettes.id_recipes
+     INNER JOIN categories ON link_cat.id_categorie = categories.id_cat
   INNER JOIN utilisateurs ON recettes.id_auteur = utilisateurs.id
    ORDER BY RAND() limit 4');
 
@@ -289,12 +267,10 @@ FROM
       'title' => $post['title'],
       'preptime' => $post['preptime'],
       'image_recette' => $post['image_recette'],
-      'description' => $post['description'],
-      'categorie' => $post['categorie'],
+      'name' => $post['name'],
       'type' => $post['type'],
 
     ];
-    $date = date_create($post['date']);
   }
 
   for ($i = 0; $i < count($tabcontent); $i++) { ?>
@@ -351,7 +327,6 @@ function OneReceipe()
     recettes.date,
     recettes.id_auteur,
     recettes.image_recette,
-    recettes.categorie,
     recettes.type,
     recettes.cooktime,
     recettes.preptime,
@@ -372,10 +347,11 @@ function OneReceipe()
     ingredients.ing_sauce6
 From
     recettes Inner Join
-    nutrition On nutrition.id_nutrition = recettes.id_recipes 
+    nutrition On nutrition.id_nutrition = recettes.id_recipes
+    INNER JOIN link_cat ON link_cat.id_recette = recettes.id_recipes
+    INNER JOIN categories ON link_cat.id_categorie = categories.id_cat
     Inner Join etapes On etapes.id_etapes = recettes.id_recipes 
     Inner Join ingredients On ingredients.id_ingredient = recettes.id_recipes
-    Inner Join categories On recettes.id_cat = categories.id_cat 
     Inner Join utilisateurs On recettes.id_auteur = utilisateurs.id
 
     WHERE recettes.id_recipes = "' . $id_recette . '" ');
@@ -391,8 +367,8 @@ From
       'avatar' => $post['avatar'],
       'preptime' =>  $post['preptime'],
       'cooktime' => $post['cooktime'],
+      'name' => $post['name'],
       'image_recette' => $post['image_recette'],
-      'categorie' => $post['categorie'],
       'type' => $post['type'],
       'imgplayer' => $post['imgplayer'],
       'description' => $post['description'],
@@ -447,7 +423,7 @@ From
           <span class="timercell1"><?= $content[$i]["cooktime"]; ?></span>
         </div>
         <div class="category"> <i class="iconI fa-solid fa-utensils"></i>
-          <span class="Catcell2"><?= $content[$i]["type"]; ?></span>
+          <span class="Catcell2"><?= $content[$i]["name"]; ?></span>
         </div>
       </div>
 
@@ -564,10 +540,10 @@ function footernav()
   echo '
   <a class="logofoot" href="./index.php"><img src=".././images/Foodieland.png" /></a>
   <div class="spacerfoot"></div>
-  <span> <a href="./index.php">Accueil</a></span>
-  <span> <a href="./recette.php">Recettes</a></span>
+  <span> <a href="./index.php">Home</a></span>
+  <span> <a href="./recette.php">Recipies</a></span>
   <span><a href="./contact.php">Contact</a></span>
-  <span><a href="./inscription.php">Inscription</a></span>';
+  <span><a href="./inscription.php">Register</a></span>';
 }
 
 
@@ -579,9 +555,6 @@ function gridD()
 recettes.title,
 recettes.preptime,
 recettes.image_recette,
-recettes.description,
-recettes.categorie,
-recettes.type,
 recettes.date,
 recettes.id_recipes,
 utilisateurs.nom,
@@ -600,9 +573,6 @@ ORDER BY RAND() limit 3');
       'title' => $post['title'],
       'preptime' => $post['preptime'],
       'image_recette' => $post['image_recette'],
-      'description' => $post['description'],
-      'categorie' => $post['categorie'],
-      'type' => $post['type'],
       'nom' => $post['nom'],
       'prenom' => $post['prenom'],
 
@@ -627,7 +597,7 @@ ORDER BY RAND() limit 3');
   <?php
 }
 
-//-- BACKEND 
+//------------------------------------------------------------------------------------------------------ BACKEND 
 
 function crudrecette()
 {
@@ -638,12 +608,15 @@ function crudrecette()
       recettes.title,
       recettes.image_recette,
       recettes.description,
-      recettes.categorie,
+      categories.name,
       recettes.type,
+      recettes.vedette,
       recettes.id_recipes,
       recettes.id_auteur
   FROM
     recettes
+    INNER JOIN link_cat ON link_cat.id_recette = recettes.id_recipes
+    INNER JOIN categories ON link_cat.id_categorie = categories.id_cat
    ORDER BY date DESC');
 
       while ($post = $postx->fetch()) {
@@ -652,7 +625,8 @@ function crudrecette()
           'title' => $post['title'],
           'image_recette' => $post['image_recette'],
           'description' => $post['description'],
-          'categorie' => $post['categorie'],
+          'name' => $post['name'],
+          'vedette' => $post['vedette'],
           'type' => $post['type'],
         ];
       }
@@ -662,13 +636,17 @@ function crudrecette()
     recettes.title,
     recettes.image_recette,
     recettes.description,
-    recettes.categorie,
+    categories.name,
     recettes.type,
+    recettes.vedette,
     recettes.id_recipes,
     recettes.id_auteur
 FROM
   recettes
- WHERE id_auteur = "' . $thisID . '" ORDER BY date DESC');
+  Inner Join
+    link_cat On link_cat.id_recette = recettes.id_recipes Inner Join
+    categories On link_cat.id_categorie = categories.id_cat
+ WHERE id_auteur = "' . $thisID .'" ORDER BY date DESC' );
 
       while ($post = $postx->fetch()) {
         $tabcontent[] = [
@@ -676,8 +654,9 @@ FROM
           'title' => $post['title'],
           'image_recette' => $post['image_recette'],
           'description' => $post['description'],
-          'categorie' => $post['categorie'],
+          'name' => $post['name'],
           'type' => $post['type'],
+          'vedette' => $post['vedette'],
         ];
       }
     }
@@ -685,6 +664,7 @@ FROM
 
   for ($i = 0; $i < count($tabcontent); $i++) { ?>
     <tr>
+    <td><?= $tabcontent[$i]["id_recipes"]; ?></td>
       <td><?= $tabcontent[$i]["title"]; ?></td>
       <p>
         <td><img class="crudimage" src="<?= $tabcontent[$i]["image_recette"]; ?>"></td>
@@ -694,15 +674,16 @@ FROM
             .</p>
         </td>
       <p>
-        <td><?= $tabcontent[$i]["categorie"]; ?></td>
+        <td><?= $tabcontent[$i]["name"]; ?></td>
       <p>
         <td><?= $tabcontent[$i]["type"]; ?></td>
       <p>
-        <td><a class="btn" href="./recette.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Aperçu</a></td>
+        <td>
+          <a class="btn" href="./recette.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>"><i class="fa-solid fa-trash-can"></i></a></td>
       <p>
-        <td><a class="btn btn-success" href="./modifier.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Modifier</a></td>
-      <p>
-        <td><a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id_recipes"]; ?>">Supprimer</a></td>
+      <td><?= $tabcontent[$i]["vedette"]; ?></td>
       <p>
     </tr>
 
@@ -718,8 +699,12 @@ function cruduser()
   include './bdd.php';
   $postx = $bdd->query('SELECT
 *
-FROM
-  utilisateurs');
+From
+    utilisateurs Inner Join
+    user_role On user_role.id_user = utilisateurs.id_user Inner Join
+    roles On user_role.id_role = roles.id_role
+  
+  ');
 
   while ($post = $postx->fetch()) {
     $tabcontent[] = [
@@ -729,6 +714,7 @@ FROM
       'prenom' => $post['prenom'],
       'avatar' => $post['avatar'],
       'email' => $post['email'],
+      'label' => $post['label'],
     ];
   }
 
@@ -737,7 +723,7 @@ FROM
       <p>
       <td><?= $tabcontent[$i]["username"]; ?></td>
       <p>
-        <td><img style="width:50px;height:50px;" src="<?= $tabcontent[$i]["avatar"]; ?>"></td>
+        <td><img class="avatarcrud" src="<?= $tabcontent[$i]["avatar"]; ?>"></td>
       <p>
         <td> <?= $tabcontent[$i]["prenom"]; ?> </td>
       <p>
@@ -745,9 +731,12 @@ FROM
       <p>
       <td> <?= $tabcontent[$i]["email"]; ?> </td>
       <p>
-        <td><a class="btn btn-success" href="./modifier_user.php?id=<?= $tabcontent[$i]["id"]; ?>">Modifier</a></td>
+      <td> <?= $tabcontent[$i]["label"]; ?> </td>
       <p>
-        <td><a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id"]; ?>">Supprimer</a></td>
+        <td>
+        <a class="btn btn-success" href="./modifier_user.php?id=<?= $tabcontent[$i]["id"]; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id"]; ?>"><i class="fa-solid fa-trash-can"></i></a>
+        </td>
       <p>
     </tr>
   <?php
@@ -782,8 +771,9 @@ categories');
               
               <td><img src="<?= $tabcontent[$i]["icon"]; ?>"></td>
             <p>
-              <td><a class="btn btn-danger" href="">Supprimer</a></td>
-            <p>
+              <td> 
+          <a class="btn btn-success" href="./modifier.php?id=<?= $tabcontent[$i]["id_cat"]; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id_cat"]; ?>"><i class="fa-solid fa-trash-can"></i></a></td>
           </tr>
   <?php
     $bdd->connection = null;

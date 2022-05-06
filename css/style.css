@@ -18,6 +18,7 @@ a.link{
   color: inherit; 
 }
 
+
 html {
   background-color: var(--bck-color);
 }
@@ -58,6 +59,8 @@ body {
   height: 150px;
   left: 590px;
   top: 15px;
+  animation: bounceInDown;
+  animation-duration: 1s;
 }
 
 .text-home{
@@ -113,6 +116,7 @@ itemsD {
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.086);
 }
 
+
 .cat-n {
   position: absolute;
   width: 116px;
@@ -128,6 +132,7 @@ itemsD {
 .titre-recette {
   position: absolute;
   height: 154px;
+  width: auto;
   left: 40px;
   top: 120px;
   font-style: normal;
@@ -139,7 +144,8 @@ itemsD {
 
 .text-home {
   position: absolute;
-  width: 520px;
+  width: auto;
+  padding-right: 20px;
   height: 56px;
   left: 40px;
   top: 295px;
@@ -245,6 +251,10 @@ itemsD {
   padding: 20px;
   background-color: black;
   border-radius: 16px;
+}
+.view_button:hover {
+animation: shakeX;
+animation-duration: 2.5s;
 }
 
 .view_button:hover {
@@ -1092,9 +1102,10 @@ footer {
 }
 
 /* MODE TABLETTE_________________________________________________________________________________________ */
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .circle {
     z-index: -1;
+
   }
 
   .gridtop {
