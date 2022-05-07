@@ -1235,6 +1235,44 @@ footer {
 
 
 @media screen and (max-width: 650px) {
+
+
+  .titre-recette {
+    font-size: 44px;
+    line-height: 37px;
+}
+
+
+.boutton-time {
+  left: 20px;
+  top: 390px;
+
+}
+
+.boutton-fork {
+  left: 160px;
+}
+
+.view_button{
+
+  left: 50px;
+  top: 450px;
+}
+
+  img.topdroite {
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.gridtop {
+  
+}
+
+itemsD{
+  
+}
+
   .categories-bar {
     grid-template-columns: auto;
     grid-template-rows: 1fr 1fr;

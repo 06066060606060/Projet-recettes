@@ -13,8 +13,8 @@ session_start();
   <script type="text/javascript" src=".././js/Myfunctions.js"></script>
   <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href=".././css/style.css" />
   <link rel="stylesheet" href=".././css/navbar.css" />
+  <link rel="stylesheet" href=".././css/style.css" />
 </head>
 
 <body>

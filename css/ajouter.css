@@ -200,4 +200,13 @@ input[type="submit"]:hover {
     padding-right: 40px;
   }
 
+  .griduser {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+    align-items: center;
+    justify-items: center;
+}
+
 }
