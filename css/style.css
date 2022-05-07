@@ -1,0 +1,1369 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Variables css */
+:root {
+  --bck-color: #e4e6f1;
+  scroll-behavior: smooth;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+*::selection {
+  background-color: #8b8b8b;
+  color: white;
+}
+
+a.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  background-color: var(--bck-color);
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  padding: 10px;
+  background: white;
+  user-select: none;
+}
+
+/*//------grid--recette-du-jour------------// */
+.gridtop {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: end;
+  align-items: stretch;
+}
+
+.topdroite {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 50px 50px 0px;
+  filter:brightness(100%) contrast(120%) saturate(100px);
+  -webkit-filter:brightness(100%) contrast(120%) saturate(100%);
+  transition:-webkit-filter 0.3s ease-in-out;
+}
+
+.topdroite:hover {
+  filter:brightness(90%) contrast(160%) saturate(100%); 
+  -webkit-filter: brightness(90%) contrast(160%) saturate(100%); 
+}
+
+
+
+
+.topblue {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 623px;
+}
+
+.circle {
+  z-index: 1;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 590px;
+  top: 15px;
+  animation: bounceInDown;
+  animation-duration: 1s;
+}
+
+.text-home {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.imgavatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.article {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+itemsG {
+  position: relative;
+  margin-left: 10px;
+  border-radius: 50px 0px 0px 50px;
+}
+
+itemsD {
+  margin-right: 10px;
+  border-radius: 0px 50px 50px 0px;
+}
+
+.topblue {
+}
+
+.topright {
+}
+
+.icon-img {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.icone1 {
+  position: absolute;
+  width: 156px;
+  height: 45px;
+  left: 50px;
+  top: 50px;
+  background-color: white;
+  border-radius: 20px;
+  filter: drop-shadow(10px 20px 40px rgba(41, 64, 70, 0.441));
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.086);
+}
+
+.cat-n {
+  position: absolute;
+  width: 116px;
+  height: 24px;
+  left: 55px;
+  top: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+
+.titre-recette {
+  position: absolute;
+  height: 154px;
+  width: auto;
+  left: 40px;
+  top: 120px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 77px;
+  letter-spacing: -0.04em;
+}
+
+.text-home {
+  position: absolute;
+  width: auto;
+  padding-right: 20px;
+  height: 56px;
+  left: 40px;
+  top: 295px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.612);
+}
+
+.boutton-time {
+  position: absolute;
+  width: 139px;
+  height: 40px;
+  left: 45px;
+  top: 390px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+
+.timer {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.fa-solid.fa-stopwatch {
+  padding: 10px;
+  margin-left: 15px;
+  margin-top: 3px;
+}
+
+.fa-solid.fa-utensils {
+  padding: 10px;
+  margin-left: 15px;
+  margin-top: 3px;
+}
+
+.boutton-fork {
+  position: absolute;
+  width: 139px;
+  height: 40px;
+  left: 200px;
+  top: 390px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+
+.cat-0 {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.divautor {
+  position: absolute;
+  display: grid;
+  grid-template-columns: auto auto;
+  left: 20px;
+  top: 535px;
+}
+
+.imga {
+  margin-left: 30px;
+}
+
+.imgb {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.nameautor {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+}
+
+.date_autor {
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.view_button {
+  position: absolute;
+  display: block;
+  color: white;
+  width: 200px;
+  height: 60px;
+  left: 370px;
+  top: 530px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 16px;
+}
+.view_button:hover {
+  animation: shakeX;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+.view_button:hover {
+  background-color: rgba(0, 0, 0, 0.679);
+}
+
+.view_button:active {
+  background-color: rgba(0, 0, 0, 0.444);
+}
+
+.btn-title {
+  margin-left: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+
+.fa-solid.fa-circle-play {
+  margin-left: 10px;
+}
+
+/* FIN---GRID--RECETTES--DU--JOUR */
+
+/* GRID CATEGORIES */
+.categories-bar {
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: 20% auto 15%;
+  align-items: center;
+}
+
+.cat-title {
+  justify-content: start;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.all-cat {
+  background-color: #e7fafe;
+  width: 200px;
+  height: 60px;
+  padding: 20px;
+  padding-left: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  border-radius: 16px;
+}
+
+.all-cat:hover {
+  background-color: #cdf7ff;
+}
+
+.all-cat:active {
+  background-color: #cdf7ffb0;
+}
+
+.grid-cat {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 35px;
+}
+.cat-img {
+  padding-top: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 60px;
+  -webkit-box-reflect: below -130px linear-gradient(transparent, rgba(0, 0, 0, 0.138));
+}
+
+.cat-img:hover {
+  animation: shakeY;
+  animation-duration: 2s;
+}
+
+.cat-title2 {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  margin-top: -20px;
+}
+
+.container-cat-1 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.789) 0%,
+    #f2f4ef 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-1:active {
+  border: solid 1px rgba(0, 0, 0, 0.197);
+}
+
+.container-cat-2 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #f2faee 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-2:active {
+  border: solid 1px rgba(0, 0, 0, 0.197);
+}
+
+.container-cat-3 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #faebea 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-3:active {
+  border: solid 1px rgba(0, 0, 0, 0.197);
+}
+
+.container-cat-4 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #fef6e8 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-4:active {
+  border: solid 1px rgba(0, 0, 0, 0.197);
+}
+
+.container-cat-5 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #f5f5f5 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-5:active {
+  border: solid 1px rgba(0, 0, 0, 0.197);
+}
+
+.container-cat-6 {
+  width: 180px;
+  height: 202px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #f5f5f5 40%
+  );
+  border-radius: 30px;
+}
+
+.container-cat-6:active {
+  border: solid 1px rgba(0, 0, 0, 0.197);
+}
+
+/* FIN--------GRID-------------CAT */
+
+/* DEBUT GRID A 9 CELLULE */
+.div-grid-recettes {
+  padding-top: 150px;
+  text-align: center;
+}
+
+.title-grid-recettes {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.text-grid-recettes {
+  margin-top: 40px;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.ninegrid {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 40px;
+}
+
+.cell {
+  position: relative;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.53) 0%,
+    #eafafd 30%
+  );
+  border-radius: 20px;
+  width: 400px;
+  height: 434px;
+}
+
+.cell:nth-child(6) {
+  background-image: url(../images/01.png);
+  background-size: cover;
+  border-radius: 0%;
+  width: 400px;
+  height: 434px;
+  filter:brightness(100%) contrast(120%) saturate(100px);
+  -webkit-filter:brightness(100%) contrast(120%) saturate(100%);
+}
+
+.cell:nth-child(6) img {
+  visibility: hidden;
+}
+.cell:nth-child(6) p {
+  visibility: hidden;
+}
+
+.cell:nth-child(6) i {
+  visibility: hidden;
+}
+
+.cell:nth-child(6) span {
+  visibility: hidden;
+}
+
+.cell:nth-child(6) .dotlike {
+  visibility: hidden;
+}
+
+.cell0 {
+  background: linear-gradient(180deg, #357355 0%, #1d483b 100%);
+  width: 400px;
+  height: 434px;
+}
+
+.cellx {
+  background-image: url(../images/01.png);
+  background-size: cover;
+  border-radius: 0%;
+  width: 400px;
+  height: 434px;
+  filter:brightness(100%) contrast(120%) saturate(100px);
+  -webkit-filter:brightness(100%) contrast(120%) saturate(100%);
+}
+
+.dotlike {
+  position: absolute;
+  z-index: 1;
+  top: 35px;
+  left: 315px;
+  height: 48px;
+  width: 48px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+}
+
+.flike.fa-solid.fa-heart {
+  color: #c4c8c9;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  left: 14px;
+}
+
+.flike.fa-solid.fa-heart:hover {
+  color: #949595;
+}
+
+.flike.fa-solid.fa-heart:active {
+  color: #e24f00;
+}
+
+.flike.fa-solid.fa-heart:visited {
+  color: #e24f00;
+}
+
+.img9 {
+  position: absolute;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 20px;
+  width: 368px;
+  height: 250px;
+  filter:brightness(100%) contrast(120%) saturate(100px);
+  -webkit-filter:brightness(100%) contrast(120%) saturate(100%);
+  transition:-webkit-filter 0.3s ease-in-out;
+}
+
+.img9:hover {
+  transform: scale(1.05);
+  transition: transform 330ms ease-in-out;
+  filter:brightness(90%) contrast(150%) saturate(100%); 
+  -webkit-filter: brightness(90%) contrast(150%) saturate(100%); 
+}
+
+.img10 {
+  position: absolute;
+  margin-top: 62px;
+  margin-left: 20px;
+  margin-right: 16px;
+}
+
+.img10:hover {
+  transform: scale(1.05);
+  transition: transform 330ms ease-in-out;
+}
+
+.img11 {
+  z-index: 2;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 120px;
+  margin-right: 16px;
+}
+
+.recette9-title {
+  position: absolute;
+  width: 352px;
+  height: 64px;
+  left: 15px;
+  top: 290px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+}
+
+.boutton-timeCell {
+  position: absolute;
+  height: 24px;
+  top: 370px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  letter-spacing: -0.02em;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.boutton-catCell {
+  position: absolute;
+  height: 24px;
+  top: 370px;
+  left: 120px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.iconT.fa-solid.fa-stopwatch {
+  color: #000000;
+  margin-left: 10px;
+}
+
+.iconC.fa-solid.fa-solid.fa-utensils {
+  color: #000000;
+}
+
+/* FIN GRID 9 CELLULES */
+
+/* GRID 2__________________________________________________________________________ */
+
+.grid_every {
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.titre-every {
+  white-space: pre-line;
+  position: absolute;
+  margin-top: 40px;
+  left: 40px;
+  top: 120px;
+  width: 600px;
+  height: 116px;
+  left: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.text-every {
+  position: absolute;
+  width: 520px;
+  height: 56px;
+  left: 20px;
+  top: 360px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.612);
+}
+
+.view_every {
+  position: absolute;
+  color: white;
+  width: 200px;
+  height: 60px;
+  left: 25px;
+  top: 490px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 16px;
+}
+
+.btn-learn {
+  margin-left: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+}
+
+.view_every:hover {
+  background-color: rgba(0, 0, 0, 0.757);
+}
+
+.view_every:active {
+  background-color: rgba(0, 0, 0, 0.554);
+}
+
+.jongleur {
+  position: relative;
+  background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #e7f9fd 100%);
+  border-radius: 30px;
+}
+.img_jongleur {
+}
+
+.tomates {
+  position: absolute;
+  top: 400px;
+  left: -40px;
+  animation: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.steak {
+  position: absolute;
+  top: 100px;
+  left: 110px;
+  animation: bounce;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.onion {
+  position: absolute;
+  top: 120px;
+  left: 460px;
+  animation: bounce;
+  animation-delay: 0.7s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.salade {
+  position: absolute;
+  top: 260px;
+  left: 580px;
+  animation: bounce;
+  animation-delay: 0.9s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+/* DEBUT CELLULE GRID8____________________________________________________________________ */
+.grid88 {
+  margin-top: 200px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.titre-cell88 {
+  position: absolute;
+  width: 507px;
+  height: 116px;
+  left: 90px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.text-cell88 {
+  position: absolute;
+  top: 30px;
+  width: 600px;
+  height: 56px;
+  left: 700px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* FIN TITRE GRID 8 */
+
+/* DEBUT GRID 8 */
+
+.title-grid-88 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.text-grid-88 {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.grid888 {
+  margin-top: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.grid887 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.grid889 {
+  margin-top: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.cell8 {
+  position: relative;
+  border-radius: 20px;
+  width: 290px;
+  height: 316px;
+}
+
+.img98 {
+  position: absolute;
+  width: 290px;
+  height: 200px;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 20px;
+  filter:brightness(100%) contrast(120%) saturate(100px);
+  -webkit-filter:brightness(100%) contrast(120%) saturate(100%);
+  transition:-webkit-filter 0.3s ease-in-out;
+}
+
+.img98:hover {
+  transform: scale(1.05);
+  transition: transform 330ms ease-in-out;
+  filter:brightness(90%) contrast(150%) saturate(100%); 
+  -webkit-filter: brightness(90%) contrast(150%) saturate(100%); 
+}
+
+
+.recette8-title {
+  position: absolute;
+  width: 290px;
+  height: 52px;
+  left: 15px;
+  top: 230px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.04em;
+}
+
+.boutton-timeCell8 {
+  position: absolute;
+  height: 24px;
+  top: 290px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.boutton-catCell8 {
+  position: absolute;
+  height: 24px;
+  top: 290px;
+  left: 120px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.iconT8.fa-solid.fa-stopwatch {
+  color: #000000;
+  margin-left: 10px;
+}
+
+.iconC8.fa-solid.fa-solid.fa-utensils {
+  color: #000000;
+}
+
+.dotlike8 {
+  position: absolute;
+  z-index: 1;
+  top: 35px;
+  left: 240px;
+  height: 48px;
+  width: 48px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+}
+
+.flike8.fa-solid.fa-heart {
+  color: #c4c8c9;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  left: 14px;
+}
+
+.flike8.fa-solid.fa-heart:hover {
+  color: #949595;
+}
+
+.flike8.fa-solid.fa-heart:active {
+  color: #e24f00;
+}
+
+.flike8.fa-solid.fa-heart:visited {
+  color: #e24f00;
+}
+
+/*  DEBUT DELICIOUS__________________________________________________ */
+.delicious {
+  position: relative;
+  margin-top: 170px;
+  max-width: 1280px;
+  min-height: 442px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e7f9fd;
+  border-radius: 70px;
+  overflow: hidden;
+}
+
+.titre-delicious {
+  padding-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 589px;
+  height: 58px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+}
+
+.text-delicious {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 620px;
+  height: 56px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.mailbar {
+  position: relative;
+}
+.formail {
+  margin-top: 60px;
+  background-color: white;
+  width: 480px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 24px;
+}
+
+.btn-mail {
+  position: absolute;
+  top: 10px;
+  left: 710px;
+  text-align: center;
+  color: white;
+  width: 160px;
+  height: 60px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 16px;
+}
+
+.btn-mail:hover {
+  background-color: rgba(0, 0, 0, 0.77);
+}
+
+.btn-mail:active {
+  background-color: black;
+}
+
+.ymail {
+  position: absolute;
+  padding-top: 32px;
+  padding-left: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.imgsalad {
+  position: absolute;
+  left: 0px;
+  top: 65px;
+  animation: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.imgsalad2 {
+  position: absolute;
+  top: 175px;
+  right: -130px;
+  animation: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+/* FIN DELICIOUS BOX */
+
+/*  FOOTER BAR______________________________________ */
+.footernav {
+  margin-top: 150px;
+  display: grid;
+  height: 80px;
+  grid-template-columns: 100px 1fr auto auto auto auto auto;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.footernav a {
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-style: Medium;
+  font-weight: 500;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+footer {
+  margin-top: 10px;
+  padding-left: 40px;
+  padding-right: 50px;
+  height: 120px;
+}
+
+.footer p {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.footer i {
+  font-size: 24px;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: right;
+  margin-bottom: 100px;
+}
+
+.spacerfoot {
+  width: 20px;
+}
+
+.footernav a:hover {
+  color: black;
+}
+
+/* MODE TABLETTE_________________________________________________________________________________________ */
+@media screen and (max-width: 1200px) {
+  .circle {
+    z-index: -1;
+  }
+
+  .gridDr {
+    visibility: hidden;
+  }
+
+  .gridtop {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    align-items: stretch;
+  }
+
+  .gridtop img {
+    padding-top: 10px;
+    border-radius: 50px 50px 50px 50px;
+  }
+
+  .topdroite {
+    width: 623px;
+    height: auto;
+  }
+
+  .grid88 {
+    margin-top: 50px;
+  }
+
+  .titre-cell88 {
+    left: 0px;
+  }
+
+  .text-cell88 {
+    visibility: hidden;
+  }
+
+  .categories-bar {
+    grid-template-columns: 20% auto 15% 5%;
+  }
+
+  .grid-cat {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 35px;
+    row-gap: 35px;
+    justify-items: center;
+  }
+
+  .text-grid-recettes {
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .ninegrid {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 40px;
+    justify-items: center;
+  }
+
+  .grid888 {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  .grid887 {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
+/* MODE MOBILE__________________________________________________________________ */
+@media screen and (max-width: 880px) {
+  body {
+    width: 100%;
+  }
+
+  .topnav {
+    grid-template-columns: auto;
+    height: 600px;
+  }
+
+  .img_play {
+    border-radius: 30px;
+    width: 640px;
+    height: auto;
+  }
+
+  .resumerecettes {
+    height: 161px;
+    width: auto;
+  }
+
+  .gridGr {
+    width: 100%;
+    height: auto;
+  }
+
+  .grid-cat {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 35px;
+    row-gap: 35px;
+  }
+
+  .topnav span {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .ninegrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .grid888 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .grid_recette {
+    justify-items: center;
+    align-items: center;
+    display: grid;
+  }
+
+  .gridingredientD {
+    visibility: hidden;
+  }
+
+  .imgrecet {
+    margin-right: 20px;
+    float: left;
+    border-radius: 30px;
+    width: 600px;
+    height: auto;
+  }
+
+  .grid889 {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .titre-recette {
+    font-size: 44px;
+    line-height: 37px;
+  }
+
+  .boutton-time {
+    left: 20px;
+    top: 390px;
+  }
+
+  .boutton-fork {
+    left: 160px;
+  }
+
+  .view_button {
+    left: 50px;
+    top: 450px;
+  }
+
+  img.topdroite {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .gridtop {
+  }
+
+  itemsD {
+  }
+
+  .categories-bar {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+  }
+  .grid-cat {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 35px;
+    row-gap: 35px;
+  }
+
+  .ninegrid {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 40px;
+  }
+
+  .grid888 {
+    margin-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}

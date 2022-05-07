@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" src=".././js/Myfunctions.js"></script>
+  <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href=".././css/style.css" />
+  <link rel="stylesheet" href=".././css/navbar.css" />
+</head>
+
+<body>
+  <div id="overlay"></div>
+  <!-- BARRE DE MENU -->
+  <div class="topnav">
+    
+      <a class="logo" href="./index.html"><img src=".././images/Foodieland.png" /></a>
+      <div class="spacer"></div>
+      <span> <a href="./index.html">Home</a></span>
+      <span> <a href="./recette.html">Recipes</a></span>
+      <span><a href="./backend.html">My Recipes</a></span>
+      <span><a href="./logout.html">Logout</a></span>
+      <div></div>
+      <div></div>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>  </div>
+  <!----------------------------------------->
+
+  <!-- LOGIN -->
+  <div id="login">
+
+  <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
+  <h1>Login</h1>
+  <form action="./authenticate.html" method="post">
+    <label for="username">
+      <i class="fa-solid fa-user"></i>
+    </label>
+    <input type="text" name="username" placeholder="Username" id="username"  />
+    <label for="password">
+      <i class="fa-solid fa-lock"></i>
+    </label>
+    <input type="password" name="password" placeholder="Password" id="password"  />
+    <input type="submit" value="Login" />
+  </form>  </div>
+  <!-- FIN LOGIN -->
+
+  <!-- 1ERE GRID -->
+  <article class="article">
+   
+
+    <grid class="gridtop">
+      <!-- grid cell gauche -->
+      <itemsG>
+        <img class="topblue" src=".././images/Rectangle1.png" />
+        <div class="divicon">
+          <img class="circle" src=".././images/Badge.png" />
+
+          <p class="icone1">
+            <img class="icon-img" src=".././images/SeaFood.png" />
+            <span class="cat-n">SeaFood</span>
+          </p>
+        </div>
+        <div class="divtext">
+          <h1 class="titre-recette">Brown Sugar Baked Salmon</h1>
+          <p class="text-home">
+            What I love about this recipe is that everything needed for a delicious meal happens on one pan. Hello, easy cleanup! We love roasted green beans and salmon together, but you can substitute most veggies in their place (see below for some suggestions).
+
+</h1>
+          </p>
+        </div>
+        <div class="boutton-time">
+          <i class="fa-solid fa-stopwatch"></i>
+          <span class="timer">15 minutes</span>
+        </div>
+
+        <div class="boutton-fork">
+          <i class="fa-solid fa-utensils"></i>
+          <span class="cat-0">Lunch</span>
+        </div>
+
+        <div class="divautor">
+          <p class="imga"><img class="imgavatar" src=".././images/avatar.png" /></p>
+          <div class="divname">
+            <p class="nameautor">David &zwnj; &zwnj;Goodenough</p>
+            <p class="date_autor">11 April 2022</p>
+          </div>
+        </div>
+
+        <div class="view_button">
+          <span class="btn-title"><a class="link" href="./recette.html?id=15">View Recipes</a></span>
+          <i class="fa-solid fa-circle-play"></i>
+        </div>
+      </itemsG>
+
+      <!-- grid cell droite -->
+      <itemsD>
+        <img class="topdroite" src=".././images/StockSnap_WHVVP2NIA0.jpg" />
+      </itemsD>
+    </grid>
+  
+    </article>
+
+  <article class="article">
+    <div class="categories-bar">
+      <span class="cat-title">Categories</span>
+      <div></div>
+      <span class="all-cat">View All Categories</span>
+    </div>
+
+    <div class="grid-cat">
+      <div class="container-cat-1">
+        <img class="cat-img" src=".././images/1.png" />
+        <span class="cat-title2">Breakfast</span>
+      </div>
+      <div class="container-cat-2">
+        <img class="cat-img" src=".././images/2.png" />
+        <span class="cat-title2">Vegan</span>
+      </div>
+      <div class="container-cat-3">
+        <img class="cat-img" src=".././images/3.png" />
+        <span class="cat-title2">Meat</span>
+      </div>
+      <div class="container-cat-4">
+        <img class="cat-img" src=".././images/4.png" />
+        <span class="cat-title2">Dessert</span>
+      </div>
+      <div class="container-cat-5">
+        <img class="cat-img" src=".././images/5.png" />
+        <span class="cat-title2">Lunch</span>
+      </div>
+      <div class="container-cat-6">
+        <img class="cat-img" src=".././images/6.png" />
+        <span class="cat-title2">Chocolate</span>
+      </div>
+
+    </div>
+  </article>
+
+  <article class="article">
+    <div class="div-grid-recettes">
+      <span class="title-grid-recettes">Simple and tasty recipes</span>
+      <p class="text-grid-recettes">
+        Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqut enim ad minim
+      </p>
+    </div>
+
+    <div class="ninegrid">
+      
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=15"><img class="img9" src=".././images/StockSnap_WHVVP2NIA0.jpg" /></a>
+      <p class="recette9-title">Brown Sugar Baked Salmon</p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Lunch</span>
+      </div>
+    </div>
+
+  
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=6"><img class="img9" src=".././images/spagetti.jpg" /></a>
+      <p class="recette9-title">Fresh and Easy Veggie Spaghetti</p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">20 minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Vegan</span>
+      </div>
+    </div>
+
+  
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=13"><img class="img9" src=".././images/burger.jpg" /></a>
+      <p class="recette9-title">Burger with Egg, Ham and Peppers</p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Meat</span>
+      </div>
+    </div>
+
+  
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=2"><img class="img9" src=".././images/pasta-s.jpg" /></a>
+      <p class="recette9-title">Quick and Easy Pasta Salad</p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">10 minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Lunch</span>
+      </div>
+    </div>
+
+  
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=14"><img class="img9" src=".././images/salade-mais.jpg" /></a>
+      <p class="recette9-title">Lemony Arugula Salad with tomatoes</p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Vegan</span>
+      </div>
+    </div>
+
+  
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=12"><img class="img9" src=".././images/pasta-mushroom.jpg" /></a>
+      <p class="recette9-title">Easy Garlic Mushroom Pasta</p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Lunch</span>
+      </div>
+    </div>
+
+  
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=7"><img class="img9" src=".././images/courgette.jpg" /></a>
+      <p class="recette9-title">Cheese Basil Baked Zucchini </p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">20 minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Vegan</span>
+      </div>
+    </div>
+
+  
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=10"><img class="img9" src="../images/cupcake.jpg" /></a>
+      <p class="recette9-title">Easy Cupcakes from Scratch</p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">5 Minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Dessert</span>
+      </div>
+    </div>
+
+  
+    <div class="cell">
+      <div class="dotlike"><i class="flike fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=11"><img class="img9" src=".././images/mais.jpg" /></a>
+      <p class="recette9-title">Smoky Black Bean and Corn Salad</p>
+      <div class="boutton-timeCell">
+        <i class="iconT fa-solid fa-stopwatch"></i>
+        <span class="timercell">10 minutes</span>
+      </div>
+      <div class="boutton-catCell">
+        <i class="iconC fa-solid fa-utensils"></i>
+        <span class="Catcell">Lunch</span>
+      </div>
+    </div>
+
+  
+      </div>
+  </article>
+
+  <article class="article">
+    <grid class="grid_every">
+      <!-- grid cell gauche -->
+      <itemsG>
+        <img src=".././images/rect-blznc.png" />
+        <div class="divtext">
+          <h1 class="titre-every">
+            Everyone can be a
+            chef in their own kitchen</h1>
+          <p class="text-every">
+            Sunt in culpa qui officia deserunt mollit anim id Sunt in culpa
+            qui officia deserunt mollit anim id
+          </p>
+        </div>
+        <div class="view_every">
+          <span class="btn-learn"><a class="link" onclick="">Learn More</a></span>
+        </div>
+      </itemsG>
+
+      <!-- grid cell droite -->
+      <itemsD>
+        <div class="jongleur">
+          <div class="steak"><img src=".././images/image21.png" /></div>
+          <div class="salade"><img src=".././images/image22.png" /></div>
+          <div class="tomates"><img src=".././images/image23.png" /></div>
+          <div class="onion"><img src=".././images/image24.png" /></div>
+          <img class="img_jongleur" src=".././images/dd.png" />
+        </div>
+      </itemsD>
+    </grid>
+  </article>
+
+  <article class="article">
+    <div class="grid88">
+      <div class="cellGT">
+        <h1 class="titre-cell88">
+          Try this delicious recipe to make your day
+        </h1>
+      </div>
+      <div class="cellDT">
+        <p class="text-cell88">
+          Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqut enim ad minim
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- GRID 88______________________________ -->
+
+  <article class="article">
+    <div class="grid888">
+    
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=2"> <img class="img98" src=".././images/pasta-s.jpg" /></a>
+      <p class="recette8-title">Quick and Easy Pasta Salad</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">10 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Lunch</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=15"> <img class="img98" src=".././images/StockSnap_WHVVP2NIA0.jpg" /></a>
+      <p class="recette8-title">Brown Sugar Baked Salmon</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Lunch</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=7"> <img class="img98" src=".././images/courgette.jpg" /></a>
+      <p class="recette8-title">Cheese Basil Baked Zucchini </p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">20 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Vegan</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=13"> <img class="img98" src=".././images/burger.jpg" /></a>
+      <p class="recette8-title">Burger with Egg, Ham and Peppers</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Meat</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=11"> <img class="img98" src=".././images/mais.jpg" /></a>
+      <p class="recette8-title">Smoky Black Bean and Corn Salad</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">10 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Lunch</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=1"> <img class="img98" src=".././images/fruits.jpg" /></a>
+      <p class="recette8-title">Mixed Tropical Fruit Salad</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Breakfast</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=4"> <img class="img98" src=".././images/shrimp2.jpg" /></a>
+      <p class="recette8-title">Spicy Shrimp and Clam Pasta </p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Lunch</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=16"> <img class="img98" src=".././images/viandes.jpg" /></a>
+      <p class="recette8-title">Gordon Ramsay’s roast beef fillet</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Meat</span>
+      </div>
+    </div>
+
+
+  
+      </div>
+  </article>
+
+  <article class="article">
+    <div class="delicious">
+      <h1 class="titre-delicious">Deliciousness to your inbox</h1>
+      <p class="text-delicious">
+        Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqut enim ad minim
+      </p>
+      <div class="mailbar">
+        <div class="formail">
+          <span class="ymail">Your email here...</span>
+          <div class="btn-mail"><a class="link" href="http://"> Subscribe</a></div>
+        </div>
+      </div>
+      <img class="imgsalad" src=".././images/salads.png" />
+      <img class="imgsalad2" src=".././images/22.png" />
+    </div>
+  </article>
+
+  <div class="footernav">
+    
+  <a class="logofoot" href="./index.html"><img src=".././images/Foodieland.png" /></a>
+  <div class="spacerfoot"></div>
+  <span> <a href="./index.html">Home</a></span>
+  <span> <a href="./recette.html">Recipes</a></span>
+  <span><a href="./contact.html">Contact</a></span>
+  <span><a href="./inscription.html">Register</a></span>  </div>
+
+  <footer>
+    <div class="footer">
+      <p>©2022 Site Recette Formation Simplon</p>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+  </footer>
+</body>
+
+</html>

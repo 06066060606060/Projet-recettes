@@ -1,0 +1,212 @@
+
+.title_add {
+text-align: center;
+  height: 77px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 77px;
+  letter-spacing: -0.04em;
+  color: #000000;
+}
+
+
+
+.title_incription {
+  text-align: center;
+    height: 77px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 77px;
+    letter-spacing: -0.04em;
+    color: #000000;
+  }
+
+.grid_add{
+
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  align-items: start;
+}
+
+#time{
+  width: 100%;
+}
+#time2{
+  width: 100%;
+}
+
+#name{
+  width: 100%;
+}
+
+#type{
+  width: 100%;
+}
+
+#vedette{
+  width: 100%;
+}
+
+
+.resume{
+  height: 250px;
+}
+
+.videourl{
+  width: 100%;
+}
+
+.resume{
+  width: 100%;
+}
+
+.grid2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid2 h2{
+padding: 20px;
+}
+
+.gridingredient{
+  display: grid;
+  justify-content: center;
+}
+
+.label-calories{
+  padding-top: 10px;
+}
+
+
+
+
+.label-file {
+  color: white;
+  background-color: rgb(118, 118, 118);
+  border-radius: 16px;
+  margin-top: 6px;
+  padding: 5px;
+  padding-left:  20px;
+  padding-right:  20px;
+  min-width: 150px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.label-file:hover {
+  background-color: rgba(0, 0, 0, 0.679);
+}
+
+.label-file:active {
+  background-color: rgb(0, 0, 0);
+}
+
+
+.input-file {
+  display: none;
+}
+
+.boutonimg {
+  margin-top: 6px;
+  padding: 10px;
+
+}
+
+.imgadd{
+padding: 20px;
+}
+
+.bouton{
+padding: 40px;
+
+}
+
+.griduser{
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 5px;
+  align-items: center;
+  justify-items: center;
+
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  resize: vertical;
+  border-radius: 10px;
+  resize: none;
+}
+
+.titre-add{
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #454545;
+}
+
+.btn_add {
+  padding: 15px;
+  background-color: black;
+  color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 16px;
+  border-collapse: collapse;
+  border-style: none;
+  margin-top: 20px ;
+
+}
+
+
+@media screen and (max-width: 850px) {
+  .gridtop {
+    grid-template-columns: auto;
+    height: 600px;
+  }
+
+  .grid_add {
+    justify-items: stretch;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form_add {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .griduser {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+    align-items: center;
+    justify-items: center;
+}
+
+}
