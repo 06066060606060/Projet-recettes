@@ -248,7 +248,7 @@ itemsD {
   color: white;
   width: 200px;
   height: 60px;
-  left: 350px;
+  left: 320px;
   top: 530px;
   padding: 20px;
   background-color: black;
@@ -257,6 +257,7 @@ itemsD {
 .view_button:hover {
 animation: shakeX;
 animation-duration: 2.5s;
+animation-iteration-count: infinite;
 }
 
 .view_button:hover {
@@ -1110,6 +1111,10 @@ footer {
 
   }
 
+  .gridDr {
+visibility: hidden;
+}
+
   .gridtop {
     display: grid;
     grid-template-columns: 100%;
@@ -1118,8 +1123,7 @@ footer {
   }
 
   .gridtop img {
-    margin-top: 10px;
-    padding-top: 10px;
+        padding-top: 10px;
     border-radius: 50px 50px 50px 50px;
   }
 
@@ -1229,6 +1233,8 @@ footer {
     grid-template-rows: 1fr 1fr;
   
   }
+
+
 
 }
 

@@ -135,9 +135,10 @@ margin-left: 40px;
 }
 
 .gridDr {
+  margin-top: -35px;
   position: relative;
   width: 400px;
-  height: 600px;
+  height: 560px;
   background: #e7fafe;
   border-radius: 30px;
 }
@@ -580,4 +581,6 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
   }
+
+
 }
