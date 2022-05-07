@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -15,85 +17,458 @@
 </head>
 
 <body>
-  <div id="overlay"></div>
+
   <!-- BARRE DE MENU -->
   <div class="topnav">
     <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href="./categorie.html">Liste des Catégories</a></span>
-    <span> <a href="./utilisateurs.html">Liste des Utilisateurs</a></span>
-    <span onclick=""><a href="#">Logout</a></span>
-    <div></div>
+    
+    <span> <a href="./index.html">Home</a></span>
+    <span> <a href="./categorie.html">Category List</a></span>
+    <span> <a href="./utilisateurs.html">User List</a></span>
+    <span> <a href="./ajouter.html">Add a new Recipe</a></span>
+    <span onclick=""><a href="./logout.html">Logout</a></span>    <div></div>
   </div>
+
 
   <!----------------------------------------->
   <article class="article">
     <div class="table-responsive">
-      <h2 class="title_liste">Liste des Recettes</h2>
-      <table class="table table-hover table-bordered">
-          <thead>
-              <th>titre</th>
-              <p>
-                  <th>image de la recette</th>
-              <p>
-                  <th>Résumé</th>
-              <p>
-                  <th>Catégorie</th>
-              <p>
-                <th>Type</th>
-                <p>
-                  <th>Aperçu</th>
-              <p>
-                  <th>Edition</th>
-              <p>
-                  <th>Supprimer</th>
-              <p>
 
-          </thead>
+ <h5 class=''>Welcome Admin</h2><h2 class='title_liste'>List of all Recipes:</h2>      <table class="table table-hover table-bordered">
+        <thead>
+          <th>ID</th>
+          <p>
+          <th>title</th>
+          <p>
+            <th>picture</th>
+          <p>
+            <th>resume</th>
+          <p>
+            <th>category</th>
+          <p>
+            <th>Type</th>
+          <p>
+            <th>Manage</th>
+          <p>
+          <th>In Front</th>
+          <p>
+        </thead>
 
-          <tbody>
+        <tbody>
               <tr>
-                  <td>Porc au caramel façon créole</td>
-                  <p>
-                      <td><img src=".././images/116.png"></td>
-                  <p>
-                      <td>
-                          <p class="short">The day is almost here when the Microsoft Store will have Microsoft
-                              Teams stocked on its digital shelves. As spotted on the Microsoft 365 roadmap,
-                              it could be just a matter of weeks before Teams officially hits the storefront.
-                              .</p>
-                      </td>
-                  <p>
-                      <td>Viandes</td>
-                      <p>
-                        <td>Plats chaud</td>
-                  <p>
-                      <td><a class="btn" href=".././recette.html">Aperçu</a></td>
-                  <p>
-                      <td><a class="btn btn-success" href="./modifier.html">Modifier</a></td>
-                  <p>
-                      <td><a class="btn btn-danger" href="">Supprimer</a></td>
-                  <p>
-              </tr>
-              <p>
+    <td>9</td>
+      <td>Simple Strawberry and kiwi Pie</td>
+      <p>
+        <td><img class="crudimage" src=".././images/tarte.jpg"></td>
+      <p>
+        <td>
+          <p class="short">Looking for a simple and humble pie? You’ve found it. It’s filled with fresh, sweet strawberries coated in a light strawberry glaze. A glaze that’s just thick enough to hold the strawberries together, but just loose enough so a couple stray strawberries fall out out onto the plate. It’s not perfect — we love that. Not to mention, those stray strawberries are perfect for swiping through some lightly whipped cream.            .</p>
+        </td>
+      <p>
+        <td>Dessert</td>
+      <p>
+        <td>Sweet</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=9"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=9"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=9"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>1</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>14</td>
+      <td>Lemony Arugula Salad with tomatoes</td>
+      <p>
+        <td><img class="crudimage" src=".././images/salade-mais.jpg"></td>
+      <p>
+        <td>
+          <p class="short">It’s funny how certain recipes sneak their way into your weekly rotation. This arugula and couscous salad has done just that. We make it for dinner, eat the leftovers for lunch and have served it to friends more times than I can count.             .</p>
+        </td>
+      <p>
+        <td>Vegan</td>
+      <p>
+        <td>Healthy</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=14"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=14"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=14"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>1</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>8</td>
+      <td>How to Make Crispy Falafel</td>
+      <p>
+        <td><img class="crudimage" src=".././images/falafel.jpg"></td>
+      <p>
+        <td>
+          <p class="short">Falafel is a popular Middle Eastern food made with legumes (most often with chickpeas or fava beans) that’s mixed with herbs, spices, and then deep fried until crisp golden brown on the outside and tender in the middle.            .</p>
+        </td>
+      <p>
+        <td>Meat</td>
+      <p>
+        <td>Hot Recipies</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=8"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=8"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=8"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>10</td>
+      <td>Easy Cupcakes from Scratch</td>
+      <p>
+        <td><img class="crudimage" src="../images/cupcake.jpg"></td>
+      <p>
+        <td>
+          <p class="short">We love these simple, fall inspired cupcakes. They are packed with flavor thanks to pumpkin puree, brown sugar, butter and lots of warm spices like cinnamon, ginger and nutmeg. You can used canned pumpkin puree or try making your own. Here’s our tutorial for making homemade pumpkin puree, if you want to give it a try.            .</p>
+        </td>
+      <p>
+        <td>Dessert</td>
+      <p>
+        <td>Sweet</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=10"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=10"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=10"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>1</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>2</td>
+      <td>Quick and Easy Pasta Salad</td>
+      <p>
+        <td><img class="crudimage" src=".././images/pasta-s.jpg"></td>
+      <p>
+        <td>
+          <p class="short">This pasta salad recipe is easy to make. Made with simple ingredients, this salad is flexible, so you can make this when you are inundated by summer produce or adapt to what is in season. Plus, you are looking at under 20 minutes from start to finish. Not too bad, especially when you can keep it in the fridge for up to 5 days! This recipe uses a vinaigrette based dressing.            .</p>
+        </td>
+      <p>
+        <td>Lunch</td>
+      <p>
+        <td>Hot Recipies</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=2"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=2"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=2"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>1</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>11</td>
+      <td>Smoky Black Bean and Corn Salad</td>
+      <p>
+        <td><img class="crudimage" src=".././images/mais.jpg"></td>
+      <p>
+        <td>
+          <p class="short">Raw, roasted, barbecued, in burritos, sautéed, we’ll take corn anyway we can get it. One of our favorite recipes is this one. It’s not so much a recipe as a “throw everything we adore into a big bowl and stir” kind of dish.            .</p>
+        </td>
+      <p>
+        <td>Lunch</td>
+      <p>
+        <td>Healthy</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=11"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=11"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=11"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>1</td>
+      <td>Mixed Tropical Fruit Salad</td>
+      <p>
+        <td><img class="crudimage" src=".././images/fruits.jpg"></td>
+      <p>
+        <td>
+          <p class="short">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.            .</p>
+        </td>
+      <p>
+        <td>Breakfast</td>
+      <p>
+        <td>Healthy</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=1"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=1"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=1"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>1</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>17</td>
+      <td>Roast Beef with Red Wine Sauce</td>
+      <p>
+        <td><img class="crudimage" src=".././images/viandes.jpg"></td>
+      <p>
+        <td>
+          <p class="short">Nothing says holiday dinner like a show-stopping roast, and I love this combination of sear-roasted beef tenderloin with a deeply flavored red wine sauce. Not only is it elegant, but it’s also simple to make. The sauce can be made mostly in advance so there’s very little fussing at the last minute – and beef tenderloin, believe it or not, is one of the easiest things in the world to cook.
+
+If you’re thinking, “Beef tenderloin is such an expensive cut. What if I overcook it? How will I know when it’s done?” I promise you: you don’t need to be an experienced cook to make a perfect beef tenderloin. All you need is a meat thermometer. The one I use has a leave-in probe and remote monitor (like this one), so I know when the roast is done without ever even opening my oven. There’s no poking, cutting, peeking, or guesswork involved.            .</p>
+        </td>
+      <p>
+        <td>Meat</td>
+      <p>
+        <td>Hot Recipies</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=17"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=17"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=17"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>13</td>
+      <td>Burger with Egg, Ham and Peppers</td>
+      <p>
+        <td><img class="crudimage" src=".././images/burger.jpg"></td>
+      <p>
+        <td>
+          <p class="short">We love a good burger and usually keep them pretty simple — See our No Fuss Hamburger Recipe. That being said, it’s fun to go wild every now and then. Topping burgers with omelets, ham and lots of sauteed onions and peppers most certainly fits into that category.            .</p>
+        </td>
+      <p>
+        <td>Meat</td>
+      <p>
+        <td>Hot Recipies</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=13"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=13"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=13"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>5</td>
+      <td>Strawberry and Blueberry Salad</td>
+      <p>
+        <td><img class="crudimage" src=".././images/fruit.jpg"></td>
+      <p>
+        <td>
+          <p class="short">n recent months, farro has become one of our favorite grains to keep stocked in our pantry. Farro is an ancient whole grain derived from wheat. Farro is not gluten-free, however, it is a tasty whole grain that’s rich in protein and fiber.            .</p>
+        </td>
+      <p>
+        <td>Dessert</td>
+      <p>
+        <td>Healthy</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=5"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=5"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=5"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>3</td>
+      <td>Roasted Asparagus, Ricotta and Pesto</td>
+      <p>
+        <td><img class="crudimage" src=".././images/asperge.jpg"></td>
+      <p>
+        <td>
+          <p class="short">This crostini recipe is simple and fast. We love using asparagus, but other veggies work, too — roasted cauliflower and roasted broccoli are two of our favorites substitutes.            .</p>
+        </td>
+      <p>
+        <td>Lunch</td>
+      <p>
+        <td>Hot Recipies</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=3"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=3"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=3"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>6</td>
+      <td>Fresh and Easy Veggie Spaghetti</td>
+      <p>
+        <td><img class="crudimage" src=".././images/spagetti.jpg"></td>
+      <p>
+        <td>
+          <p class="short">Think of this as a versatile vegetarian pasta recipe that works wonders with a variety of vegetables so you can use whatever you have in the fridge. I like to think of this as a great way to use up any veggie scraps left in the produce drawer.            .</p>
+        </td>
+      <p>
+        <td>Vegan</td>
+      <p>
+        <td>Healthy</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=6"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=6"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=6"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>12</td>
+      <td>Easy Garlic Mushroom Pasta</td>
+      <p>
+        <td><img class="crudimage" src=".././images/pasta-mushroom.jpg"></td>
+      <p>
+        <td>
+          <p class="short">This mushroom pasta recipe was a long time coming! Over the years I’ve shared many mushroom recipes with you, but have never shared our absolute favorite way to enjoy them.            .</p>
+        </td>
+      <p>
+        <td>Lunch</td>
+      <p>
+        <td>Hot Recipies</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=12"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=12"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=12"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>7</td>
+      <td>Cheese Basil Baked Zucchini </td>
+      <p>
+        <td><img class="crudimage" src=".././images/courgette.jpg"></td>
+      <p>
+        <td>
+          <p class="short">We’re always on the lookout for easy and healthy zucchini recipes. Zucchini is available in mass quantities during the summer and is often readily available year round. We’ve already shared one of our favorite zucchini salads, how we quickly saute zucchini, and this zucchini bread with almonds. Now it’s time to share these easy zucchini chips.            .</p>
+        </td>
+      <p>
+        <td>Vegan</td>
+      <p>
+        <td>Hot Recipies</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=7"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=7"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=7"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>16</td>
+      <td>Gordon Ramsay’s roast beef fillet</td>
+      <p>
+        <td><img class="crudimage" src=".././images/viandes.jpg"></td>
+      <p>
+        <td>
+          <p class="short">Gordon Ramsay’s roasted beef fillet is a delicious, succulent recipe that can be on the table in under an hour. A great source of protein and iron, this roasted fillet of beef is served in a fiery tomato tarragon dressing – just leave out the Tabasco if you’re not a fan of spice. The beef fillet – the long tenderloin muscle near the spine – is a surprisingly lean cut of meat, which will melt in your mouth when cooked right. Leave to rest for a few minutes before thinly slicing. A great low-carb dinner as it is, or serve with homemade chips or new potatoes if you’re after something heartier.            .</p>
+        </td>
+      <p>
+        <td>Meat</td>
+      <p>
+        <td>Hot Recipies</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=16"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=16"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=16"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>15</td>
+      <td>Brown Sugar Baked Salmon</td>
+      <p>
+        <td><img class="crudimage" src=".././images/StockSnap_WHVVP2NIA0.jpg"></td>
+      <p>
+        <td>
+          <p class="short">What I love about this recipe is that everything needed for a delicious meal happens on one pan. Hello, easy cleanup! We love roasted green beans and salmon together, but you can substitute most veggies in their place (see below for some suggestions).
+
+            .</p>
+        </td>
+      <p>
+        <td>Lunch</td>
+      <p>
+        <td>SeaFood</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=15"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=15"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=15"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>1</td>
+      <p>
+    </tr>
+
+      <tr>
+    <td>4</td>
+      <td>Spicy Shrimp and Clam Pasta </td>
+      <p>
+        <td><img class="crudimage" src=".././images/shrimp2.jpg"></td>
+      <p>
+        <td>
+          <p class="short">Hi there. It’s me, Joanne. This is an updated post from September 2009, which was only our third month sharing recipes with you. A lot has changed since then. Here’s the little blurb we wrote way back then. If you’re only interested in the recipe, scroll down to the recipe below.            .</p>
+        </td>
+      <p>
+        <td>Lunch</td>
+      <p>
+        <td>SeaFood</td>
+      <p>
+        <td>
+          <a class="btn" href="./recette.html?id=4"><i class="fa-solid fa-eye"></i></a>
+          <a class="btn btn-success" href="./modifier.html?id=4"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppr.html?id=4"><i class="fa-solid fa-trash-can"></i></a></td>
+      <p>
+      <td>0</td>
+      <p>
+    </tr>
+
+  
           </tbody>
       </table>
-  </div>
-
+    </div>
+  
 
   </article>
 
-  <a class="btnadd" href="./ajouter.html">Ajouter Une Recette</a>
+
 
   <div class="footernav">
-    <a class="logofoot" href="#"><img src=".././images/Foodieland.png" /></a>
-    <div class="spacerfoot"></div>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href=".././recette.html">Recettes</a></span>
-    <span><a href=".././contact.html">Contact</a></span>
-    <span><a href=".././inscription.html">Inscription</a></span>
-  </div>
+    
+  <a class="logofoot" href="./index.html"><img src=".././images/Foodieland.png" /></a>
+  <div class="spacerfoot"></div>
+  <span> <a href="./index.html">Home</a></span>
+  <span> <a href="./recette.html">Recipes</a></span>
+  <span><a href="./contact.html">Contact</a></span>
+  <span><a href="./inscription.html">Register</a></span>  </div>
 
   <footer>
     <div class="footer">

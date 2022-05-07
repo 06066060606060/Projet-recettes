@@ -50,6 +50,7 @@ body {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  min-height: 623px;
 }
 
 .circle {
@@ -243,6 +244,7 @@ itemsD {
 
 .view_button {
   position: absolute;
+  display: block;
   color: white;
   width: 200px;
   height: 60px;
@@ -1116,20 +1118,28 @@ footer {
   }
 
   .gridtop img {
+    margin-top: 10px;
+    padding-top: 10px;
     border-radius: 50px 50px 50px 50px;
   }
 
-  itemsG {
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
+  .topdroite{
+    width: 623px;
+    height: auto;
   }
 
-  itemsD {
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-  }
+.grid88{
+  margin-top: 50px;
+
+}
+
+.titre-cell88 {
+  left: 0px;
+}
+
+.text-cell88 {
+  visibility: hidden;
+}
 
   .categories-bar {
     grid-template-columns: 20% auto 15% 5%;
@@ -1143,6 +1153,7 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 35px;
     row-gap: 35px;
+    justify-items: center;
   }
 
   .text-grid-recettes {
@@ -1159,6 +1170,7 @@ footer {
     grid-template-rows: 1fr 1fr;
     column-gap: 40px;
     row-gap: 40px;
+    justify-items: center;
   }
 
   .grid888 {
@@ -1192,18 +1204,41 @@ footer {
     height: 600px;
   }
 
+  .grid-cat {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 35px;
+    row-gap: 35px;
+  }
+
   .topnav span {
     margin-top: 12px;
     text-align: center;
   }
+
+  .ninegrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  
+  .grid888 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  
+  }
+
 }
+
+
 
 @media screen and (max-width: 650px) {
   .categories-bar {
     grid-template-columns: auto;
     grid-template-rows: 1fr 1fr;
   }
-
   .grid-cat {
     margin-top: 80px;
     margin-left: auto;

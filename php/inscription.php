@@ -37,16 +37,38 @@ session_start();
   <article class="article">
   <?php 
   if (isset($_POST['username'])) {
+    $target_dir = ".././images/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if ($check !== false) {
+      $uploadOk = 1;
+      move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+    } else {
+      $uploadOk = 0;
+    }
   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-  $requete = "INSERT INTO utilisateurs VALUES(NULL, '" . $_POST['username'] . "', '" . $password . "', '" . $_POST['Prenom'] . "', '" . $_POST['Nom'] . "', '" . $_POST['mail'] . "', '" . $_POST['Nom'] . "', '" . $_POST['avatar'] . "')";
+  $requete = "INSERT INTO utilisateurs VALUES(NULL, '" . $_POST['username'] . "', '" . $password . "', '" . $target_file . "', '" . $_POST['Nom'] . "', '" . $_POST['Prenom'] . "', '" . $_POST['mail'] . "')";
   $resultat = $bdd->query($requete);
+  $pdo = $bdd;
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $sqlx = "SELECT * FROM `utilisateurs` ORDER BY `id` DESC LIMIT 1";
+  $qx = $pdo->query($sqlx);
+  foreach ($qx as $row) {
+    $newid = $row['id'];
+  }
+
+  $sql2 =  "INSERT INTO `user_role` (`id_user`, `id_role`) VALUES ($newid, '3')";
+  $q1 = $pdo->query($sql2);
+
   if ($resultat)
       echo "<span>Inscription Validée</span>";
   else
       echo "<p>Erreur</p>";
 } ?>
     <h2 class="title_incription">Create an Account</h2>
-    <form action="./inscription.php" method="post">
+    <form action="./inscription.php" method="post" enctype="multipart/form-data">
 
       <div class="griduser">
         <label for="username" class="label">Username:</label>
@@ -60,7 +82,7 @@ session_start();
         <label for="Password" class="label">Password:</label>
         <input type="password" id="cingr" name="password" placeholder="password" />
         <label for="file" class="label-file">Select profile Picture</label>
-        <input id="file" class="input-file" type="file" name="avatar" />
+        <input id="file" name="fileToUpload" class="input-file" type="file" name="avatar" />
         <div class="bouton">
           <input class="btn_add" type="submit" value="Register" />
         </div>

@@ -1,51 +1,53 @@
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src=".././js/Myfunctions.js"></script>
   <title>Document</title>
   <link rel="stylesheet" href=".././css/contact.css" />
   <link rel="stylesheet" href=".././css/navbar.css" />
   <link rel="stylesheet" href=".././css/style.css" />
   <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
   <div id="overlay"></div>
   <!-- BARRE DE MENU -->
   <div class="topnav">
-    <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
-    <div class="spacer"></div>
-    <span> <a href="./index.html">Accueil</a></span>
-    <span> <a href="./recette.html">Recettes</a></span>
-    <span><a href="./contact.html">Contact</a></span>
-    <span><a href="./inscription.html">Inscription</a></span>
-    <span onclick="on()"><a href="#">Login</a></span>
-    <div></div>
-    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-  </div>
+  
+      <a class="logo" href="./index.html"><img src=".././images/Foodieland.png" /></a>
+      <div class="spacer"></div>
+      <span> <a href="./index.html">Home</a></span>
+      <span> <a href="./recette.html">Recipes</a></span>
+      <span><a href="./contact.html">Contact</a></span>
+      <span><a href="./inscription.html">Register</a></span>
+      <span onclick="on()"><a href="#">Login</a></span>
+      <div></div>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>  </div>
   <!----------------------------------------->
   <!-- LOGIN -->
   <div id="login">
-    <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
-    <h1>Login</h1>
-    <form action="./backend/backend.html" method="post">
-      <label for="username">
-        <i class="fa-solid fa-user"></i>
-      </label>
-      <input type="text" name="theusername" placeholder="Username" id="username" required />
-      <label for="password">
-        <i class="fa-solid fa-lock"></i>
-      </label>
-      <input type="password" name="thepassword" placeholder="Password" id="password" required />
-      <input type="submit" value="Login" />
-    </form>
-  </div>
+  
+  <i class="fa-solid fa-circle-xmark" onclick="off()"></i>
+  <h1>Login</h1>
+  <form action="./authenticate.html" method="post">
+    <label for="username">
+      <i class="fa-solid fa-user"></i>
+    </label>
+    <input type="text" name="username" placeholder="Username" id="username"  />
+    <label for="password">
+      <i class="fa-solid fa-lock"></i>
+    </label>
+    <input type="password" name="password" placeholder="Password" id="password"  />
+    <input type="submit" value="Login" />
+  </form>  </div>
   <!-- FIN LOGIN -->
 
   <article class="article">
@@ -58,7 +60,7 @@
       </div>
       <div class="gridD">
         <div class="form_contact">
-          <form action="/action_page.php">
+          <form action="/action_page.html">
             <label for="fname">NAME</label>
             <input type="text" id="fname" name="firstname" placeholder="Enter your name..">
             <label for="lname">EMAIL ADDRESS</label>
@@ -96,72 +98,85 @@
 
   <article class="article">
     <h1 class="title-grid-88">Check out the delicious recipe</h1>
-    <div class="grid888">
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <img class="img98" src=".././images/111.png" />
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
+    <div class="grid887">
+     
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=16"> <img class="img98" src=".././images/viandes.jpg" /></a>
+      <p class="recette8-title">Gordon Ramsay’s roast beef fillet</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
       </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <img class="img98" src=".././images/112.png" />
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <img class="img98" src=".././images/113.png" />
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
-      </div>
-      <div class="cell8">
-        <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
-        <img class="img98" src=".././images/114.png" />
-        <p class="recette8-title">Big and Juicy Wagyu Beef Cheeseburger</p>
-        <div class="boutton-timeCell8">
-          <i class="iconT8 fa-solid fa-stopwatch"></i>
-          <span class="timercell">30 Minutes</span>
-        </div>
-        <div class="boutton-catCell8">
-          <i class="iconC8 fa-solid fa-utensils"></i>
-          <span class="catCell8">Healty</span>
-        </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Hot Recipies</span>
       </div>
     </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=13"> <img class="img98" src=".././images/burger.jpg" /></a>
+      <p class="recette8-title">Burger with Egg, Ham and Peppers</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Hot Recipies</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=12"> <img class="img98" src=".././images/pasta-mushroom.jpg" /></a>
+      <p class="recette8-title">Easy Garlic Mushroom Pasta</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">15 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Hot Recipies</span>
+      </div>
+    </div>
+
+
+  
+    <div class="cell8">
+      <div class="dotlike8"><i class="flike8 fa-solid fa-heart" onclick="this.style.color='red'"></i></div>
+      <a class="link" href="./recette.html?id=8"> <img class="img98" src=".././images/falafel.jpg" /></a>
+      <p class="recette8-title">How to Make Crispy Falafel</p>
+      <div class="boutton-timeCell8">
+        <i class="iconT8 fa-solid fa-stopwatch"></i>
+        <span class="timercell">30 minutes</span>
+      </div>
+      <div class="boutton-catCell8">
+        <i class="iconC8 fa-solid fa-utensils"></i>
+        <span class="catCell8">Hot Recipies</span>
+      </div>
+    </div>
+
+
+  
+      </div>
   </article>
 
 
 
   <div class="footernav">
-    <a class="logofoot" href="#"><img src=".././images/Foodieland.png" /></a>
-    <div class="spacerfoot"></div>
-    <span> <a href="./index.html">Accueil</a></span>
-    <span> <a href="./recette.html">Recettes</a></span>
-    <span><a href="./contact.html">Contact</a></span>
-    <span><a href="./inscription.html">Inscription</a></span>
-  </div>
+  
+  <a class="logofoot" href="./index.html"><img src=".././images/Foodieland.png" /></a>
+  <div class="spacerfoot"></div>
+  <span> <a href="./index.html">Home</a></span>
+  <span> <a href="./recette.html">Recipes</a></span>
+  <span><a href="./contact.html">Contact</a></span>
+  <span><a href="./inscription.html">Register</a></span>  </div>
   <footer>
     <div class="footer">
       <p>©2022 Site Recette Formation Simplon</p>

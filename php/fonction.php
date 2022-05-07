@@ -8,10 +8,10 @@ function topnav()
       <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
       <div class="spacer"></div>
       <span> <a href="./index.php">Home</a></span>
-      <span> <a href="./recette.php">Recipies</a></span>
-      <span><a href="./contact.php">Contact</a></span>
-      <span><a href="./backend.php">My Recipies</a></span>
+      <span> <a href="./recette.php">Recipes</a></span>
+      <span><a href="./backend.php">My Recipes</a></span>
       <span><a href="./logout.php">Logout</a></span>
+      <div></div>
       <div></div>
       <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
       <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -21,7 +21,7 @@ function topnav()
       <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
       <div class="spacer"></div>
       <span> <a href="./index.php">Home</a></span>
-      <span> <a href="./recette.php">Recipies</a></span>
+      <span> <a href="./recette.php">Recipes</a></span>
       <span><a href="./contact.php">Contact</a></span>
       <span><a href="./inscription.php">Register</a></span>
       <span onclick="on()"><a href="#">Login</a></span>
@@ -541,7 +541,7 @@ function footernav()
   <a class="logofoot" href="./index.php"><img src=".././images/Foodieland.png" /></a>
   <div class="spacerfoot"></div>
   <span> <a href="./index.php">Home</a></span>
-  <span> <a href="./recette.php">Recipies</a></span>
+  <span> <a href="./recette.php">Recipes</a></span>
   <span><a href="./contact.php">Contact</a></span>
   <span><a href="./inscription.php">Register</a></span>';
 }
@@ -698,12 +698,13 @@ function cruduser()
 {
   include './bdd.php';
   $postx = $bdd->query('SELECT
-*
+  utilisateurs.*,
+  roles.label
 From
-    utilisateurs Inner Join
-    user_role On user_role.id_user = utilisateurs.id_user Inner Join
-    roles On user_role.id_role = roles.id_role
-  
+  utilisateurs Inner Join
+  user_role On user_role.id_user = utilisateurs.id Inner Join
+  roles On user_role.id_role = roles.id_roles
+
   ');
 
   while ($post = $postx->fetch()) {
@@ -735,7 +736,7 @@ From
       <p>
         <td>
         <a class="btn btn-success" href="./modifier_user.php?id=<?= $tabcontent[$i]["id"]; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-          <a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id"]; ?>"><i class="fa-solid fa-trash-can"></i></a>
+          <a class="btn btn-danger" href="./suppruser.php?id=<?= $tabcontent[$i]["id"]; ?>"><i class="fa-solid fa-trash-can"></i></a>
         </td>
       <p>
     </tr>
@@ -769,11 +770,10 @@ categories');
               <td><?= $tabcontent[$i]["name"]; ?></td>
             <p>
               
-              <td><img src="<?= $tabcontent[$i]["icon"]; ?>"></td>
+              <td><img style="height:50px;width:50px;" src="<?= $tabcontent[$i]["icon"]; ?>"></td>
             <p>
               <td> 
-          <a class="btn btn-success" href="./modifier.php?id=<?= $tabcontent[$i]["id_cat"]; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-          <a class="btn btn-danger" href="./suppr.php?id=<?= $tabcontent[$i]["id_cat"]; ?>"><i class="fa-solid fa-trash-can"></i></a></td>
+          <a class="btn btn-danger" href="./suppr.php?id="><i class="fa-solid fa-trash-can"></i></a></td>
           </tr>
   <?php
     $bdd->connection = null;
@@ -781,6 +781,72 @@ categories');
 
 <?php
 }
+
+function moduser($iduser)
+{
+  include './bdd.php';
+
+  $postx = $bdd->query('SELECT
+*
+FROM
+utilisateurs WHERE id = '. $iduser .'');
+
+  while ($post = $postx->fetch()) {
+    $tabcontent[] = [
+      'id' => $post['id'],
+      'username' => $post['username'],
+      'avatar' => $post['avatar'],
+      'nom' => $post['nom'],
+      'prenom' => $post['prenom'],
+      //'role' => $post['role']
+      'email' => $post['email'],
+
+    ];
+  }
+
+  for ($i = 0; $i < count($tabcontent); $i++) { ?>
+    <h2 class="title_incription">Edit User</h2>
+    <form action="/modifier_user.php">
+
+      <div class="griduser">
+        <label for="Pseudo" class="label">Username:</label>
+        <input type="text" id="cingr" name="Pseudo" placeholder="Username" value="<?= $tabcontent[$i]["username"]; ?>" />
+        <img style="height:50px;width:50px;" src="<?= $tabcontent[$i]["avatar"]; ?>">
+        <label for="Nom" class="label">First Name:</label>
+        <input type="text" id="cingr" name="Nom" placeholder="First Name:"  value="<?= $tabcontent[$i]["nom"]; ?>" />
+        <label for="Prenom" class="label">Last Name:</label>
+        <input type="text" id="cingr" name="Prenom" placeholder="Last Name:"  value="<?= $tabcontent[$i]["prenom"]; ?>" />
+        <label for="Prenom" class="label">Email:</label>
+        <input type="text" id="cingr" name="mail" placeholder="Email"  value="<?= $tabcontent[$i]["email"]; ?>" />
+        <?php if (isset($_SESSION['id'])) {
+    if ($_SESSION['id'] == '4') {
+     echo ' <label for="role" class="label">Role:</label>
+     <select name="role" id="role">
+     <option value="3">visiteur</option>
+     <option value="2">moderateur</option>
+     <option value="1">administrateur</option>
+   </select>';
+    } }?>
+        <div class="bouton">
+          <input class="btn_add" type="submit" value="Apply" />
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+
+  <?php
+    $bdd->connection = null;
+  } ?>
+
+<?php
+}
+
+
+
 
 
 function loginpop(){

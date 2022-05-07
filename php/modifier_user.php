@@ -24,10 +24,10 @@ session_start();
   <div class="topnav">
     <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href="./index.php">Accueil</a></span>
-    <span> <a href="./backend.php">Liste des Recettes</a></span>
-    <span> <a href="./categorie.php">Liste des Catégories</a></span>
-    <span> <a href="./utilisateurs.php">Liste des Utilisateurs</a></span>
+    <span> <a href="./index.php">Home</a></span>
+    <span> <a href="./backend.php">Recipes List</a></span>
+    <span> <a href="./categorie.php">Category List</a></span>
+    <span> <a href="./utilisateurs.php">User List</a></span>
     <span><a href="./logout.php">Logout</a></span>
     <div></div>
     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -46,30 +46,15 @@ session_start();
 
   <!----------------------------------------->
   <article class="article">
-    <h2 class="title_incription">Modifier Utilisateur</h2>
-    <form action="/action_page.php">
+  <?php
+  if ($_SERVER['REQUEST_METHOD'] == "GET" and isset($_GET['id'])) {
+    $iduser = $_GET['id'];
+    moduser($iduser); 
+  } else {
+    header('Location: ./backend.php');
+  }
+?>
 
-      <div class="griduser">
-        <label for="Pseudo" class="label">Pseudo:</label>
-        <input type="text" id="cingr" name="Pseudo" placeholder="Pseudo" />
-        <label for="Nom" class="label">Nom:</label>
-        <input type="text" id="cingr" name="Nom" placeholder="Nom" />
-        <label for="Prenom" class="label">Prenom:</label>
-        <input type="text" id="cingr" name="Prenom" placeholder="Prénom" />
-        <label for="Prenom" class="label">Email:</label>
-        <input type="text" id="cingr" name="mail" placeholder="Email" />
-        <?php if (isset($_SESSION['id'])) {
-    if ($_SESSION['id'] == '4') {
-     echo '     <label for="role" class="label">Role:</label>
-     <input type="text" id="cingr" name="role" placeholder="Role" />';
-    } }?>
-        <label for="Password" class="label">Password:</label>
-        <input type="password" id="cingr" name="password" placeholder="password" />
-        <div class="bouton">
-          <input class="btn_add" type="submit" value="S'inscrire" />
-        </div>
-      </div>
-    </form>
   </article>
 
   <div class="footernav">

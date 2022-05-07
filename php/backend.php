@@ -33,14 +33,14 @@ session_start();
     <span> <a href="./index.php">Home</a></span>
     <span> <a href="./categorie.php">Category List</a></span>
     <span> <a href="./utilisateurs.php">User List</a></span>
-    <span> <a href="./ajouter.php">Add a new Recepie</a></span>
+    <span> <a href="./ajouter.php">Add a new Recipe</a></span>
     <span onclick=""><a href="./logout.php">Logout</a></span>';
   } else {
     echo '
     <span> <a href="./index.php">Home</a></span>
-    <span> <a href="./ajouter.php">Add a new Recepie</a></span>
+    <span> <a href="./ajouter.php">Add a new Recipe</a></span>
     <span> <a href="./categorie.php">Category List</a></span>
-    <span> <a href="./backend.php">My Recepies</a></span>
+    <span> <a href="./backend.php">My Recipes</a></span>
     <span onclick=""><a href="./logout.php">Logout</a></span>';
   }
  } ?>
@@ -55,12 +55,12 @@ session_start();
  <?php   if (isset($_SESSION['id'])){
   if ($_SESSION['id'] == '4') {
       echo "<h5 class=''>Welcome Admin</h2>";
-      echo "<h2 class='title_liste'>List of all Recepies:</h2>";      
+      echo "<h2 class='title_liste'>List of all Recipes:</h2>";      
     }
   else if ($_SESSION['id'] != '4') {
       echo "<h4 class=''>Welcome</h4>";
       echo  "<h4 class=''>", $_SESSION['name'] ,"</h4>";
-      echo "<h2 class='title_liste'>Liste of your recipies</h2>";
+      echo "<h2 class='title_liste'>Liste of your Recipes</h2>";
   }
  } ?>
       <table class="table table-hover table-bordered">

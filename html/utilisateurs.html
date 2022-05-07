@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -18,78 +19,100 @@
   <div id="overlay"></div>
   <!-- BARRE DE MENU -->
   <div class="topnav">
-    <a class="logo" href="#"><img src=".././images/Foodieland.png" /></a>
+    <a class="logo" href="./index.html"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href="./backend.html">Liste des recettes</a></span>
-    <span> <a href=".././inscription.html">Ajouter utilisateur</a></span>
-    <span onclick=""><a href="#">Logout</a></span>
+    <span> <a href="./index.html">Home</a></span>
+    <span> <a href="./backend.html">Recipes List</a></span>
+    <span> <a href="./categorie.html">Category List</a></span>
+    <span><a href="./logout.html">Logout</a></span>
     <div></div>
   </div>
 
   <!----------------------------------------->
   <article class="article">
     <div class="table-responsive">
-      <h2 class="title_liste">Liste des Utilisateurs</h2>
+      <h2 class="title_liste">User List</h2>
       <table class="table table-hover table-bordered">
         <thead>
-          <th>Pseudo</th>
+          <th>Username</th>
           <p>
-          <th>Avatar</th>
+            <th>Avatar</th>
           <p>
-            <th>Prénom</th>
+            <th>First Name</th>
           <p>
-            <th>Nom</th>
+            <th>Last Name</th>
           <p>
-            <th>Role</th>
+            <th>Email</th>
             <p>
-              <th>Email</th>
+            <th>Role</th>
           <p>
-            <th>Edition</th>
-          <p>
-            <th>Supprimer</th>
+            <th>Manage</th>
           <p>
 
         </thead>
 
         <tbody>
-          <tr>
-            <p>
-              <td>Admin</td>
-            <td><img src=".././images/Ellipse2.png"></td>
-            <p>
-              <td>John</td>
-            <p>
-              <td> Smith </td>
-            <p>
-              <td>Admin</td>
-            <p>
-              <td>cdsfsfer@mail.com</td>
-              <p>
-              <td><a class="btn btn-success" href="modifier_user.html">Modifier</a></td>
-            <p>
-              <td><a class="btn btn-danger" href="">Supprimer</a></td>
-            <p>
-          </tr>
-          <tr>
-            <p>
-              <td>Nico</td>
-            <td><img src=".././images/avatar2.png"></td>
-            <p>
-              <td>Nico</td>
-            <p>
-              <td> test </td>
-            <p>
-              <td>User</td>
-              <p>
-                <td>cdsfsfer@mail.com</td>
-                <p>
-              <td><a class="btn btn-success" href="./modifier.html">Modifier</a></td>
-            <p>
-              <td><a class="btn btn-danger" href="">Supprimer</a></td>
-            <p>
-          </tr>
-          <p>
+              <tr>
+      <p>
+      <td>admin</td>
+      <p>
+        <td><img class="avatarcrud" src=".././images/Ellipse2.png"></td>
+      <p>
+        <td> John </td>
+      <p>
+        <td>Smith</td>
+      <p>
+      <td> john@gmail.com </td>
+      <p>
+      <td> administrateur </td>
+      <p>
+        <td>
+        <a class="btn btn-success" href="./modifier_user.html?id=4"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppruser.html?id=4"><i class="fa-solid fa-trash-can"></i></a>
+        </td>
+      <p>
+    </tr>
+      <tr>
+      <p>
+      <td>david</td>
+      <p>
+        <td><img class="avatarcrud" src=".././images/avatar.png"></td>
+      <p>
+        <td> David </td>
+      <p>
+        <td>Goodenough</td>
+      <p>
+      <td> 0 </td>
+      <p>
+      <td> moderateur </td>
+      <p>
+        <td>
+        <a class="btn btn-success" href="./modifier_user.html?id=5"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppruser.html?id=5"><i class="fa-solid fa-trash-can"></i></a>
+        </td>
+      <p>
+    </tr>
+      <tr>
+      <p>
+      <td>nico</td>
+      <p>
+        <td><img class="avatarcrud" src=".././images/avatar2.png"></td>
+      <p>
+        <td> Dauphin </td>
+      <p>
+        <td>Dufutur</td>
+      <p>
+      <td> 0 </td>
+      <p>
+      <td> visiteur </td>
+      <p>
+        <td>
+        <a class="btn btn-success" href="./modifier_user.html?id=6"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a class="btn btn-danger" href="./suppruser.html?id=6"><i class="fa-solid fa-trash-can"></i></a>
+        </td>
+      <p>
+    </tr>
+  
         </tbody>
       </table>
     </div>
@@ -98,12 +121,13 @@
 
 
   <div class="footernav">
-    <a class="logofoot" href="#"><img src=".././images/Foodieland.png" /></a>
-    <span> <a href=".././index.html">Accueil</a></span>
-    <span> <a href=".././recette.html">Recettes</a></span>
-    <span><a href=".././contact.html">Contact</a></span>
-    <span><a href=".././inscription.html">Inscription</a></span>
-  </div>
+
+  <a class="logofoot" href="./index.html"><img src=".././images/Foodieland.png" /></a>
+  <div class="spacerfoot"></div>
+  <span> <a href="./index.html">Home</a></span>
+  <span> <a href="./recette.html">Recipes</a></span>
+  <span><a href="./contact.html">Contact</a></span>
+  <span><a href="./inscription.html">Register</a></span>  </div>
 
   <footer>
     <div class="footer">

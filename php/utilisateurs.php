@@ -32,7 +32,7 @@ if (isset($_SESSION['id'])) {
     <a class="logo" href="./index.php"><img src=".././images/Foodieland.png" /></a>
     <div class="spacer"></div>
     <span> <a href="./index.php">Home</a></span>
-    <span> <a href="./backend.php">Recipies List</a></span>
+    <span> <a href="./backend.php">Recipes List</a></span>
     <span> <a href="./categorie.php">Category List</a></span>
     <span><a href="./logout.php">Logout</a></span>
     <div></div>
