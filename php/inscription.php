@@ -48,8 +48,12 @@ session_start();
       } else {
         $uploadOk = 0;
       }
+      $username = htmlspecialchars($_POST['username']);
+      $nom = htmlspecialchars($_POST['Nom']);
+      $prenom = htmlspecialchars($_POST['Prenom']);
+      $mail = htmlspecialchars($_POST['mail']);
       $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-      $requete = "INSERT INTO utilisateurs VALUES(NULL, '" . $_POST['username'] . "', '" . $password . "', '" . $target_file . "', '" . $_POST['Nom'] . "', '" . $_POST['Prenom'] . "', '" . $_POST['mail'] . "')";
+      $requete = "INSERT INTO utilisateurs VALUES(NULL, '" . $username . "', '" . $password . "', '" . $target_file . "', '" . $nom . "', '" . $prenom . "', '" . $mail . "')";
       $resultat = $bdd->query($requete);
       $pdo = $bdd;
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

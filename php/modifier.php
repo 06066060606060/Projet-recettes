@@ -49,45 +49,45 @@ if (isset($_SESSION['id'])) {
       $image_recette = "";
     }
   } else {
-    $image_recette = $_POST['links'];
+    $image_recette = htmlspecialchars($_POST['links']);
   }
 
     $titleError = null;
     $timeError = null;
     $image_postError = null;
     $description_postError = null;
-    $id = $_POST['id_recipes'];
-    $title = $_POST['title'];
-    $image = $_POST['imgplayer'];
-    $preptime = $_POST['preptime'];
-    $cooktime = $_POST['cooktime'];
-    $description = $_POST['description'];
-    $categorie = $_POST['name'];
-    $type = $_POST['type'];
-    $vedette = $_POST['vedette'];
-    $ing_plats1 = $_POST['ing_plats1'];
-    $ing_plats2 = $_POST['ing_plats2'];
-    $ing_plats3 = $_POST['ing_plats3'];
-    $ing_plats4 = $_POST['ing_plats4'];
-    $ing_plats5 = $_POST['ing_plats5'];
-    $ing_plats6 = $_POST['ing_plats6'];
+    $id = htmlspecialchars($_POST['id_recipes']);
+    $title = htmlspecialchars($_POST['title']);
+    $image = htmlspecialchars($_POST['imgplayer']);
+    $preptime = htmlspecialchars($_POST['preptime']);
+    $cooktime = htmlspecialchars($_POST['cooktime']);
+    $description = htmlspecialchars($_POST['description']);
+    $categorie = htmlspecialchars($_POST['name']);
+    $type = htmlspecialchars($_POST['type']);
+    $vedette = htmlspecialchars($_POST['vedette']);
+    $ing_plats1 = htmlspecialchars($_POST['ing_plats1']);
+    $ing_plats2 = htmlspecialchars($_POST['ing_plats2']);
+    $ing_plats3 = htmlspecialchars($_POST['ing_plats3']);
+    $ing_plats4 = htmlspecialchars($_POST['ing_plats4']);
+    $ing_plats5 = htmlspecialchars($_POST['ing_plats5']);
+    $ing_plats6 = htmlspecialchars($_POST['ing_plats6']);
 
-    $ing_sauce1 = $_POST['ing_sauce1'];
-    $ing_sauce2 = $_POST['ing_sauce2'];
-    $ing_sauce3 = $_POST['ing_sauce3'];
-    $ing_sauce4 = $_POST['ing_sauce4'];
-    $ing_sauce5 = $_POST['ing_sauce5'];
-    $ing_sauce6 = $_POST['ing_sauce6'];
+    $ing_sauce1 = htmlspecialchars($_POST['ing_sauce1']);
+    $ing_sauce2 = htmlspecialchars($_POST['ing_sauce2']);
+    $ing_sauce3 = htmlspecialchars($_POST['ing_sauce3']);
+    $ing_sauce4 = htmlspecialchars($_POST['ing_sauce4']);
+    $ing_sauce5 = htmlspecialchars($_POST['ing_sauce5']);
+    $ing_sauce6 = htmlspecialchars($_POST['ing_sauce6']);
 
-    $etape1 = $_POST['etape1'];
-    $etape2 = $_POST['etape2'];
-    $etape3 = $_POST['etape3'];
+    $etape1 = htmlspecialchars($_POST['etape1']);
+    $etape2 = htmlspecialchars($_POST['etape2']);
+    $etape3 = htmlspecialchars($_POST['etape3']);
 
-    $calories = $_POST['calories'];
-    $fat = $_POST['fat'];
-    $prot = $_POST['prot'];
-    $carbon = $_POST['carbon'];
-    $chol = $_POST['chol'];
+    $calories = htmlspecialchars($_POST['calories']);
+    $fat = htmlspecialchars($_POST['fat']);
+    $prot = htmlspecialchars($_POST['prot']);
+    $carbon = htmlspecialchars($_POST['carbon']);
+    $chol = htmlspecialchars($_POST['chol']);
 
     $valid = true;
     if (empty($title)) {

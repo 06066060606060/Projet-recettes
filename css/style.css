@@ -558,7 +558,7 @@ itemsD {
 }
 
 .flike.fa-solid.fa-heart {
-  color: #c4c8c9;
+  color: #9c9c9c;
   font-size: 20px;
   position: absolute;
   top: 15px;
@@ -566,16 +566,18 @@ itemsD {
 }
 
 .flike.fa-solid.fa-heart:hover {
-  color: #949595;
+  color: #5c5c5c;
 }
 
 .flike.fa-solid.fa-heart:active {
-  color: #e24f00;
+  color: #ff0000;
 }
 
 .flike.fa-solid.fa-heart:visited {
-  color: #e24f00;
+  color: #ff0000;
 }
+
+
 
 .img9 {
   position: absolute;

@@ -34,7 +34,7 @@ if (password_verify($_POST['password'], $password)) {  // use BCRYPT
 		// Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
 		session_regenerate_id();
 		$_SESSION['loggedin'] = TRUE;
-		$_SESSION['name'] = $_POST['username'];
+		$_SESSION['name'] = htmlspecialchars($_POST['username']);
 		$_SESSION['id'] = $id;
 		echo 'Bienvenue ' . $_SESSION['name'] . '!';
 		header('Location: ./backend.php');

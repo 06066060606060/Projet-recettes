@@ -35,58 +35,59 @@ if (isset($_SESSION['id'])) {
 
   // Check if image file is a actual image or fake image
   if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) { // on initialise nos erreurs
-    $target_dir = "../images/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if ($check !== false) {
+    if (isset($_FILES['fileToUpload']) and !empty($_FILES['fileToUpload']['name'])) {
+      $target_dir = "../images/";
+      $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       $uploadOk = 1;
-      move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+      $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+      $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+      if ($check !== false) {
+        $uploadOk = 1;
+        $image_recette = $target_file;
+        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+      } else {
+        $uploadOk = 0;
+        $image_recette = "";
+      }
     } else {
-      $uploadOk = 0;
+      $image_recette = "";
     }
-
-
+   
     $titleError = null;
     $timeError = null;
     $imgplayer_postError = null;
     $description_postError = null;
-    $id = $_POST['id_recipes'];
-    $title = $_POST['title'];
-    $imgplayer = $_POST['imgplayer'];
+    $id =  htmlspecialchars($_POST['id_recipes']);
+    $title = htmlspecialchars($_POST['title']);
+    $imgplayer = htmlspecialchars($_POST['imgplayer']);
     $idauteur = $_SESSION['id'];
-    $catname = $_POST['name'];
-    $preptime = $_POST['preptime'];
-    $cooktime = $_POST['cooktime'];
+    $catname = htmlspecialchars($_POST['name']);
+    $preptime = htmlspecialchars($_POST['preptime']);
+    $cooktime = htmlspecialchars($_POST['cooktime']);
     $image_recette = $target_file;
-    $description = $_POST['description'];
-    $type = $_POST['type'];
-    $vedette = $_POST['vedette'];
-
-    $ing_plats1 = $_POST['ing_plats1'];
-    $ing_plats2 = $_POST['ing_plats2'];
-    $ing_plats3 = $_POST['ing_plats3'];
-    $ing_plats4 = $_POST['ing_plats4'];
-    $ing_plats5 = $_POST['ing_plats5'];
-    $ing_plats6 = $_POST['ing_plats6'];
-
-    $ing_sauce1 = $_POST['ing_sauce1'];
-    $ing_sauce2 = $_POST['ing_sauce2'];
-    $ing_sauce3 = $_POST['ing_sauce3'];
-    $ing_sauce4 = $_POST['ing_sauce4'];
-    $ing_sauce5 = $_POST['ing_sauce5'];
-    $ing_sauce6 = $_POST['ing_sauce6'];
-
-    $calories = $_POST['calories'];
-    $fat = $_POST['fat'];
-    $prot = $_POST['prot'];
-    $carbon = $_POST['carbon'];
-    $chol = $_POST['chol'];
-
-    $etape1 = $_POST['etape1'];
-    $etape2 = $_POST['etape2'];
-    $etape3 = $_POST['etape3'];
+    $description = htmlspecialchars($_POST['description']);
+    $type = htmlspecialchars($_POST['type']);
+    $vedette = htmlspecialchars($_POST['vedette']);
+    $ing_plats1 = htmlspecialchars($_POST['ing_plats1']);
+    $ing_plats2 = htmlspecialchars($_POST['ing_plats2']);
+    $ing_plats3 = htmlspecialchars($_POST['ing_plats3']);
+    $ing_plats4 = htmlspecialchars($_POST['ing_plats4']);
+    $ing_plats5 = htmlspecialchars($_POST['ing_plats5']);
+    $ing_plats6 = htmlspecialchars($_POST['ing_plats6']);
+    $ing_sauce1 = htmlspecialchars($_POST['ing_sauce1']);
+    $ing_sauce2 = htmlspecialchars($_POST['ing_sauce2']);
+    $ing_sauce3 = htmlspecialchars($_POST['ing_sauce3']);
+    $ing_sauce4 = htmlspecialchars($_POST['ing_sauce4']);
+    $ing_sauce5 = htmlspecialchars($_POST['ing_sauce5']);
+    $ing_sauce6 = htmlspecialchars($_POST['ing_sauce6']);
+    $calories = htmlspecialchars($_POST['calories']);
+    $fat = htmlspecialchars($_POST['fat']);
+    $prot = htmlspecialchars($_POST['prot']);
+    $carbon = htmlspecialchars($_POST['carbon']);
+    $chol = htmlspecialchars($_POST['chol']);
+    $etape1 = htmlspecialchars($_POST['etape1']);
+    $etape2 = htmlspecialchars($_POST['etape2']);
+    $etape3 = htmlspecialchars($_POST['etape3']);
 
     $valid = true;
     if (empty($title)) {

@@ -75,7 +75,7 @@ p.short {
 a.btn {
   display: block;
   padding: 10px;
-  color: rgb(4, 0, 255);
+  color: rgb(3, 0, 156);
   text-decoration: none;
   padding-left: 15px;
   font-size: 24px;
@@ -86,13 +86,13 @@ a.btn.btn-active {
 }
 
 a.btn.btn-success {
-  color: rgb(0, 126, 2);
+  color: rgb(0, 159, 3);
   text-decoration: none;
   padding-left: 17px;
 }
 
 a.btn.btn-danger {
-  color: rgb(229, 0, 0);
+  color: rgb(132, 0, 0);
   text-decoration: none;
   padding-left: 17px;
 }
