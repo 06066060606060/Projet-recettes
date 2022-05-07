@@ -196,7 +196,7 @@ if (isset($_SESSION['id'])) {
 
   <!----------------------------------------->
   <article class="article">
-    <h2 class="title_add">Add a new Recipes</h2>
+    <h2 class="title_add">Edit Recipe</h2>
     <form action="./modifier.php" method="post" enctype="multipart/form-data">
       <div class="grid_add">
         <div class="cook">
