@@ -98,6 +98,14 @@
   border-radius: 30px;
   width: 840px;
  height: auto;
+ filter:brightness(100%) contrast(120%) saturate(100px);
+ -webkit-filter:brightness(100%) contrast(120%) saturate(100%);
+ transition:-webkit-filter 0.3s ease-in-out;
+}
+
+.img_play:hover {
+ filter:brightness(90%) contrast(130%) saturate(100%); 
+ -webkit-filter: brightness(90%) contrast(130%) saturate(100%); 
 }
 
 .fa-play{
@@ -121,7 +129,7 @@ margin-left: 40px;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-70%);
-  background-color: #ffffffb9;
+  background-color: #ffffffd3;
   border-radius: 100%;
   height: 100px;
   width: 100px;
@@ -308,11 +316,16 @@ input[type="radio"].ingr1 {
   width: 180px;
   height: 120px;
   border-radius: 20px;
-
-}
+  filter:brightness(100%) contrast(120%) saturate(100px);
+  -webkit-filter:brightness(100%) contrast(120%) saturate(100%);
+  transition:-webkit-filter 0.3s ease-in-out;
+ }
+ 
 .minipost:hover {
 transform: scale(1.05);
 transition: transform 330ms ease-in-out;
+filter:brightness(90%) contrast(130%) saturate(100%); 
+-webkit-filter: brightness(90%) contrast(130%) saturate(100%); 
 }
 
 .titrepub {
@@ -572,15 +585,4 @@ footer {
 
 .footernav a:hover {
   color: black;
-}
-
-@media screen and (max-width: 850px) {
-  .grid_recette {
-    justify-items: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-
 }

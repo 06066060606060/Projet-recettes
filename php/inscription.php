@@ -1,4 +1,4 @@
-<?php 
+<?php
 include './fonction.php';
 include './bdd.php';
 session_start();
@@ -24,49 +24,50 @@ session_start();
   <div id="overlay"></div>
   <!-- BARRE DE MENU -->
   <div class="topnav">
-  <?php topnav();?>
+    <?php topnav(); ?>
   </div>
 
   <!-- LOGIN -->
   <div id="login">
-  <?php loginpop(); ?>
+    <?php loginpop(); ?>
   </div>
   <!-- FIN LOGIN -->
 
   <!----------------------------------------->
   <article class="article">
-  <?php 
-  if (isset($_POST['username'])) {
-    $target_dir = ".././images/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if ($check !== false) {
+    <?php
+    if (isset($_POST['username'])) {
+      $target_dir = ".././images/";
+      $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
       $uploadOk = 1;
-      move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-    } else {
-      $uploadOk = 0;
-    }
-  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-  $requete = "INSERT INTO utilisateurs VALUES(NULL, '" . $_POST['username'] . "', '" . $password . "', '" . $target_file . "', '" . $_POST['Nom'] . "', '" . $_POST['Prenom'] . "', '" . $_POST['mail'] . "')";
-  $resultat = $bdd->query($requete);
-  $pdo = $bdd;
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sqlx = "SELECT * FROM `utilisateurs` ORDER BY `id` DESC LIMIT 1";
-  $qx = $pdo->query($sqlx);
-  foreach ($qx as $row) {
-    $newid = $row['id'];
-  }
+      $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+      $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+      if ($check !== false) {
+        $uploadOk = 1;
+        move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+      } else {
+        $uploadOk = 0;
+      }
+      $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+      $requete = "INSERT INTO utilisateurs VALUES(NULL, '" . $_POST['username'] . "', '" . $password . "', '" . $target_file . "', '" . $_POST['Nom'] . "', '" . $_POST['Prenom'] . "', '" . $_POST['mail'] . "')";
+      $resultat = $bdd->query($requete);
+      $pdo = $bdd;
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $sqlx = "SELECT * FROM `utilisateurs` ORDER BY `id` DESC LIMIT 1";
+      $qx = $pdo->query($sqlx);
+      foreach ($qx as $row) {
+        $newid = $row['id'];
+      }
 
-  $sql2 =  "INSERT INTO `user_role` (`id_user`, `id_role`) VALUES ($newid, '3')";
-  $q1 = $pdo->query($sql2);
+      $sql2 =  "INSERT INTO `user_role` (`id_user`, `id_role`) VALUES ($newid, '3')";
+      $q1 = $pdo->query($sql2);
 
-  if ($resultat)
-      echo "<span>Inscription Validée</span>";
-  else
-      echo "<p>Erreur</p>";
-} ?>
+      if ($resultat) {
+        echo "<span>Inscription Validée</span>";
+        header("Location: ./index.php");
+      } else
+        echo "<p>Erreur</p>";
+    } ?>
     <h2 class="title_incription">Create an Account</h2>
     <form action="./inscription.php" method="post" enctype="multipart/form-data">
 
@@ -92,7 +93,7 @@ session_start();
   </article>
 
   <div class="footernav">
-  <?php footernav(); ?>
+    <?php footernav(); ?>
   </div>
 
   <footer>
