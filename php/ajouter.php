@@ -212,9 +212,9 @@ if (isset($_SESSION['id'])) {
           } ?>
         </div>
       </div>
-      <input type="text" class="titre-add" name="title" placeholder="title" value="" />
+      <input type="text" class="titre-add" name="title" placeholder="title" value="" required/>
       <input type="text" class="videourl" name="imgplayer" placeholder="video URL..." value="" />
-      <textarea class="resume" name="description" placeholder="Recipes resume.."></textarea>
+      <textarea class="resume" name="description" placeholder="Recipes resume.." required></textarea>
 
       <div class="grid2">
         <div class="gridingredient">
@@ -255,7 +255,7 @@ if (isset($_SESSION['id'])) {
           <div class="boutonimg">
             <label for="file" class="label-file">Add picture</label>
             <img class="imgadd" style="width:auto;height:150px;" src="">
-            <input id="file" name="fileToUpload" class="input-file" type="file" />
+            <input id="file" name="fileToUpload" class="input-file" type="file" accept="image/*" />
           </div>
           <label for="etape2" class="label-etape2">Step2:</label>
           <textarea class="resume" name="etape2" placeholder="Step 2.."></textarea>

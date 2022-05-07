@@ -77,7 +77,7 @@ session_start();
 
       <div class="griduser">
         <label for="username" class="label">Username:</label>
-        <input type="text" id="cingr" name="username" placeholder="Username" />
+        <input type="text" id="cingr" name="username" placeholder="Username" required/>
         <label for="Nom" class="label">First Name:</label>
         <input type="text" id="cingr" name="Nom" placeholder="First Name" />
         <label for="Prenom" class="label">Last Name:</label>
@@ -85,9 +85,9 @@ session_start();
         <label for="mail" class="label">Email:</label>
         <input type="text" id="cingr" name="mail" placeholder="Email" />
         <label for="Password" class="label">Password:</label>
-        <input type="password" id="cingr" name="password" placeholder="password" />
+        <input type="password" id="cingr" name="password" placeholder="password" required/>
         <label for="file" class="label-file">Select profile Picture</label>
-        <input id="file" name="fileToUpload" class="input-file" type="file" name="avatar" />
+        <input id="file" name="fileToUpload" class="input-file" type="file" name="avatar" accept="image/*" />
         <div class="bouton">
           <input class="btn_add" type="submit" value="Register" />
         </div>

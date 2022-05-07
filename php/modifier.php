@@ -266,9 +266,9 @@ if (isset($_SESSION['id'])) {
           } ?>
         </div>
       </div>
-      <input type="text" class="titre-add" name="title" placeholder="title" value="<?= $title ?>" />
+      <input type="text" class="titre-add" name="title" placeholder="title" value="<?= $title ?>" required/>
       <input type="text" class="videourl" name="imgplayer" placeholder="video url..." value="<?= $image ?>" />
-      <textarea class="resume" name="description" placeholder="Recipes resume.."><?= $description ?></textarea>
+      <textarea class="resume" name="description" placeholder="Recipes resume.." required><?= $description ?></textarea>
 
       <div class="grid2">
         <div class="gridingredient">
@@ -307,7 +307,7 @@ if (isset($_SESSION['id'])) {
           <textarea class="resume" name="etape1" placeholder="Step1 .."><?= $etape1 ?></textarea>
           <div class="boutonimg">
             <label for="file" class="label-file">select picture</label>
-            <input id="file" name="fileToUpload" class="input-file" type="file" />
+            <input id="file" name="fileToUpload" class="input-file" type="file" accept="image/*"/>
           </div>
           <input type="hidden" id="cingr" name="links" value="<?= $image_link ?>" />
           <img class="imgadd" style="width:auto;height:150px;" src="<?= $image_recette ?>"><br>
