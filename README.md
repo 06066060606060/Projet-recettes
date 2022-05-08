@@ -1,5 +1,6 @@
 # Projet-recettes
-Projet Recette Formation Simplon 2022 https://06066060606060.github.io/Projet-recettes/html/index.html  
+Projet Recette Formation Simplon 2022
+https://06066060606060.github.io/Projet-recettes/html/index.html  
 
 Maquette:https://www.figma.com/file/gn8ptiWYyE6XDSq4jitOCj/FoodLife?node-id=1%3A296
 
