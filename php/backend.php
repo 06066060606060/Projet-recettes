@@ -2,7 +2,7 @@
 include './fonction.php';
 session_start();
 //var_dump($_SESSION)
-
+error_reporting(0);
 ?>
 
 <!DOCTYPE html>
